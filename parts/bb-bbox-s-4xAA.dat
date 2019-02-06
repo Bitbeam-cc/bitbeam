@@ -1,8 +1,7 @@
-0 {name}
-0 Name: parts/bb-bbox-s-4xAA.dat
-0 Author: Ondrej Tuma
-0 !CATEGORY Technic
-
+0 Batery Case 4 x AA
+0 Name: bb-bbox-s-4xAA.dat
+0 Author: Ondřej Tůma
+0 !CATEGORY m-Bitbeam
 
 0 !LDRAW_ORG Unofficial_Part
 0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt

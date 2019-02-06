@@ -12,22 +12,14 @@ parts.lst: $(DAT)
 	@ldraw-mklist -n -i parts
 
 stl/%.stl: %.scad
-	@mkdir -p stl
 	@echo "$< -> $@"
 	@openscad -o $@ $<
 
-
-parts/%.dat: stl/%.stl
-	@mkdir -p parts
+parts/%.dat: stl/%.stl headers/%.dat
 	@echo "$< -> $@"
-	@#@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) translate([0, 0, 4]) import("$<");' > .tmp.scad
 	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.scad
-	@openscad -o .tmp.stl .tmp.scad
-	@stl2dat .tmp.stl > /dev/null
-	@# TODO: metafile ze kterych se budou hlavicky skladat
-	@echo "0 {name}\n0 Name: $@\n0 Author: Ondrej Tuma\n0 !CATEGORY Technic\n\n" > $@
+	@openscad -o .tmp.stl .tmp.scad && rm .tmp.scad
+	@stl2dat .tmp.stl > /dev/null && rm -r .tmp.stl
+	test -f headers/$*.dat && cat headers/$*.dat > $@ || sed 's/{file}/parts\/$*.dat/' headers/default.dat > $@
 	@tail -n +4 .tmp.dat >> $@
-
-debug:
-	@printf "$(DAT)\n"
-	@printf "$(STL)\n"
+	@rm .tmp.dat
