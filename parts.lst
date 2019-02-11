@@ -1,4 +1,5 @@
 bb-a90-3x3.dat             Beam L90 3 x 3
+bb-a90-3x4.dat             Beam L90 3 x 4
 bb-b-20x1.dat              Beam 20 x 1
 bb-bbox-s-4xAA.dat         Batery Case 4 x AA
 bb-bbox-s-5xAA.dat         Batery Case 5 x AA
@@ -10,6 +11,7 @@ bb-o-10x7.dat              Beam Frame 10 x 7
 bb-pivot.dat               Ping-Ping Pivot Wheel
 bb-sen-us.dat              Ultrasonic Sensor Box
 bb-t-6x4.dat               Beam T 6 x 4
+bb-t-6x5.dat               Beam T 6 x 5
 bb-wg-53.dat               Beam Wheel 53 for Gearbox Motor
 bb-wg-53_with_ring.dat     Wheel with ring
 drv-mbkitronic.dat         Kitronic Motor Driver for BBC Micro:bit
