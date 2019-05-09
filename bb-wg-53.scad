@@ -8,15 +8,16 @@ diameter_1 = 5.5*1.02;      // printer corection 2% bigger wheel hole
 diameter_2 = 3.84*1.02;
 
 module center(){
+    translate([0, 0, unit*0.25])
     difference(){
-        cylinder(r=unit, h=unit, center=true);
+        cylinder(r=unit, h=unit*1.5, center=true);
 
         difference(){
-            cylinder(d=diameter_1, h=unit+0.1, center=true);
+            cylinder(d=diameter_1, h=unit*1.5+0.1, center=true);
             translate([0, 1.5+diameter_2/2, 0])
-                cube([diameter_1, 3, unit+0.1], center=true);
+                cube([diameter_1, 3, unit*1.5+0.1], center=true);
             translate([0, -1.5-diameter_2/2, 0])
-                cube([diameter_1, 3, unit+0.1], center=true);
+                cube([diameter_1, 3, unit*1.5+0.1], center=true);
         }
     }
 }
@@ -64,6 +65,10 @@ module wheel_53(){
                 rotate([0, 0, i*90])
                     translate([unit, 0, 0])
                     holes(1);
+                rotate([0, 0, i*90])
+                    translate([unit, 0, unit*0.75])
+                    scale([1.5, 1.5, 1])
+                    holes(1, h=0.5);
             }
         }
 }

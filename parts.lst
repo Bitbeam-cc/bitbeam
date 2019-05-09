@@ -9,7 +9,9 @@ bb-h-8x10.dat              Beam H 8 x 10
 bb-mot-gearbox.dat         Gearbox Motor Mount
 bb-o-10x7.dat              Beam Frame 10 x 7
 bb-pivot.dat               Ping-Ping Pivot Wheel
+bb-sen-rcw.dat             RCW 0001 Ultrasound Sensor
 bb-sen-us.dat              Ultrasonic Sensor Box
+bb-switch.dat              Switch Box
 bb-t-6x4.dat               Beam T 6 x 4
 bb-t-6x5.dat               Beam T 6 x 5
 bb-wg-53.dat               Beam Wheel 53 for Gearbox Motor
@@ -21,6 +23,7 @@ nut-M3.dat                 Nut M3
 nut-M4.dat                 Nut M4
 o-ring-53.dat              O ring 53
 ping-pong.dat              Ping-Pong Ball
+rcw-0001.dat               RCW 0001 Ultrasound Sensor
 sc-M3x10.dat               Screw M3 x 10
 sc-M3x20.dat               Screw M3 x 20
 sc-M3x25.dat               Screw M3 x 25
