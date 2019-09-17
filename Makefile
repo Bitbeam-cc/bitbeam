@@ -31,7 +31,7 @@ parts/%.dat: stl/%.stl headers/%.dat parts
 release: m-bitbeam-stl-$(VERSION).zip m-bitbeam-parts-$(VERSION).zip
 
 m-bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md
-	zip stl/*.stl LICENSE.md
+	zip $@ stl/*.stl LICENSE.md
 
 m-bitbeam-parts-$(VERSION).zip: parts.lst LICENSE.md
 	zip $@ parts/*.dat parts.lst LICENSE.md
