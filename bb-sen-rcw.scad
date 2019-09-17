@@ -21,6 +21,7 @@ difference(){
     }
 }
 
+
 difference(){
     cube([unit*4, unit*3, unit], center=true);
 
@@ -30,6 +31,7 @@ difference(){
     translate([0, unit+0.01, -unit/2+2.49])
         cube([12, 8, 5], center=true);
 }
+
 
 translate([unit, -unit*2, 0])
     rotate([0, 0, 90])
@@ -43,6 +45,8 @@ translate([-unit*2.5, -unit, 0])
 translate([-unit*2.5, unit, 0])
     cube_arm(1);
 translate([unit*2.5, -unit, 0])
-    cube_arm(1);
+    mirror([1,0,0])     // manifold fix
+    cube_arm(1.001);
 translate([unit*2.5, unit, 0])
-    cube_arm(1);
+    mirror([1,0,0])     // manifold fix
+    cube_arm(1.001);

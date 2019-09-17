@@ -1,0 +1,27 @@
+language: minimal
+
+services:
+  - docker
+
+before_install:
+  - docker build -t ondratu/m-bitbeam .
+
+script:
+  - docker run -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam
+
+before_deploy:
+  - docker run -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam make release
+
+
+deploy:
+  provider: releases
+  tag_name: $TRAVIS_TAG
+  token: "$RELEASES_TOKEN"
+
+  file:
+    - "m-bitbeam-stl-$TRAVIS_TAG.zip"
+    - "m-bitbeam-parts-$TRAVIS_TAG.zip"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
