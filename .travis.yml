@@ -1,26 +1,25 @@
 language: minimal
 
 services:
-  - docker
+- docker
 
 before_install:
-  - docker build -t ondratu/m-bitbeam .
+- docker build -t ondratu/m-bitbeam .
 
 script:
-  - docker run -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam
+- docker run -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam
 
 before_deploy:
-  - docker run -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam make release
-
+- docker run -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR"
+  ondratu/m-bitbeam make release
 
 deploy:
   provider: releases
-  tag_name: $TRAVIS_TAG
-  token: "$RELEASES_TOKEN"
-
+  api_key:
+    secure: I/hXdS45/pWfJJDAAR2gN0WAsK5Om6Fb0pWbHb/CFxxSIdAi6Zs7mPJqWSDtPIcrfrdU0QudtVtNsaXJRVBZnbv2LAtyHenHyOhtdVBS+NNcF5Up6ZFEBZW2Y/cmR7psu0X7Gjn8fjVlTMU74RyvA6slQjiBo6nxJql47gbxmOUimge/vZ9SEBFnGgtNagmd+mAHK7A7sR+REyc4vH7ODPYBgLHeHsy/gXWkNomWD6pMVhjlWQgWRcqbDDCzJxqWnafxc7k3sDmArx6Pe8he2MUjKk6XmZJVmx5fnTPltnJthnzlMv3HdHr6ll9jdi0WbMfQ0aL/iwZF/ok7kzzvwkrXf56axrfq4OKvTYi8zWKOvUPMCQqEA/JkRlnQgpDjNjmLbl0Tcwn6mEZZaSNz086cblt8uYbcHwVmbv1UtfUg2+YrnJ5B4JlXTRRBp+pNhlrd+/UB/hWFxSlm+6NwhQ0O6FEYQth4fJz50r3BQLBJ2jGvz4YXCHNvkxJwyaxr4BPvUyqvbeAJiGnIGQaGKyJQduRvC3Vp+/E5ut+vH5wQq4i8guZBQLN4xECsClHIz8yz3vUWIghCM1/CHVPeVEQCU0De9zYIv3Btxwdd5IHKi8Svk1hjDnY/Z903nDAlcqOXA0eT2kfUOxBqrL1EyD2FPcXHkuHQl0Mb7yFjB9A=
   file:
-    - "m-bitbeam-stl-$TRAVIS_TAG.zip"
-    - "m-bitbeam-parts-$TRAVIS_TAG.zip"
+    - m-bitbeam-stl-$TRAVIS_TAG.zip
+    - m-bitbeam-parts-$TRAVIS_TAG.zip
   skip_cleanup: true
   overwrite: true
   on:
