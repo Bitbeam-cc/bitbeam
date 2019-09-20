@@ -1,3 +1,3 @@
 [submodule "bitbeam-lib"]
-	path = bitbeam-lib
+	path = scad/bitbeam-lib
 	url = https://github.com/ondratu/bitbeam-lib.git

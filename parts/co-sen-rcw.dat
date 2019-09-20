@@ -1,0 +1,9 @@
+0 RCW 0001 Ultrasound Sensor Complet
+0 Name: parts/bb-sen-rcw_with_sen.dat
+0 Author: Collective Authors
+0 !CATEGORY m-Bitbeam Electric
+0 !LDRAW_ORG Unofficial_Part
+0 !LICENSE Redistributable under CC BY-NC-SA 4.0, see LICENSE.md
+
+1 16 80 -8 -60 1 0 0 0 1 0 0 0 1 bb-sen-rcw.dat
+1 2 80 -8 -60 1 0 0 0 1 0 0 0 1 rcw-0001.dat
