@@ -21,14 +21,14 @@ There are some main groups, the base group is **bb**, which means bit beam, so t
   * **nut**, **ws**, **sc** - nuts, washers and screws
   * **sen** - that is sensors
   * **drv** - drivers, means electronics for drive motors, servos etc.
-  
+
 ### type
 Type of part, that could tell you, what kind of beam, sensor or driver it is.
   * **b** - brick
-  * **L**, **H**, **T**, **O** - brick with the specific shape, which looks like L, H, T or O.
+  * **L**, **H**, **T**, **O**, **D**, **X** - brick with the specific shape, which looks like L, H, T, O, D or X.
   * **sen**, **drv** - box for sensor or driver
   * **wh**, **pivot** - wheel and special stabilization ball.
-  
+
 ### value
 Value is short as possible which represent specific of part. That means number of each beams - size, type of sensor etc. Examples:
   * ``bb-b-20x1`` - bit beam brick 20x1
