@@ -5,6 +5,8 @@ parts/nut-*
 parts/washer-*
 parts/drv-mbkitronic.dat
 parts/gearbox-motor.dat
+parts/nema14-motor.dat
+parts/nema17-motor.dat
 parts/hc-s04.dat
 parts/rcw-0001.dat
 parts/switch.dat

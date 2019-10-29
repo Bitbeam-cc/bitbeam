@@ -9,6 +9,7 @@ RUN apt update && \
         build-essential \
         git \
         openscad \
+        openscad-mcad \
         ldraw-mklist \
         zip \
         && \
