@@ -1,6 +1,6 @@
 $fn=25;
 
-module screw_m3(h=20){
+module screw_m3(h=20, button=false){
     cylinder(d=3, h=h, center=true);
     translate([0, 0, -h/2-1.5])
         difference(){
@@ -10,11 +10,21 @@ module screw_m3(h=20){
         }
 }
 
-module screw_m4(h=20){
+module screw_m4(h=20, button=false){
     cylinder(d=4, h=h, center=true);
     translate([0, 0, -h/2-2])
         difference(){
-            cylinder(d=7, h=4, center=true);
+            if (button) {
+                translate([0, 0, 2])
+                    scale([1, 1, 6/7.5])
+                    sphere(d=7.5);
+            } else {
+                cylinder(d=7, h=4, center=true);
+            }
+            if (button) {
+                 translate([0, 0, 5])
+                    cube([7.6, 7.6, 6], center=true);
+            }
             translate([0, 0, -0.8])
                 cylinder(d=3.5, h=2.5, $fn=6, center=true);
         }
