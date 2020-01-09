@@ -8,6 +8,7 @@ parts.lst: $(DAT)
 	@ldraw-mklist -n -i parts
 
 stl:
+	@env
 	@mkdir -p stl
 
 stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad stl
@@ -35,31 +36,29 @@ parts/%.dat: stl/%.stl parts
 release: m-bitbeam-stl-$(VERSION).zip m-bitbeam-parts-$(VERSION).zip
 
 m-bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
-	zip $@ stl/bb-*.stl wascher-*.stl LICENSE.md AUTHORS
+	zip $@ stl/bb-*.stl washer-*.stl LICENSE.md AUTHORS
 
 m-bitbeam-parts-$(VERSION).zip: parts.lst LICENSE.md AUTHORS
 	zip $@ parts/*.dat parts.lst LICENSE.md AUTHORS
 
 docker-build:
 	docker build \
-		-f Dockerfile \
-		-t m-bitbeam .
+		-t ondratu/m-bitbeam .
 	docker run \
-		ls s--rm \
+		--rm \
 		-w "$(CURDIR)" \
 		-v "$(CURDIR):$(CURDIR)" \
-		"m-bitbeam"
+		ondratu/m-bitbeam
 
 docker-console:
 	docker build \
-		-f Dockerfile \
-		-t m-bitbeam .
+		-t ondratu/m-bitbeam .
 	docker run \
 		-ti \
 		--rm \
 		-w "$(CURDIR)" \
 		-v "$(CURDIR):$(CURDIR)" \
-		"m-bitbeam" \
+		ondratu/m-bitbeam \
 		bash
 
 clean:
@@ -67,3 +66,4 @@ clean:
 	rm -f $(DAT)
 	rm -f parts.lst
 	rm -f *.zip
+	docker rmi -f ondratu/m-bitbeam || true
