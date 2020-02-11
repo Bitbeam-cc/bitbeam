@@ -1,4 +1,4 @@
-// NAME: Beam X 7x7
+// NAME: Beam X Shape 7x7
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

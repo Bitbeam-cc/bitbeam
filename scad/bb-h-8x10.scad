@@ -1,4 +1,4 @@
-// NAME: Beam H 8x10
+// NAME: Beam H Frame 8x10
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

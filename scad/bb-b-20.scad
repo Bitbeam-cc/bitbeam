@@ -1,4 +1,4 @@
-// NAME: Beam 20x1
+// NAME: Beam 20
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

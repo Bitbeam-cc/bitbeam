@@ -1,4 +1,4 @@
-// NAME: Beam A360 7x7x7
+// NAME: Beam Triangle 7x7x7
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

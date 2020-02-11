@@ -1,4 +1,4 @@
-// NAME: Beam T 6x4
+// NAME: Beam T Shape 6x4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

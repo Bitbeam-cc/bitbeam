@@ -1,4 +1,4 @@
-// NAME: Base plate 2x5x0.5
+// NAME: Base plate 2x5 Thin
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

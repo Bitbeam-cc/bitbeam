@@ -1,4 +1,4 @@
-// NAME: Nema 17 Motor
+// NAME: Nema 14 Motor
 // CATEGORY: Electric
 // COLOR: 493
 

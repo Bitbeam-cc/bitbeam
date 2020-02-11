@@ -1,4 +1,4 @@
-// NAME: Nema 17 Motor Cube 7x7x5x0.5
+// NAME: Nema 17 Motor Cube 7x7x5 Thin
 
 include <bitbeam-lib/bitbeam-lib.scad>
 //include <MCAD/stepper.scad>

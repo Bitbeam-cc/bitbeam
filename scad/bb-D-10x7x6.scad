@@ -4,7 +4,7 @@ include <bitbeam-lib/bitbeam-lib.scad>
 
 translate([0, unit/2, 0])
 difference(){
-    translate([4-5*unit, 4-4*unit, 4]){ 
+    translate([4-5*unit, 4-4*unit, 4]){
         cube_arm(10);
         rotate([0,0, 90])
             cube_arm(7);

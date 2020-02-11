@@ -1,4 +1,4 @@
-// NAME: Robot Board Octopus brick 9x11
+// NAME: Robot Board Octopus Beam 9x11
 // CATEGORY: Electric
 
 include <bitbeam-lib/bitbeam-lib.scad>

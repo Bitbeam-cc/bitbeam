@@ -1,4 +1,4 @@
-// NAME: Beam L45 3x6
+// NAME: Beam Ang. 3x6 45 Deg.
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

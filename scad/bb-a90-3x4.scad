@@ -1,4 +1,4 @@
-// NAME: L90 3x4
+// NAME: Beam Ang. 3x4 90 Deg.
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
