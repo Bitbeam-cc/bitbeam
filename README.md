@@ -34,7 +34,8 @@ Type of part, that could tell you, what kind of beam, sensor or driver it is.
   * **b** - Beam
   * **a** - L shape with defined angle
   * **H**, **O**, **D** - Beam frame with specific shape
-  * **T**, **X** - Beam with the specific shape, which looks like T or X (+).
+  * **T**, **X**, **U** - Beam with the specific shape, which looks like T,
+    X(+) and U
   * **sen**, **drv** - Box for sensor or driver
   * **wh**, **pivot** - Wheel and special stabilization ball.
   
