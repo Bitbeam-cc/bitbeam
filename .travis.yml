@@ -1,17 +1,21 @@
+---
 language: minimal
 
 services:
-- docker
+  - docker
 
 before_install:
-- docker build -t ondratu/m-bitbeam .
+  # https://github.com/docker/for-linux/issues/208#issuecomment-442978983
+  - sudo apt-get update && sudo apt-get install -y libseccomp2
+  - docker build -t ondratu/m-bitbeam .
 
 script:
-- docker run -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam
+  - docker run --rm -w "$TRAVIS_BUILD_DIR"
+    -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR" ondratu/m-bitbeam
 
 before_deploy:
-- docker run -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR" -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR"
-  ondratu/m-bitbeam make release
+  - docker run --rm -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR"
+    -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR"  ondratu/m-bitbeam make release
 
 deploy:
   provider: releases
@@ -20,6 +24,7 @@ deploy:
   file:
     - m-bitbeam-stl-$TRAVIS_TAG.zip
     - m-bitbeam-parts-$TRAVIS_TAG.zip
+    - m-bitbeam-catalog-$TRAVIS_TAG.zip
   skip_cleanup: true
   overwrite: true
   on:
