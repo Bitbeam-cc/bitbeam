@@ -22,3 +22,8 @@ create table parts_categories (
 
 create unique index
     parts_categories_idx on parts_categories (category, part);
+
+create table release (
+    version text not null,
+    published integer not null
+);

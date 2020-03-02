@@ -1,3 +1,5 @@
+VERSION ?= 0.0.0
+
 SRC = $(sort $(wildcard scad/*.scad))
 STL = $(SRC:scad/%.scad=stl/%.stl)
 DAT = $(STL:stl/%.stl=parts/%.dat)
@@ -14,7 +16,9 @@ stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@openscad -o $@ $<
 
 parts/%.dat: stl/%.stl
-	@[ -f catalog.db ] || sqlite3 catalog.db < catalog.sql
+	@[ -f catalog.db ] || (sqlite3 catalog.db < catalog.sql && \
+		sqlite3 catalog.db "INSERT INTO release VALUES \
+		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));")
 	@echo "$< -> $@"
 	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.scad
 	@openscad -o .tmp.stl .tmp.scad && rm .tmp.scad
