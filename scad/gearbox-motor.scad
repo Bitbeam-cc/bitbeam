@@ -1,5 +1,5 @@
 // NAME: Gearbox Motor
-// CATEGORY: Electric
+// CATEGORY: Electric Motor
 // COLOR: 226
 
 $fn=25;

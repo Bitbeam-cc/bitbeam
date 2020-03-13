@@ -1,5 +1,5 @@
 // NAME: Nema 14 Motor
-// CATEGORY: Electric
+// CATEGORY: Electric Motor
 // COLOR: 493
 
 include <MCAD/stepper.scad>

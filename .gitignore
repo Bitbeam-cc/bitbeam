@@ -4,6 +4,7 @@ parts/sc-*
 parts/nut-*
 parts/washer-*
 parts/drv-mbkitronic.dat
+parts/28BYJ-motor.dat
 parts/gearbox-motor.dat
 parts/nema14-motor.dat
 parts/nema17-motor.dat
