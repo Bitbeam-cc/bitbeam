@@ -1,4 +1,4 @@
-// NAME: Thin Adapter for Stepper Motor 5x4.5 Shaft
+// NAME: Thin Adapter for Motor 5mm Shaft
 // CATEGORY: Adapter Motor
 
 include <bitbeam-lib/bitbeam-lib.scad>
@@ -13,11 +13,7 @@ translate([0,0,unit/2])
         }
 
         // shaft
-        difference(){
-            cylinder(d=5.1, h=unit*1.01, center=true);
-            translate([2.5+2.1, 0, 0])
-                cube([5, 5, unit*1.02], center=true);
-        }
+        cylinder(d=5.1, h=unit*1.01, center=true);
 
         // nuts
         for (y=[-1, 1]){

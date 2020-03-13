@@ -1,4 +1,4 @@
-// NAME: Adapter for Stepper Motor 5x4.5 Shaft
+// NAME: Adapter for Gearbox Motor 5.5x3.8 Shaft
 // CATEGORY: Adapter Motor
 
 include <bitbeam-lib/bitbeam-lib.scad>
@@ -14,8 +14,10 @@ translate([0,0,6])
 
         // shaft
         difference(){
-            cylinder(d=5.1, h=12.1, center=true);
-            translate([2.5+2.1, 0, -2])
+            cylinder(d=5.5, h=12.1, center=true);
+            translate([2.5+1.95, 0, -1])
+                cube([5, 5, 12.2], center=true);
+            translate([-2.5-1.95, 0, -1])
                 cube([5, 5, 12.2], center=true);
         }
 
