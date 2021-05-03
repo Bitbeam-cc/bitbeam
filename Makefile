@@ -7,6 +7,8 @@ PNG = $(STL:stl/%.stl=png/%.png)
 
 all: parts.lst $(PNG)
 
+stl: $(STL)
+
 parts.lst: $(DAT)
 	@ldraw-mklist -n -i parts
 
