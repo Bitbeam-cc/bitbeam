@@ -13,7 +13,7 @@ translate([0, 4, 0])
     import("octopus-robot-board-02.stl");
 */
 
-module bb_drv_mbkitronic(){
+module bb_octopus_board(){
     difference(){
         union(){
             translate([-unit/2, unit/2, -unit*0.5])
@@ -52,4 +52,4 @@ module bb_drv_mbkitronic(){
 
 
 translate([4-5*unit, 4-5*unit, 4])
-    bb_drv_mbkitronic();
+    bb_octopus_board();
