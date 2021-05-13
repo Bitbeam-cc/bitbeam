@@ -3,6 +3,7 @@ parts/bb-*
 parts/sc-*
 parts/nut-*
 parts/washer-*
+parts/pin-*
 parts/drv-mbkitronic.dat
 parts/28BYJ-motor.dat
 parts/gearbox-motor.dat

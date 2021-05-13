@@ -19,8 +19,8 @@ difference(){
     translate([0, -4.8/2-0.5, 0])
         cube([5, 2, unit*3.01], center=true);
     
-    translate([0, 0, unit*2/3+unit/2])
-        cube([0.5, hole, unit*2.01/3], center=true);
-    translate([0, 0, -unit*2/3-unit/2])
-        cube([0.5, hole, unit*2.01/3], center=true);
+    translate([0, 0, unit*1.21])
+        cube([0.5, hole, unit*0.6], center=true);
+    translate([0, 0, -unit*1.21])
+        cube([0.5, hole, unit*0.6], center=true);
 }
