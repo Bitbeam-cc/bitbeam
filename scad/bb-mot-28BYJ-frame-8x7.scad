@@ -1,23 +1,23 @@
-// NAME: BYJ28-48 Motor Frame 5x5x3x0.5
+// NAME: BYJ28-48 Motor Frame 8x7
 // CATEGORY: Beam Motor
 
 include <bitbeam-lib/bitbeam-lib.scad>
 $fn=40;
 
 translate([-2*unit, -3*unit, unit*0.5])
-    cube_arm(8, skip_side=[for (i=[1:6]) i]);
+    cube_arm(8);
 translate([-2*unit, 3*unit, unit*0.5])
-    cube_arm(8, skip_side=[for (i=[1:6]) i]);
+    cube_arm(8);
 
-translate([4*unit, -3*unit, unit*0.5])
+translate([4*unit, -2*unit, unit*0.5])
     rotate([0, 0, 90])
-    cube_arm(7, side_holes=false);
+    cube_arm(5, skip_side=[0,5]);
 
 difference(){
     union(){
-        translate([-1*unit, -3*unit, unit*0.5])
+        translate([-1*unit, -2*unit, unit*0.5])
             rotate([0, 0, 90])
-            cube_arm(7, skip=[2,3,4], side_holes=false);
+            cube_arm(5, side_holes=false);
 
         translate([-2*unit, -2*unit, unit*0.5])
             cube_arm(8, skip=[2,3,4], skip_side=[for (i=[1:6]) i]);
