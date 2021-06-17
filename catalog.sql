@@ -1,5 +1,6 @@
 create table categories (
-    category text not null
+    category text not null,
+    quantity integer not null default 0
 );
 
 create unique index
@@ -7,7 +8,8 @@ create unique index
 
 create table parts (
     name text not null,
-    file text not null
+    file text not null,
+    to_print integer not null default 0
 );
 
 create unique index
