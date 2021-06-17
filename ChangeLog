@@ -2,15 +2,23 @@
 
 ## [0.4.0] - In Progress
 
-    * stepper motor 28BYJ frame type
+    * stepper motor 28BYJ frames
     * many of base beams, mainly from first official set
     * stepper motor adapters
     * ball adapters
+    * many angle parts
     * new M4 screws for ldraw instructions
     * 608 bearing for ldraw and it's mount
     * eggbot extending parts
     * new motor category
     * logo beam
+    * Arduino UNO part
+    * Mini servo mount
+    * bitbeam-lib update - new look
+    * many new parts (b, h, o, t, x, y)
+    * printed pins
+    * Nema14 and Nema17 motor frames
+    * Tool for pins
 
 ## [0.3.0] - 2020-02-14
 
