@@ -1,6 +1,5 @@
 FROM debian:bullseye
 
-# Install packages for building ruby
 RUN apt update && \
     apt upgrade -y && \
     apt install -y software-properties-common && \
@@ -9,6 +8,7 @@ RUN apt update && \
     apt install -y \
         build-essential \
         git \
+        imagemagick \
         ldraw-mklist \
         openscad \
         openscad-mcad \
@@ -16,8 +16,6 @@ RUN apt update && \
         wget \
         zip \
         && \
-    wget https://github.com/unlimitedbacon/stl-thumb/releases/download/v0.3.1/stl-thumb_0.3.1_amd64.deb && \
-    dpkg -i stl-thumb_0.3.1_amd64.deb || apt install -f -y && \
     apt clean
 
 RUN cd /opt && \

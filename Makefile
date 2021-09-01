@@ -7,6 +7,8 @@ PNG = $(STL:stl/%.stl=png/%.png)
 
 all: parts.lst $(PNG)
 
+images: $(PNG)
+
 stl: $(STL)
 
 parts.lst: $(DAT)
@@ -51,12 +53,12 @@ parts/%.dat: stl/%.stl
 	@tail -n +4 .tmp.dat >> $@
 	@rm .tmp.dat
 
-png/%.png: stl/%.stl
+png/%.png: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@echo "$< -> $@"
 	@[ -d png ] || mkdir png
-	@# default is  000066 007fff ffffff
-	@#stl-thumb $< $@ -m 000010 322AAF ffffff
-	@stl-thumb $< $@ -s 256
+	@openscad -o $@ --imgsize=512,512 --projection=p --autocenter --colorscheme=Monotone $<
+	@# ffffef is Monotone background
+	@convert $@ -transparent '#ffffe5' -scale 50% -colorspace gray -fill '#80a0ff' -tint 70 $@
 
 release: m-bitbeam-stl-$(VERSION).zip \
 	m-bitbeam-parts-$(VERSION).zip \
