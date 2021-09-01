@@ -14,6 +14,7 @@ RUN apt update && \
         openscad-mcad \
         sqlite3 \
         wget \
+        xvfb \
         zip \
         && \
     apt clean
@@ -24,4 +25,4 @@ RUN cd /opt && \
     make && \
     ln -s /opt/stl2dat-cp/stl2dat /usr/bin/
 
-CMD ["make"]
+ENTRYPOINT xvfb-run make
