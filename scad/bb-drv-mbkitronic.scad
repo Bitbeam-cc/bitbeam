@@ -10,7 +10,7 @@ mdbh = 62;
 module bb_drv_mbkitronic(){
     difference(){
         translate([-unit/2, unit/2, -unit*0.5])
-            cube([unit*10, unit*8, unit*0.25]);
+            ecube([unit*10, unit*8, unit*0.25]);
 
         translate([-unit/2+(unit*10-mdbw)/2, (unit*8-mdbh)/2+mdbh-6, -unit*0.5-0.05])
             cube([mdbw, 8, 2.1]);
@@ -24,10 +24,10 @@ module bb_drv_mbkitronic(){
             }
     }
 
-    translate([-unit/2, unit/2, -unit*0.5])
-        cube([unit*0.5, unit*8, unit*0.5]);
-    translate([-unit/2+unit*9.5, unit/2, -unit*0.5])
-        cube([unit*0.5, unit*8, unit*0.5]);
+    translate([-unit/2, unit*0.375, -unit*0.5])
+        ecube([unit*0.5, unit*8.25, unit*0.5]);
+    translate([-unit/2+unit*9.5, unit*0.375, -unit*0.5])
+        ecube([unit*0.5, unit*8.25, unit*0.5]);
 
     for (y=[0, 1]) {
         for (x=[0, 1]) {
