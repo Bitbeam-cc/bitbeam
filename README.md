@@ -4,7 +4,7 @@ This is source repository of m-BITBEAM parts. It is based on ``bitbeam-lib``
 openscad library, which is append as sub-module under the ``scad`` directory.
 
 Parts must be shifted to right position, to good positioning in LDRAW type
-software. 
+software.
 
 ## Parts naming
 
@@ -38,7 +38,8 @@ Type of part, that could tell you, what kind of beam, sensor or driver it is.
     X(+) and U
   * **sen**, **drv** - Box for sensor or driver
   * **wh**, **pivot** - Wheel and special stabilization ball.
-  
+  * **tr** - piece of track chain
+
 ### subtype
 Some part have defined sub-type.
   * **th** - Thin size, that means height of Beam is one half of unit.
@@ -63,7 +64,7 @@ created:
   * ``m-bitbeam-stl-X.Y.Z.zip`` which is printed STL files.
   * ``m-bitbeam-parts-X.Y.Z.zip`` which is parts library for LDRAW type
     software.
-       
+
 ## Authors
 
 This work is created or based or more authors. So all parts is tagged as

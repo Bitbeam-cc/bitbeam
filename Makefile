@@ -56,9 +56,10 @@ parts/%.dat: stl/%.stl
 png/%.png: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@echo "$< -> $@"
 	@[ -d png ] || mkdir png
-	@openscad -o $@ --imgsize=512,512 --projection=p --autocenter --colorscheme=Monotone $<
+	@openscad -o $@ --imgsize=512,512 --projection=p --viewall --colorscheme=Monotone $<
 	@# ffffef is Monotone background
-	@convert $@ -transparent '#ffffe5' -scale 50% -colorspace gray -fill '#80a0ff' -tint 70 $@
+	@#convert $@ -transparent '#ffffe5' -scale 50% -colorspace gray -fill '#80a0ff' -tint 70 $@
+	@convert $@ -transparent '#ffffe5' -scale 50% $@
 
 release: m-bitbeam-stl-$(VERSION).zip \
 	m-bitbeam-parts-$(VERSION).zip \
