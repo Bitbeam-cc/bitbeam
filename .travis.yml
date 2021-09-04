@@ -15,7 +15,8 @@ script:
 
 before_deploy:
   - docker run --rm -e VERSION=$TRAVIS_TAG -w "$TRAVIS_BUILD_DIR"
-    -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR"  ondratu/m-bitbeam make release
+    -v "$TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR"
+    --entrypoint '' ondratu/m-bitbeam make release
 
 deploy:
   provider: releases
