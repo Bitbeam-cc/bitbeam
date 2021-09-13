@@ -17,17 +17,6 @@ size 30 (240) => 753,982 / 60 (6°) = 12.566
 
 $fn=60;
 
-diameter_1 = 5.5*1.02;      // printer corection 2% bigger wheel hole
-diameter_2 = 3.84*1.02;
-
-module center(){
-    difference(){
-        cylinder(r=unit, h=unit, center=true);
-
-        cube(unit+0.4, true);
-    }
-}
-
 module track_wheel(size){
     difference(){
         cylinder(d=unit*size, h=unit, center=true);
@@ -57,13 +46,13 @@ module track_wheel(size){
             }
         }
 
-        cube(unit+0.4, true);
+        cube(unit+0.2, true);
         for(z=[-1, 1])
             hull(){
                 translate([0, 0, z*(unit/2+0.01)])
                     cube([unit+1.6, unit+1.6, 0.01], true);
                 translate([0, 0, z*(unit/2-0.8)])
-                    cube([unit+0.4, unit+0.4, 0.01], true);
+                    cube([unit+0.2, unit+0.2, 0.01], true);
             }
 
         for (i = [0:3]){
@@ -74,4 +63,4 @@ module track_wheel(size){
     }
 }
 
-//´    track_wheel();
+//track_wheel(5);

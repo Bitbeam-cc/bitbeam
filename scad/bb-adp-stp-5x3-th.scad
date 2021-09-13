@@ -1,8 +1,10 @@
 // NAME: Thin Adapter for Stepper Motor 5x3 Shaft
 // CATEGORY: Adapter Motor
+// COLOR: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("LightSlateGray")
 translate([0,0,unit/2])
     difference(){
         union(){
@@ -15,9 +17,9 @@ translate([0,0,unit/2])
         // shaft
         difference(){
             cylinder(d=5.1, h=unit*1.01, center=true);
-            translate([2.5+1.6, 0, -2])
+            translate([2.5+1.6, 0, 0])
                 cube([5, 5, unit*1.02], center=true);
-            translate([-2.5-1.6, 0, -2])
+            translate([-2.5-1.6, 0, 0])
                 cube([5, 5, unit*1.02], center=true);
         }
 

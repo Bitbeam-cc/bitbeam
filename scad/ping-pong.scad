@@ -2,4 +2,5 @@
 // COLOR: 15
 // CATEGORY: Support
 
-sphere(d=40);
+color("white")
+sphere(d=40, $fn=60);

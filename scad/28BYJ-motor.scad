@@ -37,4 +37,5 @@ module stepper_28BYJ_motor(){
     }
 }
 
+color("Silver")
 stepper_28BYJ_motor();

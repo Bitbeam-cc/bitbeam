@@ -5,4 +5,4 @@
 include <lib/track_wheel.scad>
 
 color("gray")
-    track_wheel(4);
+    track_wheel(5);

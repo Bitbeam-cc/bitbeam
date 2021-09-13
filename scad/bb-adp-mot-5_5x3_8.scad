@@ -1,24 +1,30 @@
 // NAME: Adapter for Gearbox Motor 5.5x3.8 Shaft
 // CATEGORY: Adapter Motor
+// COLOR: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-translate([0,0,6])
+color("LightSlateGray")
+translate([0,0,unit/2])
+mirror([0, 0, 1])
     difference(){
         union(){
-            cylinder(d=16, h=12, center=true);
+            cylinder(d=unit*2, h=unit, center=true);
             rotate([0, 0, 90])
-                translate([-unit, 0, -2])
-                cube_arm(3, side_holes=false);
+                translate([-unit, 0, 0])
+                cube_arm(3);
+            translate([0, 0, -unit/2])
+                ecube([unit, unit, unit], true);
         }
 
         // shaft
         difference(){
-            cylinder(d=5.5, h=12.1, center=true);
-            translate([2.5+1.95, 0, -1])
-                cube([5, 5, 12.2], center=true);
-            translate([-2.5-1.95, 0, -1])
-                cube([5, 5, 12.2], center=true);
+            translate([0, 0, -unit*0.25])
+                cylinder(d=5.5, h=unit*1.6, center=true);
+            translate([2.5+1.95, 0, -unit*0.25])
+                cube([5, 5, unit*1.6], center=true);
+            translate([-2.5-1.95, 0, -unit*0.25])
+                cube([5, 5, unit*1.6], center=true);
         }
 
         // nuts
@@ -40,9 +46,5 @@ translate([0,0,6])
         for (y=[-1, 1]){
             translate([0, unit*y, 0])
                 cylinder(d=hole, h=12.1, center=true);
-        }
-        for (y=[-1, 1]){
-            translate([0, unit*y, 2])
-                cylinder(d=unit, h=12.1);
         }
     }

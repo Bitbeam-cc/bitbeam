@@ -1,8 +1,10 @@
 // NAME: Thin Adapter for Motor 5mm Shaft
 // CATEGORY: Adapter Motor
+// COLOR: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("LightSlateGray")
 translate([0,0,unit/2])
     difference(){
         union(){
