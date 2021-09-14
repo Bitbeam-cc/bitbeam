@@ -1,5 +1,6 @@
 // NAME: Robot Board Octopus Beam 9x11
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -47,4 +48,5 @@ module bb_drv_mbkitronic(){
 
 
 translate([4-4.5*unit, 4-5*unit, 4])
+    color("YellowGreen")
     bb_drv_mbkitronic();

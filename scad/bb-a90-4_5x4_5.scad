@@ -1,7 +1,9 @@
 // NAME: Beam Ang. 4.5x4.5 90 Deg.
+// COLOR: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("RoyalBlue")
 translate([4, 4, 4]) {
     difference(){
         union(){
@@ -12,7 +14,7 @@ translate([4, 4, 4]) {
                 rotate([0, 0, 90])
                 cube_arm(4.5, skip=[3], skip_side=[3]);
         }
-        
+
         holes(1);
     }
 }

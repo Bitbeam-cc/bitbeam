@@ -1,8 +1,10 @@
 // NAME: Pencil Holder 6x2
 // CATEGORY: Special
+// COLOR: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("DarkOrange")
 difference(){
     hull(){
         rotate([90,0,0])

@@ -1,11 +1,14 @@
 // NAME: Bearing 608RS mount
+// CATEGORY: Wheel
+// COLOR: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
 // bearing 8x22x7
-$fn=60;
+$fn=40;
 
 translate([0, 0, unit*0.5])
+color("red")
 difference(){
     union(){
         cube([3*unit, 3*unit, unit], center=true);

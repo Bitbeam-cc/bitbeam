@@ -5,6 +5,7 @@
 $fn=25;
 
 module rwc_0001(){
+    color("green")
     difference(){
         cube([31, 17, 1.5], center=true);
 

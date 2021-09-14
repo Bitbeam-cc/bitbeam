@@ -1,5 +1,6 @@
 // NAME: Switch Box
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -14,4 +15,5 @@ module bb_switch(){
 }
 
 translate([unit/-2, -2.5*unit, unit/2])
+    color("YellowGreen")
     bb_switch();

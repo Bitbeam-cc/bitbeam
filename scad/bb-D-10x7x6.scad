@@ -1,8 +1,10 @@
 // NAME: Beam D Frame 10x7x6
+// COLOR: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
 translate([0, unit/2, 0])
+color("RoyalBlue")
 difference(){
     translate([4-5*unit, 4-4*unit, 4]){
         cube_arm(10);
@@ -12,10 +14,10 @@ difference(){
             rotate([0, 0, 180])
             cube_angle(8, 6, 55.15);
         translate([unit*8.5, 0, 0])
-            cube([unit*2, unit, unit], center=true);
+            ecube([unit*2, unit, unit], center=true);
         translate([unit*8.83, unit/2, 0])
             rotate([0, 0, -55.15])
-            cube([unit*2, unit, unit], center=true);
+             ecube([unit*2.2, unit, unit], center=true);
     }
     translate([unit*5.5, -unit*3.5, unit/2])
         cube([unit, unit, unit*1.1], center=true);

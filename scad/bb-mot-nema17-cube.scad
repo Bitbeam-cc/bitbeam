@@ -1,14 +1,17 @@
 // NAME: Nema 17 Motor Cube 7x7x5 Thin
 // CATEGORY: Beam Motor
+// COLOR: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 //include <MCAD/stepper.scad>
 //motor(Nema17, pos=[0, 0, 0.9], orientation=[180, 0, 0]);
 
+
+color("red")
 translate([0, 0, unit/2])
     difference(){
         translate([0, 0, -unit/4])
-            cube([unit*7, unit*7, unit/2], center=true);
+            ecube([unit*7, unit*7, unit/2], center=true);
 
         for (i=[0:3]){
             rotate([0, 0, 90*i])
@@ -20,6 +23,7 @@ translate([0, 0, unit/2])
             cylinder(d=25, h=unit/1.99, center=true);
     }
 
+color("red")
 difference(){
     union(){
         translate([-unit*3-unit/4, -unit*3, -unit*4-unit/2])

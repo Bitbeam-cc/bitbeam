@@ -1,13 +1,14 @@
 // NAME: BYJ28-48 Motor Cube 5x5x3x0.5
 // CATEGORY: Beam Motor
+// COLOR: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-
+color("red")
 translate([0, 0, unit/2])
     difference(){
         translate([0, 0, -unit/4])
-            cube([unit*5, unit*5, unit/2], center=true);
+            ecube([unit*5, unit*5, unit/2], center=true);
 
         for (i=[0:3]){
             rotate([0, 0, 90*i+45])
@@ -22,6 +23,7 @@ translate([0, 0, unit/2])
 
     }
 
+color("red")
 difference(){
     union(){
         translate([-unit*2-unit/4, -unit*2, -unit*2-unit/2])

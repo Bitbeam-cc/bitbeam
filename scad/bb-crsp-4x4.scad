@@ -1,10 +1,11 @@
 // NAME: Cyber Robot Speaker Holder 4x4
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
 
-module bb_crsp_4x4(){  
+module bb_crsp_4x4(){
     difference(){
         cube([unit*4, unit*4, 5], center=true);
         for (i=[0:4]){
@@ -12,7 +13,7 @@ module bb_crsp_4x4(){
             translate([unit*1.5, unit*1.5, 0])
                 holes(1, 0.7);
         }
-        
+
         translate([0, 0, -1.5])
             cylinder(d=29, h=4.1, $fn=60);
         translate([0, 0, -2.6])
@@ -41,4 +42,5 @@ module bb_crsp_4x4(){
 }
 
 //translate([0, 0, 2.5])
+    color("YellowGreen")
     bb_crsp_4x4();

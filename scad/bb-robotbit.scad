@@ -1,10 +1,12 @@
 // NAME: Kittenbot Robot:Bit Beam NxN
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
 board_w = 58;
 board_l = 79;
+
 
 module board(){
     r=3;
@@ -75,10 +77,12 @@ module bb_robot_bit(){
 */
 }
 
-
+/*
 translate([0,0,-4-1.7/2])
-color("forestgreen")
+color("Green")
     board();
+*/
 
 //translate([4-5*unit, 4-5*unit, 4])
+    color("YellowGreen")
     bb_robot_bit();

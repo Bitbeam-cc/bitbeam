@@ -1,5 +1,5 @@
 // NAME: Kitronic Motor Driver
-// COLOR: 0
+// COLOR: 2
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -10,7 +10,8 @@ mdbh = 62;
 
 module drv_mbkitronic(){
     difference(){
-        cube([mdbw, mdbh, 1.6]);
+        color("green")
+            cube([mdbw, mdbh, 1.6]);
 
         for (y=[0, 1]){
             for (x=[0, 1]){
@@ -24,11 +25,12 @@ module drv_mbkitronic(){
                 cylinder(d=1, h=1.7);
         }
     }
-    translate([4, 42, 0])
+
+    translate([4, 42, 0.01])
+        color("black")
         cube([mdbw-8, 10, 16]);
 }
 
 
 translate([-unit/2+(unit*10-mdbw)/2+4-5*unit, unit/2+(unit*8-mdbh)/2+4-5*unit, 4])
-    color([0.2, 0.2, 0.2])
     drv_mbkitronic();

@@ -1,8 +1,11 @@
 // NAME: BYJ28-48 Motor Frame 8x7
 // CATEGORY: Beam Motor
+// COLOR: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 $fn=40;
+
+color("red"){
 
 translate([-2*unit, -3*unit, unit*0.5])
     cube_arm(8);
@@ -12,7 +15,9 @@ translate([-2*unit, 3*unit, unit*0.5])
 translate([4*unit, -2*unit, unit*0.5])
     rotate([0, 0, 90])
     cube_arm(5, skip_side=[0,5]);
+}
 
+color("red")
 difference(){
     union(){
         translate([-1*unit, -2*unit, unit*0.5])

@@ -1,8 +1,10 @@
 // NAME: Adapter for Ball 40
 // CATEGORY: Adapter
+// COLOR: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("DarkOrange")
 translate([0,0,unit/2])
 {
     difference(){

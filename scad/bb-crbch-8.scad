@@ -1,5 +1,6 @@
 // NAME: Cyber Robot Batery Case Holder 8x1
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -13,4 +14,5 @@ module bb_crbch_8(){
 }
 
 translate([-3.5*unit, 0, unit/2])
+    color("YellowGreen")
     bb_crbch_8();

@@ -1,7 +1,9 @@
 // NAME: Beam 1 x 1 Thin
+// COLOR: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+color("RoyalBlue")
 translate([-unit/2, unit/2, unit/2]) {
     difference(){
         translate([0, 0, -unit/4])

@@ -1,5 +1,6 @@
 // NAME: Gearbox Motor Mount
 // CATEGORY: Electric Wheel
+// COLOR: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -36,4 +37,5 @@ module gear_motor_holder() {
 }
 
 translate([-2*unit, -4, 2])
+    color("red")
     gear_motor_holder();

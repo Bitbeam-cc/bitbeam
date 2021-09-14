@@ -1,7 +1,10 @@
 // NAME: HC-S04 Ultrasound Sensor Box
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
+
+color("YellowGreen"){
 
 difference(){
     for(x=[-1, 1]){
@@ -47,3 +50,4 @@ translate([unit*3.5, -unit, 0])
 translate([unit*3.5, unit, 0])
     mirror([1,0,0])     // manifold fix
     cube_arm(1.001);
+}

@@ -2,14 +2,18 @@
 // CATEGORY: Electric
 // COLOR: 2
 
-$fn=25;
+$fn=40;
 
 module hc_s04(){
-    cube([45, 20, 1.5], center=true);
+    color("green")
+        cube([45, 20, 1.5], center=true);
+
     for(i=[-1, 1])
         translate([i*-13, 0, 0])
+            color("silver")
             cylinder(d=16, h=12);
 
+    color("silver")
     translate([0, 8, 0])
         hull(){
             for (i=[-1, 1])

@@ -1,5 +1,6 @@
 // NAME: Robot Board Octopus brick 10x11
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -52,4 +53,5 @@ module bb_octopus_board(){
 
 
 translate([4-5*unit, 4-5*unit, 4])
+    color("YellowGreen")
     bb_octopus_board();

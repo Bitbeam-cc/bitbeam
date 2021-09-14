@@ -1,5 +1,6 @@
 // NAME: Kitronic Motor Driver Box
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -39,10 +40,5 @@ module bb_drv_mbkitronic(){
 
 
 translate([4-5*unit, 4-5*unit, 4])
+    color("YellowGreen")
     bb_drv_mbkitronic();
-
-/*
-translate([-unit/2+(unit*10-mdbw)/2+4-5*unit, unit/2+(unit*8-mdbh)/2+4-5*unit, 4])
-    color([0.2, 0.2, 0.2])
-    drv_mbkitronic();
-*/

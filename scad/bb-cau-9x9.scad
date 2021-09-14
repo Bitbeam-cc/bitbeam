@@ -1,5 +1,6 @@
 // NAME: Arduino UNO Beam 9x9
 // CATEGORY: Electric
+// COLOR: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -59,4 +60,5 @@ module bb_cau_9x9(){
 
 
 translate([-4*unit, -4*unit, unit/2])
+    color("YellowGreen")
     bb_cau_9x9();
