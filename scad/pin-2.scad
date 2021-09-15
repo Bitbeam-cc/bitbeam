@@ -4,6 +4,7 @@
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
+translate([0, 0, unit])
 color("#404040")
 difference(){
     union(){

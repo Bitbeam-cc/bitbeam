@@ -4,5 +4,6 @@
 
 include <lib/track_wheel.scad>
 
-color("gray")
-    track_wheel(5);
+translate([0, 0, unit*0.5])
+    color("gray")
+    track_wheel(4);

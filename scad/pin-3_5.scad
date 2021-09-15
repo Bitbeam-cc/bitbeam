@@ -1,4 +1,4 @@
-// NAME: Pin 4
+// NAME: Pin 3.5
 // COLOR: 0
 // CATEGORY: Support
 
