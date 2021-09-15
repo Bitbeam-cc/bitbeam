@@ -40,7 +40,7 @@ parts/%.dat: stl/%.stl
 		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		[ -n "$$NAME" ] || NAME=$* && \
 		[ -n "$$COLOR" ] || COLOR=16 && \
-		(echo $* | grep -E '^bb-|^pin-' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
+		(echo $* | grep -E '^bb-|^pin-|^shaft-' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
 		stl2dat .tmp.stl -ldraw -c1 $$COLOR -c3 $$COLOR -c4 $$COLOR > /dev/null && rm -r .tmp.stl && \
 		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ && \
 		sqlite3 catalog.db "INSERT OR REPLACE INTO parts VALUES ('$$NAME', '$*', '$$TO_PRINT');" && \

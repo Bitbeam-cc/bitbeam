@@ -1,4 +1,4 @@
-// NAME: Adapter for Stepper Motor 5x3 Shaft
+// NAME: Adapter for Gearbox Motor 4.5x3.8 Shaft
 // CATEGORY: Adapter Motor
 // COLOR: 379
 
@@ -6,7 +6,7 @@ include <bitbeam-lib/bitbeam-lib.scad>
 
 color("LightSlateGray")
 translate([0,0,unit/2])
-mirror([0,0,1])
+mirror([0, 0, 1])
     difference(){
         union(){
             cylinder(d=unit*2, h=unit, center=true);
@@ -20,11 +20,11 @@ mirror([0,0,1])
         // shaft
         difference(){
             translate([0, 0, -unit*0.25])
-                cylinder(d=5.1, h=unit*1.6, center=true);
-            translate([2.5+1.6, 0, -unit*0.25])
-                cube([5, 5, unit*1.61], center=true);
-            translate([-2.5-1.6, 0, -unit*0.25])
-                cube([5, 5, unit*1.61], center=true);
+                cylinder(d=4.6, h=unit*1.6, center=true);
+            translate([2.5+1.95, 0, -unit*0.25])
+                cube([5, 5, unit*1.6], center=true);
+            translate([-2.5-1.95, 0, -unit*0.25])
+                cube([5, 5, unit*1.6], center=true);
         }
 
         // nuts
@@ -40,11 +40,11 @@ mirror([0,0,1])
         }
         translate([0, 0, 1.5])
             rotate([0, 90, 0])
-            cylinder(d=3, h=unit*2.01, center=true);
+            cylinder(d=3, h=16.1, center=true);
 
 
         for (y=[-1, 1]){
             translate([0, unit*y, 0])
-                cylinder(d=hole, h=unit*1.01, center=true);
+                cylinder(d=hole, h=12.1, center=true);
         }
     }
