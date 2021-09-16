@@ -15,12 +15,12 @@ size 30 (240) => 753,982 / 60 (6°) = 12.566
 
 */
 
-$fn=60;
+//$fn=40;
 
 module track_wheel(size){
     difference(){
-        cylinder(d=unit*size, h=unit, center=true);
-        cylinder(d=unit*(size-2), h=unit*1.1, center=true);
+        cylinder(d=unit*size, h=unit, center=true, $fn=50);
+        cylinder(d=unit*(size-2), h=unit*1.1, center=true, $fn=50);
 
          for (i = [0:360/(size/3*6):360]){
             rotate([0, 0, i])

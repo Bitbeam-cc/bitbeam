@@ -1,9 +1,8 @@
 // NAME: BYJ28-48 Motor Frame 8x7
 // CATEGORY: Beam Motor
-// COLOR: 4
+// LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
-$fn=40;
 
 color("red"){
 
@@ -30,7 +29,7 @@ difference(){
             cube_arm(8, skip=[2,3,4], skip_side=[for (i=[1:6]) i]);
 
         translate([unit, 0, 0])
-            cylinder(d=33, h=16);
+            cylinder(d=33, h=16, $fn=50);
         translate([unit, 0, unit])
             cube([unit, unit*5, unit*2], center=true);
 
@@ -39,7 +38,7 @@ difference(){
     }
 
     translate([unit, 0, -1])
-        cylinder(d=28.7, h=18);
+        cylinder(d=28.7, h=18, $fn=50);
 
     translate([unit, -35/2, -1])
         cylinder(d=4.3, h=18);

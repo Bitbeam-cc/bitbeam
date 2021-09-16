@@ -1,5 +1,5 @@
 // NAME: Beam Triangle 7x7x7
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

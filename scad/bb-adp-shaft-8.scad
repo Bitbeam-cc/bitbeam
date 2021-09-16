@@ -1,16 +1,14 @@
 // NAME: Adapter Shaft 8
 // CATEGORY: Adapter
-// COLOR: 379
+// LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
-
-$fn=50;
 
 color("LightSlateGray")
 translate([0,0,unit/4])
     difference(){
         union(){
-            cylinder(d=16, h=unit*0.5, center=true);
+            cylinder(d=16, h=unit*0.5, center=true, $fn=40);
             rotate([0, 0, 90])
                 translate([-unit, 0, 0])
                 cube_arm(3, h=0.5);
@@ -24,7 +22,7 @@ translate([0,0,unit/4])
 
 color("LightSlateGray")
 difference(){
-    cylinder(d=7.9, h=100);
+    cylinder(d=7.9, h=100, $fn=40);
 
     translate([0,0,80])
         rotate([90,0,0])
