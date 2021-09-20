@@ -1,4 +1,4 @@
-// NAME: Track Chain 1x5
+// NAME: Track Chain 1x4
 // CATEGORY: Wheel
 // LDRAW: 0
 
@@ -14,7 +14,7 @@ module socket(){
         union(){
             translate([0, 0, -unit/2-7/3.8])
                 cylinder(d1=unit*1.5, d2=unit, h=7/1.95, center=true);
-            translate([0, 0, +unit/2+7/3.8])
+            translate([0, 0, unit/2+7/3.8])
                 cylinder(d2=unit*1.5, d1=unit, h=7/1.95, center=true);
             cylinder(d=unit, h=unit*2-1, center=true);
         }
@@ -23,6 +23,7 @@ module socket(){
             cylinder(d=unit, h=unit*2-1, center=true);
             translate([unit, unit, 0])
                 cylinder(d=unit*3, h=unit*2-1, center=true);
+
         }
     }
 }
@@ -30,7 +31,7 @@ module socket(){
 module track(){
     hull(){
         translate([unit*0.25,0,0])
-            cube([unit/2, unit*5, 1.6], true);
+            cube([unit/2, unit*4, 1.6], true);
         translate([unit/6,0, 3.155])
             cube([unit/3, unit*2-1, 0.1], true);
     }
@@ -48,17 +49,17 @@ module track(){
             rotate([0, 0, 60])
                 socket();
 
-            cylinder(d=hole, h=unit*2, center=true);
+            cylinder(d=hole, h=15.1, center=true);
 
             hull(){
-                translate([0, -0.4, 0])
-                    cylinder(d=4, h=unit*3, center=true);
+                translate([0, 0, 0])
+                    cylinder(d=4, h=24, center=true);
                 translate([0, 5, 0])
-                    cylinder(d=4, h=unit*3, center=true);
+                    cylinder(d=4, h=24, center=true);
             }
 
             translate([0, -4.3-1.7, 0])
-                cube([unit*1.5, 4, unit*2], true);
+                cube([unit*1.5, 4, 15.1], true);
             translate([0, +4.3+1.7, 0])
                 cube([unit*1.5, 4, 15.1], true);
 
@@ -66,18 +67,18 @@ module track(){
 
     translate([-shift, 0, 4.7/2+1])
         rotate([90, 0, 0])
-        cylinder(d=4.3, h=unit*3, center=true);
+        cylinder(d=4.3, h=24, center=true);
 
     for(y=[-1, 1])
         hull(){
             translate([-shift, y*(unit*3/2-2), 4.7/2+1])
                 rotate([90, 0, 0])
                 cylinder(d=4.3, h=unit*0.5, center=true);
-            translate([3.95, y*(unit*3/2+unit*0.25), 0])
-                cube([0.1, unit*1.5, 1.6], true);
-            translate([-6, y*(unit*3.5/2+unit*0.25), 0])
+            translate([3.95, y*(unit*2.5/2+unit*0.25), 0])
+                cube([0.1, unit, 1.6], true);
+            translate([-6, y*(unit*3/2+unit*0.25), 0])
                 rotate([90, 0, 0])
-                cylinder(d=1.6, h=unit, center=true);
+                cylinder(d=1.6, h=unit*0.5, center=true);
         }
 }
 
