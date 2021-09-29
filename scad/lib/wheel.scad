@@ -12,9 +12,32 @@ module profile(size, h=1){
         ]);
 }
 
+module round_logo(size){
+    text = ["m", "-", "B", "I", "T", "B", "E", "A", "M"];
+    fsize = size < 10 ? size/3 : 3;
+
+    for (i = [0:len(text)])
+        rotate([0, 0, -50/len(text)*i])
+        translate([unit*size/2-unit/3.5, 0, 0])
+        linear_extrude(1, center=true, convexity=10)
+            rotate([0, 0, 270])
+            text(text[i], font = "Sans", size=fsize,
+                halign="center", valign="center");
+}
+
 module wheel(size){
     difference(){
         profile(size);
+
+        if (size > 3){
+            rotate([0, 0, -20])
+                translate([0, 0, unit-0.3])
+                round_logo(size);
+
+            rotate([0, 0, 160])
+                translate([0, 0, unit])
+                round_logo(size);
+        }
 
         for (i = [0:3]){
             rotate([0, 0, i*90])
