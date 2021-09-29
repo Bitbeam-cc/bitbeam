@@ -1,6 +1,6 @@
 // NAME: Beam Track Wheel 6
 // CATEGORY: Wheel
-// COLOR: 8
+// LDRAW: 8
 
 include <lib/track_wheel.scad>
 

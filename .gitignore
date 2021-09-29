@@ -13,9 +13,10 @@ parts/hc-s04.dat
 parts/rcw-0001.dat
 parts/switch.dat
 parts/ping-pong.dat
-parts/o-ring-53.dat
+parts/o-ring-*.dat
 parts/bearing-608.dat
 parts/tool.dat
+parts/shaft-*.dat
 stl
 png
 catalog.db
