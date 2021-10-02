@@ -1,6 +1,6 @@
 // NAME: Kitronic Motor Driver Box
 // CATEGORY: Electric
-// COLOR: 27
+// LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

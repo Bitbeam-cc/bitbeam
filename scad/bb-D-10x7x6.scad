@@ -1,5 +1,5 @@
 // NAME: Beam D Frame 10x7x6
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

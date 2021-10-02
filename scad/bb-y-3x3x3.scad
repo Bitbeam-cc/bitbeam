@@ -1,5 +1,5 @@
 // NAME: Beam Y Shape 3x3x3
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

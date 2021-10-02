@@ -1,5 +1,5 @@
 // NAME: Beam T Shape 3x4
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

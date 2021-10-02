@@ -1,6 +1,6 @@
 // NAME: Robot Board Octopus Beam 9x11
 // CATEGORY: Electric
-// COLOR: 27
+// LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

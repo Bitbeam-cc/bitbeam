@@ -1,5 +1,5 @@
 // NAME: Base plate 5x10x0.5
-// COLOR: 2
+// LDRAW: 2
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

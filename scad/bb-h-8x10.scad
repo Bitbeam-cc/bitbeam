@@ -1,5 +1,5 @@
 // NAME: Beam H Frame 8x10
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

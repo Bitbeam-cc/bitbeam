@@ -1,6 +1,6 @@
 // NAME: Nema14 Motor Frame 6x5
 // CATEGORY: Beam Motor
-// COLOR: 4
+// LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 //include <MCAD/stepper.scad>

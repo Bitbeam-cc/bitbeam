@@ -1,5 +1,5 @@
 // NAME: Base plate 2x5 Thin
-// COLOR: 2
+// LDRAW: 2
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

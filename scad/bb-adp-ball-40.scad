@@ -1,6 +1,6 @@
 // NAME: Adapter for Ball 40
 // CATEGORY: Adapter
-// COLOR: 508
+// LDRAW: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

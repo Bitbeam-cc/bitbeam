@@ -1,6 +1,6 @@
 // NAME: Adapter for Stepper Motor 5x3 Shaft
 // CATEGORY: Adapter Motor
-// COLOR: 379
+// LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

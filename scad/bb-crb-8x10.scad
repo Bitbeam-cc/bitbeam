@@ -1,6 +1,6 @@
 // NAME: Cyber Robot Board 8x10
 // CATEGORY: Electric
-// COLOR: 27
+// LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

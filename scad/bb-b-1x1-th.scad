@@ -1,5 +1,5 @@
 // NAME: Beam 1 x 1 Thin
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

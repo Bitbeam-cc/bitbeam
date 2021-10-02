@@ -1,6 +1,6 @@
 // NAME: HC-S04 Ultrasound Sensor Box
 // CATEGORY: Electric
-// COLOR: 27
+// LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

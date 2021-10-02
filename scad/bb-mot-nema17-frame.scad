@@ -1,6 +1,6 @@
 // NAME: Nema17 Motor Frame 7x6
 // CATEGORY: Beam Motor
-// COLOR: 4
+// LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>
 //include <MCAD/stepper.scad>

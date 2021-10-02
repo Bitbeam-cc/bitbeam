@@ -1,5 +1,5 @@
 // NAME: Tool
-// COLOR: 508
+// LDRAW: 508
 // CATEGORY: Tools
 
 module ecube(size){

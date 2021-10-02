@@ -1,6 +1,6 @@
 // NAME: Adapter for Motor 5mm Shaft
 // CATEGORY: Adapter Motor
-// COLOR: 379
+// LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

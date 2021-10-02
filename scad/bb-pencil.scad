@@ -1,6 +1,6 @@
 // NAME: Pencil Holder 6x2
 // CATEGORY: Special
-// COLOR: 508
+// LDRAW: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

@@ -1,5 +1,5 @@
 // NAME: Beam Ang. 3x4 90 Deg.
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

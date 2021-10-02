@@ -1,40 +1,54 @@
 # ChangeLog
 
-## [0.4.0] - In Progress
+## [0.5.0] - In Progress
 
-    * stepper motor 28BYJ frames
-    * many of base beams, mainly from first official set
-    * stepper motor adapters
-    * ball adapters
-    * many angle parts
-    * new M4 screws for ldraw instructions
-    * 608 bearing for ldraw and it's mount
-    * eggbot extending parts
-    * new motor category
-    * logo beam
-    * Arduino UNO part
-    * Mini servo mount
-    * bitbeam-lib update - new look
-    * many new parts (b, h, o, t, x, y)
-    * printed pins
-    * Nema14 and Nema17 motor frames
-    * Tool for pins
-    * parts for Cyber Robot
+ * track wheels and chain
+ * colors for web
+ * motor adapters for plus shaft
+ * motor adapters fixes
+ * dat padding fixes
+ * dat output size optimization
+ * new angle and triangle parts
+ * new wheels
+   - smooth
+   - o-ring
+   - terrain
+
+## [0.4.0]
+
+ * stepper motor 28BYJ frames
+ * many of base beams, mainly from first official set
+ * stepper motor adapters
+ * ball adapters
+ * many angle parts
+ * new M4 screws for ldraw instructions
+ * 608 bearing for ldraw and it's mount
+ * eggbot extending parts
+ * new motor category
+ * logo beam
+ * Arduino UNO part
+ * Mini servo mount
+ * bitbeam-lib update - new look
+ * many new parts (b, h, o, t, x, y)
+ * printed pins
+ * Nema14 and Nema17 motor frames
+ * Tool for pins
+ * parts for Cyber Robot
 
 ## [0.3.0] - 2020-02-14
 
-    * button type screws for ldraw instructions
-    * cube motor mounts
-    * export to catalog.db file for online catalog (m-bitbeam.geekzoo.cz now)
-    * working travis build
-    * new h shapes
+ * button type screws for ldraw instructions
+ * cube motor mounts
+ * export to catalog.db file for online catalog (m-bitbeam.geekzoo.cz now)
+ * working travis build
+ * new h shapes
 
 ## [0.2.0] - 2019-10-25
 
-    * building process improvement
-    * bitbeam-lib update
-    * some base parts
+ * building process improvement
+ * bitbeam-lib update
+ * some base parts
 
 ## [0.1.0] - 2019-09-18
 
-    * first release of m-BITBEAM library, compiled from scad files with Travis.
+  * first release of m-BITBEAM library, compiled from scad files with Travis.

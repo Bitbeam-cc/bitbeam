@@ -1,6 +1,6 @@
 // NAME: Adapter for Gearbox Motor 5.5x3.8 Shaft
 // CATEGORY: Adapter Motor
-// COLOR: 379
+// LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

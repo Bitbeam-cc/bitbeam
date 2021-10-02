@@ -1,6 +1,6 @@
 // NAME: Arduino UNO Beam 9x9
 // CATEGORY: Electric
-// COLOR: 27
+// LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
 

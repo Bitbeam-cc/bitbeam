@@ -1,5 +1,5 @@
 // NAME: Shaft 3
-// COLOR: 0
+// LDRAW: 0
 // CATEGORY: Support
 
 include <bitbeam-lib/bitbeam-lib.scad>

@@ -1,5 +1,5 @@
 // NAME: Beam 11
-// COLOR: 1
+// LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
