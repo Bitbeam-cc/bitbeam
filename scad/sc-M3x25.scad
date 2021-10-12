@@ -4,4 +4,5 @@
 
 include <lib/screw_nuts.scad>
 
-screw_m3(25);
+color("silver")
+    screw_m3(25);
