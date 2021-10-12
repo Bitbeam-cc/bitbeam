@@ -53,4 +53,4 @@ module wheel(size){
 }
 
 color("orange")
-    wheel(6);
+    wheel(5);

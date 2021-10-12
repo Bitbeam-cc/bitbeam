@@ -49,6 +49,13 @@ module nut_m4(){
 module washer_m3(h){
     difference(){
         cylinder(d=8, h=h, center=true);
-        cylinder(d=3.5, h=h+0.1, center=true);
+        cylinder(d=3.4, h=h+0.1, center=true);
+    }
+}
+
+module washer_m5(h){
+    difference(){
+        cylinder(d=8, h=h, center=true);
+        cylinder(d=5.4, h=h+0.1, center=true);
     }
 }
