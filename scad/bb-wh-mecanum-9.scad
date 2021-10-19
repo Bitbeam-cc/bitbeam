@@ -1,4 +1,4 @@
-// NAME: Beam Mecanum Wheel 9
+// NAME: Mecanum Wheel 9
 // CATEGORY: Wheel
 // LDRAW: 8
 

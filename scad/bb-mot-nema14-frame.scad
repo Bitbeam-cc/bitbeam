@@ -1,5 +1,5 @@
 // NAME: Nema14 Motor Frame 6x5
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

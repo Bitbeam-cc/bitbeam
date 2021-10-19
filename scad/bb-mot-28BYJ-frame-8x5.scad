@@ -1,5 +1,5 @@
 // NAME: BYJ28-48 Motor Frame 8x5
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

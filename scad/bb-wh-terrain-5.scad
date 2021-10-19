@@ -1,4 +1,4 @@
-// NAME: Beam Terrain Wheel 5
+// NAME: Terrain Wheel 5
 // CATEGORY: Wheel
 // LDRAW: 8
 

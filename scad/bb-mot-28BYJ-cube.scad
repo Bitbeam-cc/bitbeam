@@ -1,5 +1,5 @@
 // NAME: BYJ28-48 Motor Cube 5x5x3x0.5
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

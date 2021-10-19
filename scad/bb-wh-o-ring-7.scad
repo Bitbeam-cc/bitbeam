@@ -1,4 +1,4 @@
-// NAME: Beam Wheel 7
+// NAME: O-Ring Wheel 7
 // CATEGORY: Wheel
 // LDRAW: 8
 

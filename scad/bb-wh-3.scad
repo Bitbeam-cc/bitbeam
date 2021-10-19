@@ -1,4 +1,4 @@
-// NAME: Beam Wheel 3
+// NAME: Wheel 3
 // CATEGORY: Wheel
 // LDRAW: 8
 

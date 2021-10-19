@@ -32,5 +32,5 @@ module bb_pivot(){
 }
 
 translate([4, 4, 4])
-    //color("red")
+    color("red")
     bb_pivot();

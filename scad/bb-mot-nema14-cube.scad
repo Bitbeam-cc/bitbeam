@@ -1,5 +1,5 @@
 // NAME: Nema 14 Motor Cube 6x6x4 Thin
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

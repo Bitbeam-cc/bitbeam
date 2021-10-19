@@ -1,4 +1,4 @@
-// NAME: Beam Track Wheel 8
+// NAME: Track Wheel 8
 // CATEGORY: Wheel
 // LDRAW: 8
 

@@ -1,5 +1,5 @@
 // NAME: Gearbox Motor Mount
-// CATEGORY: Electric Wheel
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

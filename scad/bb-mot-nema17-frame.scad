@@ -1,5 +1,5 @@
 // NAME: Nema17 Motor Frame 7x6
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

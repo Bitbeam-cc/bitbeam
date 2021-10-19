@@ -1,4 +1,4 @@
-// NAME: Roll for Beam Mecanum Wheel 7
+// NAME: Roll for Mecanum Wheel 7
 // CATEGORY: Wheel
 // COLOR: 0
 
