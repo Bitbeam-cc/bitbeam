@@ -3,12 +3,12 @@
 
 include <../bitbeam-lib/bitbeam-lib.scad>
 
-module profile(size){
-    rotate_extrude($fn=60)
+module profile(size, h=1){
+    rotate_extrude($fn=size*12)
         translate([unit*(size-1)/2, 0])
         polygon([
             [0, 0], [unit/2-0.5, 0], [unit/2,0.5],
-            [unit/2, unit-0.5], [unit/2-0.5, unit], [0, unit]
+            [unit/2, h*unit-0.5], [unit/2-0.5, h*unit], [0, h*unit]
         ]);
 }
 
@@ -33,6 +33,20 @@ module wheel(size){
                 translate([unit, 0, 0])
                 cube_arm(((size+1)/2)-1.2, 1, side_holes=false);
             }
+
+            if (size > 6) {
+                for (i = [0:3]){
+                    rotate([0, 0, 45+i*90])
+                    translate([unit, 0, 0]){
+                        hull(){
+                            translate([unit*((size)/2-1.47), 0, unit*(0.5-0.5)])
+                                ecube([unit*0.25, unit, unit], true);
+                            translate([0, 0, 0])
+                                ecube([unit*0.75, unit, unit], true);
+                        }
+                    }
+                }
+            }
         }
 
         cube(unit+0.2, true);
@@ -49,8 +63,77 @@ module wheel(size){
                 translate([unit, 0, 0])
                 holes(size/2.1);
             }
+
+        if (size > 6)
+            for (y = [-1,1])
+                translate([-unit*2, y*unit*2, 0])
+                    holes(5, skip=[1, 3]);
+    }
+}
+
+module large_wheel(size, h=2){
+    translate([0, 0, unit*0.5])
+    difference(){
+        union(){
+            translate([0, 0, unit*-0.5])
+                profile(size, h);
+            cylinder(r=unit, h=unit, center=true, $fn=40);
+
+            for (i = [0:3]){
+                rotate([0, 0, i*90])
+                translate([unit, 0, 0]){
+                    hull(){
+                        translate([unit*((size)/2-1.47), 0, unit*(h*0.5-0.5)])
+                            ecube([unit*0.25, unit, unit*h], true);
+                        translate([unit, 0, 0])
+                            ecube([unit*0.75, unit, unit], true);
+                    }
+                    cube_arm(((size+1)/2)-1.2, 1, side_holes=false);
+                }
+            }
+
+            if (size > 6) {
+                for (i = [0:3]){
+                    rotate([0, 0, 45+i*90])
+                    translate([unit, 0, 0]){
+                        hull(){
+                            translate([unit*((size)/2-1.47), 0, unit*(h*0.5-0.5)])
+                                ecube([unit*0.25, unit, unit*h], true);
+                            translate([unit, 0, 0])
+                                ecube([unit*0.75, unit, unit], true);
+                        }
+                        hull(){
+                            translate([unit, 0, 0])
+                                ecube([unit*0.75, unit, unit], true);
+                            translate([0, 0, 0])
+                                ecube([unit*0.75, unit, unit], true);
+                        }
+                    }
+                }
+            }
+        }
+
+        for (i = [0:3]){
+            rotate([0, 0, i*90])
+                translate([unit, 0, unit*(h*0.5-0.5)])
+                holes(size/2.1, h);
+        }
+
+        if (size > 6)
+            for (y = [-1,1])
+                translate([-unit*2, y*unit*2, unit*(h*0.5-0.5)])
+                    holes(5, h=h, skip=[1,2,3]);
+
+        cube(unit+0.2, true);
+        for(z=[-1, 1])
+            hull(){
+                translate([0, 0, z*(unit/2+0.01)])
+                    cube([unit+1.6, unit+1.6, 0.01], true);
+                translate([0, 0, z*(unit/2-0.8)])
+                    cube([unit+0.2, unit+0.2, 0.01], true);
+            }
     }
 }
 
 color("orange")
-    wheel(5);
+    large_wheel(7);

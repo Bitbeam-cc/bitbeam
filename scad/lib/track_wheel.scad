@@ -19,8 +19,8 @@ size 30 (240) => 753,982 / 60 (6°) = 12.566
 
 module track_wheel(size){
     difference(){
-        cylinder(d=unit*size, h=unit, center=true, $fn=50);
-        cylinder(d=unit*(size-2), h=unit*1.1, center=true, $fn=50);
+        cylinder(d=unit*size, h=unit, center=true, $fn=size*15);
+        cylinder(d=unit*(size-2), h=unit*1.1, center=true, $fn=size*10);
 
          for (i = [0:360/(size/3*6):360]){
             rotate([0, 0, i])
@@ -44,6 +44,21 @@ module track_wheel(size){
                 translate([unit, 0, 0])
                 cube_arm((size/2)-1.1, 1, side_holes=false);
             }
+
+
+            if (size > 8) {
+                for (i = [0:3]){
+                    rotate([0, 0, 45+i*90])
+                    translate([unit, 0, 0]){
+                        hull(){
+                            translate([unit*((size)/2-2), 0, unit*(0.5-0.5)])
+                                ecube([unit*0.25, unit, unit], true);
+                            translate([0, 0, 0])
+                                ecube([unit*0.75, unit, unit], true);
+                        }
+                    }
+                }
+            }
         }
 
         cube(unit+0.2, true);
@@ -60,7 +75,12 @@ module track_wheel(size){
                 translate([unit, 0, 0])
                 holes(size/1-1);
             }
+        if (size > 8)
+            for (y = [-1,1])
+                translate([-unit*2, y*unit*2, 0])
+                    holes(5, skip=[1, 3]);
     }
 }
 
-//track_wheel(5);
+color("orange")
+    track_wheel(5);
