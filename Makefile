@@ -91,6 +91,7 @@ docker-console:
 		--rm \
 		-w "$(CURDIR)" \
 		-v "$(CURDIR):$(CURDIR)" \
+		--entrypoint '' \
 		ondratu/m-bitbeam \
 		bash
 
