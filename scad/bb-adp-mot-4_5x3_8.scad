@@ -3,6 +3,7 @@
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
+use <lib/holes.scad>
 
 color("LightSlateGray")
 translate([0,0,unit/2])
@@ -17,15 +18,9 @@ mirror([0, 0, 1])
                 ecube([unit, unit, unit], true);
         }
 
-        // shaft
-        difference(){
-            translate([0, 0, -unit*0.25])
-                cylinder(d=4.6, h=unit*1.6, center=true);
-            translate([2.5+1.95, 0, -unit*0.25])
-                cube([5, 5, unit*1.6], center=true);
-            translate([-2.5-1.95, 0, -unit*0.25])
-                cube([5, 5, unit*1.6], center=true);
-        }
+        translate([0, 0, -unit*0.25])
+            rotate([0, 0, 90])
+            shaft_hole(1.5);
 
         // nuts
         for (y=[-1, 1]){
