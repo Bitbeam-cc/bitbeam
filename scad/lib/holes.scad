@@ -12,3 +12,13 @@ module shaft_hole(size){
 }
 
 shaft_hole(1);
+
+
+module cap(){
+    difference(){
+        cylinder(d=5.2, h=edge*2);
+        translate([0, 0, -0.01])
+        cylinder(d1=5, d2=4.6, h=edge+0.01);
+    }
+
+}
