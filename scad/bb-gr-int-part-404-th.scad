@@ -9,8 +9,8 @@ module profile(size, h=1, angle=360){
     rotate_extrude(angle=angle, $fn=size*12)
         translate([unit*(size-1)/2, 0])
         polygon([
-            [0, 0], [unit*1.5-0.5, 0], [unit*1.5,0.5],
-            [unit*1.5, h*unit-0.5], [unit*1.5-0.5, h*unit], [0, h*unit]
+            [0, 0], [unit*2-0.5, 0], [unit*2,0.5],
+            [unit*2, h*unit-0.5], [unit*2-0.5, h*unit], [0, h*unit]
         ]);
 }
 
@@ -32,14 +32,10 @@ module gear_408() {
             circles=0,
             twist=0);
 
-        translate([unit*26, unit, unit*0.5])
-            rotate([0, 0, 90])
-            holes(2);
-
         for (i=[2.25:2.25:44])
             rotate([0, 0, i])
-            translate([unit*26, 0, unit*0.5])
-            holes(1);
+            translate([unit*26.5, 0, unit*0.25])
+            holes(1, h=0.5);
 
     }
 }
