@@ -15,7 +15,7 @@ translate([0,0,unit/2])
         }
 
         // shaft
-        cylinder(d=5.1, h=unit*1.01, center=true);
+        cylinder(d=5.2, h=unit*1.01, center=true);
 
         rotate([0, 90, 0])
             cylinder(d=2.8, h=16.1, center=true);

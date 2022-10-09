@@ -19,7 +19,7 @@ mirror([0, 0, 1])
 
         // shaft
         translate([0, 0, -unit*0.25])
-            cylinder(d=5.1, h=unit*1.6, center=true);
+            cylinder(d=5.2, h=unit*1.6, center=true);
 
         // nuts
         for (y=[-1, 1]){
