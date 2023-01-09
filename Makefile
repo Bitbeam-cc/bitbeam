@@ -1,4 +1,4 @@
-VERSION ?= 0.0.0
+VERSION ?= 0.0.0dev
 
 SRC = $(sort $(wildcard scad/*.scad))
 STL = $(SRC:scad/%.scad=stl/%.stl)
@@ -28,16 +28,20 @@ stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@[ -d stl ] || mkdir stl
 	@openscad -o $@ $<
 
-parts/%.dat: stl/%.stl
-	@[ -f catalog.db ] || (sqlite3 catalog.db < catalog.sql && \
-		sqlite3 catalog.db "INSERT INTO release VALUES \
-		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));")
+catalog.db: catalog.sql
+	@echo "$< -> $@"
+	@sqlite3 catalog.db < catalog.sql
+	@sqlite3 catalog.db "INSERT INTO release VALUES \
+		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));"
+
+parts/%.dat: stl/%.stl catalog.db
 	@echo "$< -> $@"
 	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.scad
 	@openscad -o .tmp.stl .tmp.scad && rm .tmp.scad
 	@(	NAME=`sed -n "s/.*NAME:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		COLOR=`sed -n "s/.*COLOR:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
+		KEYWORDS=`sed -n "s/.*KEYWORDS:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		[ -n "$$NAME" ] || NAME=$* && \
 		[ -n "$$COLOR" ] || COLOR=16 && \
 		(echo $* | grep -E '^bb-|^pin-|^shaft-' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
@@ -45,7 +49,7 @@ parts/%.dat: stl/%.stl
 		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ && \
 		sqlite3 catalog.db "INSERT OR REPLACE INTO parts VALUES ('$$NAME', '$*', '$$TO_PRINT');" && \
 		[ -n "$$CATEGORY" ] || CATEGORY=Beam && \
-		for cat in `echo $$CATEGORY`; do \
+		for cat in `echo $$CATEGORY $$KEYWORDS`; do \
 			sqlite3 catalog.db "INSERT OR IGNORE INTO categories VALUES ('$$cat', 0);"; \
 			sqlite3 catalog.db "INSERT OR IGNORE INTO parts_categories VALUES ('$$cat', '$*');"; \
 		done \
@@ -95,9 +99,11 @@ docker-console:
 		ondratu/m-bitbeam \
 		bash
 
-clean:
-	rm -rf stl png
+clean-dat:
 	rm -f $(DAT)
 	rm -f parts.lst catalog.db
+
+clean: clean-dat
+	rm -rf stl png
 	rm -f *.zip
 	docker rmi -f ondratu/m-bitbeam || true

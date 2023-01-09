@@ -1,5 +1,5 @@
 // NAME: Mini Servo Motor Mount
-// CATEGORY: Beam Motor
+// CATEGORY: Motor
 // LDRAW: 4
 
 include <bitbeam-lib/bitbeam-lib.scad>

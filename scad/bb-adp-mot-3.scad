@@ -1,5 +1,6 @@
 // NAME: Adapter for Motor 3mm Shaft
-// CATEGORY: Adapter Motor
+// CATEGORY: Adapter
+// KEYWORDS: Motor
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>

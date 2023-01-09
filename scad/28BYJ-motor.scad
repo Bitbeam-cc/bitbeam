@@ -1,5 +1,5 @@
 // NAME: Stepper 28BYJ Motor
-// CATEGORY: Electric Motor
+// CATEGORY: Motor
 // COLOR: 493
 
 $fn=30;

@@ -1,5 +1,5 @@
 // NAME: Linear Rack Gear Beam 18
-// CATEGORY: Gear Beam
+// CATEGORY: Gear
 // LDRAW: 322
 
 include <bitbeam-lib/bitbeam-lib.scad>

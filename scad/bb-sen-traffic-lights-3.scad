@@ -1,5 +1,6 @@
 // NAME: Traffic Lights 3
-// CATEGORY: Electric Special
+// CATEGORY: Electric
+// KEYWORDS: Special
 // LDRAW: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>

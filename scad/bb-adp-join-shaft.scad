@@ -1,5 +1,6 @@
 // NAME: Adapter Join for shaft 4.5x3.8
-// CATEGORY: Adapter Motor
+// CATEGORY: Adapter
+// KEYWORDS Motor
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>

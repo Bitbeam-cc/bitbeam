@@ -1,0 +1,17 @@
+0 Mecanum Wheel 7B Complet
+0 Name: parts/co-wh-mecanum-7B.dat
+0 Author: Collective Authors
+0 !CATEGORY m-Bitbeam
+0 !LDRAW_ORG Unofficial_Part
+0 !LICENSE Redistributable under CC BY-NC-SA 4.0, see LICENSE.md
+
+1 7 80 0 -90 1 0 0 0 1 0 0 0 1 bb-wh-mecanum-7B.dat
+1 0 100 -30 -90 1 0 0 0 1 0 0 0 1 pin-3.dat
+1 0 60 -30 -90 1 0 0 0 1 0 0 0 1 pin-3.dat
+0 STEP
+1 7 80 -20 -90 1 0 0 0 1 0 0 0 1 bb-wh-3.dat
+1 0 60 -30 -90 1 0 0 0 1 0 0 0 1 pin-3.dat
+1 7 80 -60 -90 1 0 0 0 -1 0 0 0 -1 bb-wh-mecanum-7B.dat
+0 STEP
+1 0 80 0 -90 1 0 0 0 1 0 0 0 1 co-wh-mecanum-7B-rolls.dat
+1 383 80 0 -90 1 0 0 0 1 0 0 0 1 co-wh-mecanum-7B-screws.dat

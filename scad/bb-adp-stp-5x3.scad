@@ -1,5 +1,6 @@
 // NAME: Adapter for Stepper Motor 5x3 Shaft
-// CATEGORY: Adapter Motor
+// CATEGORY: Adapter
+// KEYWORDS: Motor
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>

@@ -1,0 +1,11 @@
+0 
+0 Name: Nový Model.ldr
+0 Author: 
+1 4 40 0 -40 1 0 0 0 1 0 0 0 1 bb-geek-servo-a.dat
+1 272 50 -20 -8 0 0 -1 1 0 0 0 -1 0 shaft-3.dat
+0 STEP
+1 0 20 -20 -60 1 0 0 0 1 0 0 0 1 pin-2.dat
+1 0 20 -20 -20 1 0 0 0 1 0 0 0 1 pin-2.dat
+1 0 60 -20 -60 1 0 0 0 1 0 0 0 1 pin-2.dat
+0 STEP
+1 4 40 -20 -40 1 0 0 0 1 0 0 0 1 bb-geek-servo-b.dat

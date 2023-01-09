@@ -20,7 +20,7 @@ module m_wheel(){
     difference(){
         union(){
             m_profile(5.5);
-            wheel(5.5);
+            wheel(5.5, false);
 
             for (i=[0:360/10:360])
                 hull()

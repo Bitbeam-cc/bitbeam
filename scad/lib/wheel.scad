@@ -12,7 +12,7 @@ module profile(size, h=1){
         ]);
 }
 
-module round_logo(size){
+module round_logo(size,){
     text = ["m", "-", "B", "I", "T", "B", "E", "A", "M"];
     fsize = size < 10 ? size/3 : 3;
 
@@ -25,13 +25,13 @@ module round_logo(size){
                 halign="center", valign="center");
 }
 
-module wheel(size){
+module wheel(size, logo=true){
     difference(){
         profile(size);
 
-        if (size > 3){
+        if (logo && size > 3){
             rotate([0, 0, -20])
-                translate([0, 0, unit-0.3])
+                translate([0, 0, unit])
                 round_logo(size);
 
             rotate([0, 0, 160])
@@ -94,7 +94,7 @@ module wheel(size){
     }
 }
 
-module large_wheel(size, h=2){
+module large_wheel(size, h=2, logo=true){
     translate([0, 0, unit*0.5])
     difference(){
         union(){
@@ -134,6 +134,17 @@ module large_wheel(size, h=2){
                     }
                 }
             }
+        }
+
+        if (logo && size > 3){
+            rotate([0, 0, -20])
+                translate([0, 0, unit*(h-0.5)])
+                round_logo(size);
+
+            echo(unit*h)
+            rotate([0, 0, 160])
+                translate([0, 0, unit*(h-0.5)])
+                round_logo(size);
         }
 
         for (i = [0:3]){
