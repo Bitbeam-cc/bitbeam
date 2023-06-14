@@ -9,10 +9,14 @@ color("LightSlateGray")
 translate([0,0,unit/2])
     difference(){
         union(){
-            cylinder(d=unit*1.5, h=unit, center=true);
+            ecylinder(d=unit*1.5, h=unit, center=true);
             rotate([0, 0, 90])
-                translate([-unit, 0, -unit/4])
-                cube_arm(3, h=0.5);
+                intersection(){
+                    translate([-unit, 0, -unit/4])
+                        cube_arm(3, h=0.5);
+                    translate([0, 0, -unit/2])
+                        ecylinder(unit*3, unit*0.5);
+                }
         }
 
         // shaft

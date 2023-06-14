@@ -10,10 +10,14 @@ translate([0,0,unit/2])
 mirror([0, 0, 1])
     difference(){
         union(){
-            cylinder(d=unit*2, h=unit, center=true);
+            ecylinder(d=unit*2, h=unit, center=true);
             rotate([0, 0, 90])
-                translate([-unit, 0, 0])
-                cube_arm(3, side_holes=false);
+                intersection(){
+                    translate([-unit, 0, 0])
+                        cube_arm(3, side_holes=false);
+                    translate([0, 0, -unit*0.5])
+                        ecylinder(unit*3, unit);
+                }
             translate([0, 0, -unit/2])
                 ecube([unit, unit, unit], true);
         }

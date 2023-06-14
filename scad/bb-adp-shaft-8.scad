@@ -8,10 +8,14 @@ color("LightSlateGray")
 translate([0,0,unit/4])
     difference(){
         union(){
-            cylinder(d=16, h=unit*0.5, center=true, $fn=40);
+            ecylinder(d=16, h=unit*0.5, center=true, $fn=40);
             rotate([0, 0, 90])
-                translate([-unit, 0, 0])
-                cube_arm(3, h=0.5);
+                intersection(){
+                    translate([-unit, 0, 0])
+                        cube_arm(3, h=0.5);
+                    translate([0, 0, -unit/4])
+                        ecylinder(unit*3, unit*0.5);
+                }
         }
 
         for (y=[-1, 1]){

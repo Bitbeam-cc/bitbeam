@@ -1,11 +1,9 @@
-// NAME: Thin Adapter for Gearbox Motor 5.5x3.8 Shaft
+// NAME: Thin Adapter for Motor 3mm Shaft
 // CATEGORY: Adapter
 // KEYWORDS: Motor
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
-use <lib/holes.scad>
-
 
 color("LightSlateGray")
 translate([0,0,unit/2])
@@ -21,10 +19,8 @@ translate([0,0,unit/2])
                 }
         }
 
-
-        translate([0, 0, 0])
-            rotate([0, 0, 90])
-            shaft_hole(1);
+        // shaft
+        cylinder(d=3.2, h=unit*1.01, center=true);
 
         rotate([0, 90, 0])
             cylinder(d=2.8, h=16.1, center=true);
