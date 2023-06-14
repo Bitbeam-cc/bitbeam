@@ -1,6 +1,22 @@
 # ChangeLog
 
-## [0.5.0] - In Progress
+## [0.7.0]
+
+ * triangles
+ * tetris parts
+ * Adapters for motors improvement
+ * new wheels
+ * some new base parts
+
+## [0.6.0]
+
+ * fix bb-mot-5 adapter
+ * logo on wheel
+ * Category refactoring
+ * Missing parts for buggy 4x4
+ * Mecanum Wheels 7x refactoring
+
+## [0.5.0]
 
  * track wheels and chain
  * colors for web
