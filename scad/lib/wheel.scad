@@ -4,7 +4,7 @@
 include <../bitbeam-lib/bitbeam-lib.scad>
 
 module profile(size, h=1){
-    rotate_extrude($fn=size*12)
+    rotate_extrude($fn=size*16)
         translate([unit*(size-1)/2, 0])
         polygon([
             [0, 0], [unit/2-0.5, 0], [unit/2,0.5],
