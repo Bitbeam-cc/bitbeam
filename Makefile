@@ -14,6 +14,7 @@ stl: $(STL)
 parts.lst: $(DAT)
 	@ldraw-mklist -n -f -i parts
 	@sqlite3 catalog.db "UPDATE parts SET to_print = 1 WHERE file = 'tool';"
+	@sqlite3 catalog.db "UPDATE parts SET to_print = 1 WHERE file = 'tetris-box';"
 	@sqlite3 catalog.db \
 		"UPDATE categories AS c \
 		    SET quantity=p.count \
