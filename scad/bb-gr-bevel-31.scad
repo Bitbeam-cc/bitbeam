@@ -8,10 +8,8 @@ use <lib/holes.scad>
 
 module gear_31() {
 
-    *rotate([0, 45, 0])
-        #cube(23.7, true);
-
     difference(){
+        render(convexity=10)
         bevel_gear (
             number_of_teeth=31,
             cone_distance=22.7,
@@ -31,11 +29,10 @@ module gear_31() {
                 rotate([0, 45, 0])
                     cube(3, true);
 
-        translate([-unit, 0, unit*0.5])
-            holes(3);
-        translate([0, -unit, unit*0.5])
-            rotate([0, 0, 90])
-            holes(3);
+        for (i=[0:90:360])
+            rotate([0, 0, i])
+            translate([-unit, 0, unit*0.25])
+            holes(1, 0.5);
     }
 }
 
