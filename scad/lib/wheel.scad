@@ -12,6 +12,16 @@ module profile(size, h=1){
         ]);
 }
 
+module ring(size, h=1){
+    rotate_extrude($fn=size*16)
+        translate([unit*(size-2)/2, 0])
+        polygon([
+            [0.5, 0], [unit-0.5, 0], [unit,0.5],
+            [unit, h*unit-0.5], [unit-0.5, h*unit],
+            [0.5, h*unit], [0, h*unit-0.5], [0, 0.5]
+        ]);
+}
+
 module round_logo(size,){
     text = ["m", "-", "B", "I", "T", "B", "E", "A", "M"];
     fsize = size < 10 ? size/3 : 3;

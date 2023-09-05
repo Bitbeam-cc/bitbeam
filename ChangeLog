@@ -1,5 +1,10 @@
 # ChangeLog
 
+## [0.8.0]
+
+ * Raspberry Pi Zero parts
+ * Rings
+
 ## [0.7.0]
 
  * triangles
@@ -7,7 +12,6 @@
  * Adapters for motors improvement
  * new wheels
  * some new base parts
- * Raspberry Pi Zero parts
 
 ## [0.6.0]
 
