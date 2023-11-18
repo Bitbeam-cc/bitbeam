@@ -37,7 +37,7 @@ module track_wheel(size){
 
     difference(){
         union(){
-            cylinder(r=unit, h=unit, center=true);
+            cylinder(r=unit+0.2, h=unit, center=true, $fn=40);
 
             for (i = [0:3]){
                 rotate([0, 0, i*90])

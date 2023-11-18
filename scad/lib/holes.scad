@@ -15,6 +15,20 @@ module shaft_hole(size){
 
 shaft_hole(1);
 
+module plus_hole(size){
+    cube([4.9, 2, unit*size+0.1], center=true);
+    cube([2, 4.9, unit*size+0.1], center=true);
+    
+    for (z=[-1, 1])
+        translate([0, 0, z*(-size*unit-0.1)/2])
+            mirror([0, 0, -z+1])
+            cylinder(d1=hole+0.5, d2=3, h=0.5);
+}
+
+difference(){
+    cylinder(d=unit*2, h=unit, center=true);
+    plus_hole(1);
+}
 
 module cap(){
     difference(){

@@ -35,30 +35,12 @@ module round_logo(size,){
                 halign="center", valign="center");
 }
 
-module wheel(size, logo=true){
-    difference(){
-        profile(size);
-
-        if (logo && size > 3){
-            rotate([0, 0, -20])
-                translate([0, 0, unit])
-                round_logo(size);
-
-            rotate([0, 0, 160])
-                translate([0, 0, unit])
-                round_logo(size);
-        }
-
-        for (i = [0:3]){
-            rotate([0, 0, i*90])
-                translate([unit, 0, unit*0.5])
-                holes(size/2.1);
-        }
-    }
-
+module wheel(size, h=1, logo=true){
     translate([0, 0, unit*0.5])
     difference(){
         union(){
+            translate([0, 0, unit*-0.5])
+                profile(size, h);
             cylinder(r=unit, h=unit, center=true, $fn=40);
 
             for (i = [0:3]){
@@ -82,20 +64,31 @@ module wheel(size, logo=true){
             }
         }
 
-        cube(unit+0.2, true);
+        if (logo && size > 3){
+            rotate([0, 0, -20])
+                translate([0, 0, unit/2])
+                round_logo(size);
+
+            rotate([0, 0, 160])
+                translate([0, 0, unit/2])
+                round_logo(size);
+        }
+
+        cube(unit+0.1, true);
         for(z=[-1, 1])
             hull(){
                 translate([0, 0, z*(unit/2+0.01)])
                     cube([unit+1.6, unit+1.6, 0.01], true);
                 translate([0, 0, z*(unit/2-0.8)])
-                    cube([unit+0.2, unit+0.2, 0.01], true);
+                    cube([unit+0.1, unit+0.1, 0.01], true);
             }
 
         for (i = [0:3]){
-            rotate([0, 0, i*90])
+            rotate([0, 0, i*90]){
                 translate([unit, 0, 0])
-                holes(size/2.1);
+                    holes(size/2.1);
             }
+        }
 
         if (size > 6)
             for (y = [-1,1])
@@ -168,13 +161,13 @@ module large_wheel(size, h=2, logo=true){
                 translate([-unit*2, y*unit*2, unit*(h*0.5-0.5)])
                     holes(5, h=h, skip=[1,2,3]);
 
-        cube(unit+0.2, true);
+        cube(unit+0.1, true);
         for(z=[-1, 1])
             hull(){
                 translate([0, 0, z*(unit/2+0.01)])
                     cube([unit+1.6, unit+1.6, 0.01], true);
                 translate([0, 0, z*(unit/2-0.8)])
-                    cube([unit+0.2, unit+0.2, 0.01], true);
+                    cube([unit+0.1, unit+0.1, 0.01], true);
             }
     }
 }

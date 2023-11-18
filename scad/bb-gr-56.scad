@@ -32,14 +32,14 @@ module gear_56() {
 
 
         translate([0, 0, unit*0.5])
-            cube(unit+0.2, true);
+            cube(unit+0.1, true);
 
         for(z=[-1, 1])
             hull(){
                 translate([0, 0, z*(unit/4+0.01)+unit*0.25])
                     cube([unit+1.6, unit+1.6, 0.01], true);
                 translate([0, 0, z*(unit/4-0.8)+unit*0.25])
-                    cube([unit+0.2, unit+0.2, 0.01], true);
+                    cube([unit+0.1, unit+0.1, 0.01], true);
             }
 
         for (y = [-2:2])

@@ -10,10 +10,10 @@ module gear_40() {
         gear(number_of_teeth = 40,
             circular_pitch=false,
             diametral_pitch=1,
-            gear_thickness = unit*0.5,
-            rim_thickness = unit*0.5,
+            gear_thickness = unit*0.5-0.5,
+            rim_thickness = unit*0.5-0.5,
             rim_width = 5,
-            hub_thickness = unit*0.5,
+            hub_thickness = unit*0.5-0.5,
             hub_diameter=0,
             bore_diameter=0,
             backlash = 0.1,
@@ -25,25 +25,25 @@ module gear_40() {
                 translate([unit*5.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*5.5/2, 0, unit*0.5])
+                translate([unit*5.5/2, 0, unit*0.5-0.5])
                 rotate([0, 45, 0])
                     cube(2, true);
             }
 
         translate([0, 0, unit*0.5])
-            cube(unit+0.2, true);
+            cube(unit+0.1, true);
 
         for(z=[-1, 1])
             hull(){
-                translate([0, 0, z*(unit/4+0.01)+unit*0.25])
+                translate([0, 0, z*(unit/4-0.25+0.01)+unit*0.25-0.25])
                     cube([unit+1.6, unit+1.6, 0.01], true);
-                translate([0, 0, z*(unit/4-0.8)+unit*0.25])
-                    cube([unit+0.2, unit+0.2, 0.01], true);
-            }
+                translate([0, 0, z*(unit/4-0.25-0.8)+unit*0.25-0.25])
+                    cube([unit+0.1, unit+0.1, 0.01], true);
+        }
 
        for (i = [-1:1]){
-            translate([-unit, unit*i, unit*0.5])
-                holes(3);
+            translate([-unit, unit*i, unit*0.5/2])
+                holes(3, h=0.5);
        }
     }
 }

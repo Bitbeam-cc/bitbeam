@@ -37,7 +37,7 @@ module gear_12() {
 *#cylinder(d=unit*2, h=1, $fn=50);
 !color("SkyBlue")
     gear_12();
-translate([unit, 0 , unit])
+%translate([unit, 0 , unit])
     rotate([0, -90, 0])
     rotate([0, 0, 360/12/2])
     gear_12();
