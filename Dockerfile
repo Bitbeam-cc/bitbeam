@@ -22,7 +22,7 @@ RUN apt update && \
 RUN cd /opt && \
     git clone https://github.com/ondratu/stl2dat-cp.git && \
     cd /opt/stl2dat-cp && \
-    make && \
+    make -j && \
     ln -s /opt/stl2dat-cp/stl2dat /usr/bin/
 
 ENTRYPOINT xvfb-run make

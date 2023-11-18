@@ -4,8 +4,9 @@ SRC = $(sort $(wildcard scad/*.scad))
 STL = $(SRC:scad/%.scad=stl/%.stl)
 DAT = $(STL:stl/%.stl=parts/%.dat)
 PNG = $(STL:stl/%.stl=png/%.png)
+SQL = $(SRC:scad/%.scad=sql/%.sql)
 
-all: parts.lst $(PNG)
+all: parts.lst $(PNG) catalog.db
 
 images: $(PNG)
 
@@ -13,8 +14,18 @@ stl: $(STL)
 
 parts.lst: $(DAT)
 	@ldraw-mklist -n -f -i parts
-	@sqlite3 catalog.db "UPDATE parts SET to_print = 1 WHERE file = 'tool';"
-	@sqlite3 catalog.db "UPDATE parts SET to_print = 1 WHERE file = 'tetris-box';"
+
+stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
+	@echo "$< -> $@"
+	@[ -d stl ] || mkdir stl
+	@openscad -o $@ $<
+
+catalog.db: $(SQL) catalog.sql
+	@echo "$< -> $@"
+	@sqlite3 catalog.db < catalog.sql
+	@sqlite3 catalog.db "INSERT INTO release VALUES \
+		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));"
+	@(for sql in $(SQL); do sqlite3 catalog.db < $$sql; done )
 	@sqlite3 catalog.db \
 		"UPDATE categories AS c \
 		    SET quantity=p.count \
@@ -24,39 +35,37 @@ parts.lst: $(DAT)
 		        WHERE pa.to_print = 1 GROUP BY category) AS p \
 		    WHERE c.category = p.category;"
 
-stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
+sql/%.sql: scad/%.scad
 	@echo "$< -> $@"
-	@[ -d stl ] || mkdir stl
-	@openscad -o $@ $<
+	@[ -d sql ] || mkdir sql
+	@(	NAME=`sed -n "s/.*NAME:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
+		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
+		KEYWORDS=`sed -n "s/.*KEYWORDS:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
+		[ -n "$$NAME" ] || NAME=$* && \
+		(echo $* | grep -E '^bb-|^washer-|^pin-|^shaft-|^tool|^tetris-box' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
+		echo "INSERT OR REPLACE INTO parts VALUES ('$$NAME', '$*', '$$TO_PRINT');" > $@ && \
+		[ -n "$$CATEGORY" ] || CATEGORY=Beam && \
+		for cat in `echo $$CATEGORY $$KEYWORDS`; do \
+			echo "INSERT OR IGNORE INTO categories VALUES ('$$cat', 0);" >> $@; \
+			echo "INSERT OR IGNORE INTO parts_categories VALUES ('$$cat', '$*');" >> $@; \
+		done \
+	)
 
-catalog.db: catalog.sql
+parts/%.dat: stl/%.stl
 	@echo "$< -> $@"
-	@sqlite3 catalog.db < catalog.sql
-	@sqlite3 catalog.db "INSERT INTO release VALUES \
-		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));"
-
-parts/%.dat: stl/%.stl catalog.db
-	@echo "$< -> $@"
-	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.scad
-	@openscad -o .tmp.stl .tmp.scad && rm .tmp.scad
+	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.$*.scad
+	@openscad -o .tmp.$*.stl .tmp.$*.scad && rm .tmp.$*.scad
 	@(	NAME=`sed -n "s/.*NAME:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		COLOR=`sed -n "s/.*COLOR:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		KEYWORDS=`sed -n "s/.*KEYWORDS:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		[ -n "$$NAME" ] || NAME=$* && \
 		[ -n "$$COLOR" ] || COLOR=16 && \
-		(echo $* | grep -E '^bb-|^pin-|^shaft-' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
-		stl2dat .tmp.stl -ldraw -c1 $$COLOR -c3 $$COLOR -c4 $$COLOR > /dev/null && rm -r .tmp.stl && \
-		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ && \
-		sqlite3 catalog.db "INSERT OR REPLACE INTO parts VALUES ('$$NAME', '$*', '$$TO_PRINT');" && \
-		[ -n "$$CATEGORY" ] || CATEGORY=Beam && \
-		for cat in `echo $$CATEGORY $$KEYWORDS`; do \
-			sqlite3 catalog.db "INSERT OR IGNORE INTO categories VALUES ('$$cat', 0);"; \
-			sqlite3 catalog.db "INSERT OR IGNORE INTO parts_categories VALUES ('$$cat', '$*');"; \
-		done \
+		stl2dat .tmp.$*.stl -ldraw -c1 $$COLOR -c3 $$COLOR -c4 $$COLOR -out .tmp.$*.dat > /dev/null && rm -r .tmp.$*.stl && \
+		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ \
 	)
-	@tail -n +4 .tmp.dat >> $@
-	@rm .tmp.dat
+	@tail -n +4 .tmp.$*.dat >> $@
+	@rm .tmp.$*.dat
 
 png/%.png: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@echo "$< -> $@"
@@ -71,7 +80,14 @@ release: m-bitbeam-stl-$(VERSION).zip \
 	m-bitbeam-catalog-$(VERSION).zip
 
 m-bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
-	zip $@ stl/bb-*.stl stl/washer-*.stl LICENSE.md AUTHORS
+	zip $@ \
+		stl/bb-*.stl \
+		stl/washer-*.stl \
+		stl/pin-*.stl \
+		stl/shaft-*.stl \
+		stl/tool.stl \
+		stl/tetris-box.stl \
+		LICENSE.md AUTHORS
 
 m-bitbeam-parts-$(VERSION).zip: parts.lst LICENSE.md AUTHORS
 	zip $@ parts/*.dat parts.lst LICENSE.md AUTHORS
