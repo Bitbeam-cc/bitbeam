@@ -4,11 +4,7 @@
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
-
-module plus_shaft(h){
-    cube([4.9, 2, unit*h], center=true);
-    cube([2, 4.9, unit*h], center=true);
-}
+use <lib/holes.scad>
 
 color("LightSlateGray")
 translate([0,0,unit/2])
@@ -25,7 +21,7 @@ translate([0,0,unit/2])
         }
 
         // shaft
-        plus_shaft(unit*1.6);
+        plus_hole(unit*1.6);
 
         rotate([0, 90, 0])
             cylinder(d=2.8, h=16.1, center=true);

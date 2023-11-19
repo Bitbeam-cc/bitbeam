@@ -20,13 +20,14 @@ stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@[ -d stl ] || mkdir stl
 	@openscad -o $@ $<
 
-catalog.db: $(SQL) catalog.sql
+catalog.db: catalog.sql $(SQL)
 	@echo "$< -> $@"
-	@sqlite3 catalog.db < catalog.sql
-	@sqlite3 catalog.db "INSERT INTO release VALUES \
+	@rm -f $@
+	@sqlite3 $@ < catalog.sql
+	@sqlite3 $@ "INSERT INTO release VALUES \
 		    ('$(VERSION)', CAST(strftime('%s', CURRENT_TIMESTAMP) as integer));"
 	@(for sql in $(SQL); do sqlite3 catalog.db < $$sql; done )
-	@sqlite3 catalog.db \
+	@sqlite3 $@ \
 		"UPDATE categories AS c \
 		    SET quantity=p.count \
 		    FROM (SELECT COUNT(*) AS count, category \

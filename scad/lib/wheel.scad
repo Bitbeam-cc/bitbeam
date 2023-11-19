@@ -144,7 +144,6 @@ module large_wheel(size, h=2, logo=true){
                 translate([0, 0, unit*(h-0.5)])
                 round_logo(size);
 
-            echo(unit*h)
             rotate([0, 0, 160])
                 translate([0, 0, unit*(h-0.5)])
                 round_logo(size);

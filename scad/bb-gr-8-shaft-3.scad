@@ -18,14 +18,11 @@ module shaft(h=1){
     }
 }
 
-module gear_8_shaft(){
+!color("SkyBlue"){
     gear_8();
-    translate([0, 0, unit*1.5/2])
-        shaft(1.4);
+    translate([0, 0, unit*3/2])
+        shaft(3);
 }
-
-!color("SkyBlue")
-    gear_8_shaft();
 %translate([unit, 0 , 0])
     rotate([0, 0, 360/8/2])
     gear_8();
