@@ -3,7 +3,7 @@
 // COLOR: 0
 
 module o_ring_50(){
-    rotate_extrude(convexity =1)
+    rotate_extrude(convexity = 2)
         translate([(50+5)/2, 0, 0])
         circle(d = 5, $fn=20);
 }

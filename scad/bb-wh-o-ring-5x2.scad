@@ -9,8 +9,8 @@ use <o-ring-35x2_5.scad>
 color("gray")
 difference(){
     large_wheel(5, 2);
-    for(i=[0:5])
-    translate([0,0,2.2+i*2.8])
+    for(i=[0:4])
+    translate([0,0,2.2+i*2.8+0.2])
         scale([1.1, 1.1, 1])
         o_ring_35();
 }

@@ -12,25 +12,25 @@ module gear_16() {
         gear(number_of_teeth = 16,
             circular_pitch=false,
             diametral_pitch=1,
-            gear_thickness = unit*0.5-0.5,
-            rim_thickness = unit*0.5-0.5,
+            gear_thickness = unit*0.5-0.2,
+            rim_thickness = unit*0.5-0.2,
             rim_width = 5,
-            hub_thickness = unit*0.5-0.5,
+            hub_thickness = unit*0.5-0.2,
             hub_diameter=0,
             bore_diameter=0,
             backlash = 0.1,
             circles=0,
             twist=0);
 
-        translate([0, 0, unit*((unit-0.5)/unit-0.5)/2])
-            shaft_hole((unit-0.5)/unit-0.5);
+        translate([0, 0, unit*((unit-0.2)/unit-0.5)/2])
+            shaft_hole((unit-0.2)/unit-0.5);
 
         for (i = [0:360/16:360])
             rotate([0, 0, i]){
                 translate([unit*2.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*2.5/2, 0, unit*0.5-0.5])
+                translate([unit*2.5/2, 0, unit*0.5-0.2])
                 rotate([0, 45, 0])
                     cube(2, true);
             }

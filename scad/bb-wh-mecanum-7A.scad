@@ -32,7 +32,7 @@ module m_wheel(text){
     difference(){
         union(){
             m_profile(3.5);
-            wheel(3.5, false);
+            wheel(3.5, logo=false);
 
             for (i=[0:360/7:360])
                 hull()

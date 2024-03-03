@@ -9,13 +9,10 @@ use <lib/holes.scad>
 color("LightSlateGray")
 translate([0,0,unit])
     difference(){
-        cylinder(d=unit*1.5, h=unit*2, center=true);
+        cylinder(d=unit*1.5, h=unit*2-0.2, center=true);
 
         rotate([0, 0, 90])
-            shaft_hole(2);
-
-        rotate([0, 180, 90])
-            shaft_hole(2);
+            shaft_hole(2-0.2/unit);
 
         for (i=[-1, 1])
             translate([0, 0, i*unit/2])

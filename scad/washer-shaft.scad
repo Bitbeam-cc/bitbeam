@@ -1,4 +1,4 @@
-// NAME: Washer Shaft Thin
+// NAME: Washer Shaft
 // COLOR: 80
 // CATEGORY: Support
 
@@ -12,4 +12,4 @@ module washer_shaft(h){
 }
 
 color("silver")
-    washer_shaft(0.5);
+    washer_shaft(1);

@@ -1,14 +1,14 @@
-// NAME: Gear 24 Thin
+// NAME: Gear 40 Thin
 // CATEGORY: Gear
 // LDRAW: 322
 
 include <bitbeam-lib/bitbeam-lib.scad>
-use <bb-gr-8.scad>
 use <MCAD/involute_gears.scad>
+use <lib/holes.scad>
 
-module gear_24() {
+module gear_40() {
     difference(){
-        gear(number_of_teeth = 24,
+        gear(number_of_teeth = 40,
             circular_pitch=false,
             diametral_pitch=1,
             gear_thickness = unit*0.5-0.2,
@@ -21,34 +21,43 @@ module gear_24() {
             circles=0,
             twist=0);
 
-        for (i = [0:360/24:360])
+        for (i = [0:360/40:360])
             rotate([0, 0, i]){
-                translate([unit*3.5/2, 0, 0])
+                translate([unit*5.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*3.5/2, 0, unit*0.5-0.2])
+                translate([unit*5.5/2, 0, unit*0.5-0.2])
                 rotate([0, 45, 0])
                     cube(2, true);
             }
 
-        translate([0, 0, unit*0.5])
-            cube(unit+0.1, true);
+        translate([0, 0, unit*0.25-0.1])
+            shaft_hole(0.5-0.2/unit);
 
-        for(z=[-1, 1])
-            hull(){
-                translate([0, 0, z*(unit/4-0.1+0.01)+unit*0.25-0.1])
-                    cube([unit+1.6, unit+1.6, 0.01], true);
-                translate([0, 0, z*(unit/4-0.1-0.8)+unit*0.25-0.1])
-                    cube([unit+0.1, unit+0.1, 0.01], true);
-            }
+       for (i = [-1:1]){
+           skip = (i != 0) ? [] : [1];
+            translate([-unit, unit*i, unit*0.5/2-0.1])
+                holes(3, h=0.5-0.2/unit, skip=skip);
+       }
     }
 }
 
 color("SkyBlue")
-    gear_24();
-%translate([0, -unit*2, 0])
+    gear_40();
+
+/*
+use <bb-gr-8.scad>
+use <bb-gr-24-th.scad>
+
+%translate([unit*3, 0 , 0])
     rotate([0, 0, 360/8/2])
     gear_8();
-%translate([unit*3, 0 , 0])
+
+%translate([0, unit*4 , 0])
     rotate([0, 0, 360/24/2])
     gear_24();
+
+%translate([-unit*5, 0 , 0])
+    rotate([0, 0, 360/40/2])
+    gear_40();
+*/

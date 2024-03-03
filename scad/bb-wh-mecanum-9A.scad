@@ -1,4 +1,4 @@
-// NAME: Mecanum Wheel 9
+// NAME: Mecanum Wheel 9A
 // CATEGORY: Wheel
 // LDRAW: 8
 
@@ -16,11 +16,23 @@ module m_profile(size){
         ]);
 }
 
-module m_wheel(){
+module round_text(size, text = ["m", "-", "B", "I", "T", "B", "E", "A", "M"]){
+    fsize = size < 10 ? size/1.5 : 3;
+
+    for (i = [0:len(text)])
+        rotate([0, 0, -100/len(text)*i])
+        translate([unit*size-unit*2.3, 0, 0])
+        linear_extrude(1, center=true, convexity=10)
+            rotate([0, 0, 270])
+            text(text[i], font = "Sans", size=fsize,
+                halign="center", valign="center");
+}
+
+module m_wheel(text){
     difference(){
         union(){
             m_profile(5.5);
-            wheel(5.5, false);
+            wheel(5.5, logo=false);
 
             for (i=[0:360/10:360])
                 hull()
@@ -36,6 +48,26 @@ module m_wheel(){
 
             }
         }
+        
+        rotate([0, 0, 0])
+            translate([0, 0, 0])
+            mirror([1, 1, 0])
+            round_text(5);
+
+        rotate([0, 0, 180])
+            translate([0, 0, 0])
+            mirror([1, 1, 0])
+            round_text(5);
+        
+        rotate([0, 0, 90+45])
+            translate([0, 0, 0])
+            mirror([1, 1, 0])
+            round_text(5, text);
+        rotate([0, 0, 270+45])
+            translate([0, 0, 0])
+            mirror([1, 1, 0])
+            round_text(5, text);
+        
         for (i = [0:3]){
             rotate([0, 0, i*90])
                 translate([unit, 0, unit*0.5])
@@ -70,10 +102,10 @@ for (i=[0:360/10:360])
     }
 
 !color("gray")
-    m_wheel();
+    m_wheel("A");
 translate([0, 0, unit*3])
     rotate([180, 0, 0])
-    %m_wheel();
+    %m_wheel("A");
 translate([0, 0, unit*2])
     rotate([180, 0, 0])
     %wheel(5);

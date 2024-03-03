@@ -36,17 +36,19 @@ module round_logo(size,){
 }
 
 module wheel(size, h=1, logo=true){
+    render(convexity = 7)
     translate([0, 0, unit*0.5])
     difference(){
         union(){
             translate([0, 0, unit*-0.5])
                 profile(size, h);
-            cylinder(r=unit, h=unit, center=true, $fn=40);
+            
+            cylinder(r=unit+0.1, h=unit, center=true, $fn=40);
 
             for (i = [0:3]){
                 rotate([0, 0, i*90])
                 translate([unit, 0, 0])
-                cube_arm(((size+1)/2)-1.2, 1, side_holes=false);
+                    cube_arm(((size+1)/2)-1.2, h=1, side_holes=false);
             }
 
             if (size > 6) {
@@ -54,7 +56,7 @@ module wheel(size, h=1, logo=true){
                     rotate([0, 0, 45+i*90])
                     translate([unit, 0, 0]){
                         hull(){
-                            translate([unit*((size)/2-1.47), 0, unit*(0.5-0.5)])
+                            translate([unit*((size)/2-1.47), 0, 0])
                                 ecube([unit*0.25, unit, unit], true);
                             translate([0, 0, 0])
                                 ecube([unit*0.75, unit, unit], true);
@@ -86,18 +88,19 @@ module wheel(size, h=1, logo=true){
         for (i = [0:3]){
             rotate([0, 0, i*90]){
                 translate([unit, 0, 0])
-                    holes(size/2.1);
+                    holes(size/2.1, h=1);
             }
         }
 
         if (size > 6)
             for (y = [-1,1])
                 translate([-unit*2, y*unit*2, 0])
-                    holes(5, skip=[1, 3]);
+                    holes(5, h=1, skip=[1, 3]);
     }
 }
 
 module large_wheel(size, h=2, logo=true){
+    render(convexity = 7)
     translate([0, 0, unit*0.5])
     difference(){
         union(){
@@ -171,5 +174,4 @@ module large_wheel(size, h=2, logo=true){
     }
 }
 
-color("orange")
-    large_wheel(7);
+large_wheel(7);

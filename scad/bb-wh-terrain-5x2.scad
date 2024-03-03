@@ -9,7 +9,7 @@ color("gray"){
     large_wheel(5,2);
     for (a=[0:360])
         rotate([0, 0, a])
-        translate([unit*2.46, 0, a % 4.5*1.57*2+1.7])
+        translate([unit*2.46, 0, a % 4.5*1.56*2+1.75])
         hull(){
             cube([1, 2, 2.5], true);
             translate([1, 0, 0])

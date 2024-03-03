@@ -3,6 +3,7 @@
 // COLOR: 0
 
 module o_ring_35(){
+    render(convexity = 2)
     rotate_extrude(convexity =1, $fn=40)
         translate([(35+2.5)/2, 0, 0])
         circle(d = 2.5, $fn=20);

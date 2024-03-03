@@ -12,10 +12,10 @@ module gear_24() {
         gear(number_of_teeth = 24,
             circular_pitch=false,
             diametral_pitch=1,
-            gear_thickness = unit-0.5,
-            rim_thickness = unit-0.5,
+            gear_thickness = unit-0.2,
+            rim_thickness = unit-0.2,
             rim_width = 2,
-            hub_thickness = unit-0.5,
+            hub_thickness = unit-0.2,
             hub_diameter=0,
             bore_diameter=0,
             backlash = 0.1,
@@ -27,13 +27,13 @@ module gear_24() {
                 translate([unit*3.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*3.5/2, 0, unit-0.5])
+                translate([unit*3.5/2, 0, unit-0.2])
                 rotate([0, 45, 0])
                     cube(2, true);
             }
 
-        translate([0, 0, unit*((unit-0.5)/unit)*0.5])
-            shaft_hole((unit-0.5)/unit);
+        translate([0, 0, unit*((unit-0.2)/unit)*0.5])
+            shaft_hole((unit-0.2)/unit);
     }
 }
 

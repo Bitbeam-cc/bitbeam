@@ -12,4 +12,4 @@ module washer_shaft(h){
 }
 
 color("silver")
-    washer_shaft(0.2);
+    washer_shaft(0.25-0.4/unit);

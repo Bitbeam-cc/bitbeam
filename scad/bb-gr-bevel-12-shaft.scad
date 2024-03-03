@@ -1,4 +1,4 @@
-// NAME: Bevel Gear 12
+// NAME: Bevel Gear 12 Shaft
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -8,15 +8,16 @@ use <lib/holes.scad>
 
 
 module gear_12() {
-    *#cylinder(d=hole, h=unit*0.5);
+    *#cylinder(d=unit, h=unit*0.5-0.2);
     *rotate([0, 45, 0])
         #cube(12.25, true);
 
     difference(){
+        render(convexity = 3)
         bevel_gear (
             number_of_teeth=12,
             cone_distance=11.15,
-            face_width=5.22,
+            face_width=4.96,
             outside_circular_pitch=215,
             pressure_angle=30,
             clearance = 0.2,
@@ -26,8 +27,8 @@ module gear_12() {
             involute_facets=0,
             finish = 0);
 
-        translate([0, 0, unit*0.25])
-            shaft_hole(0.5);
+        translate([0, 0, unit*0.25-0.1])
+            shaft_hole(0.5-0.2/unit);
 
         for (i = [0:360/12:360])
             rotate([0, 0, i])

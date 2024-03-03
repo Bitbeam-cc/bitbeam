@@ -12,10 +12,10 @@ module gear_16() {
         gear(number_of_teeth = 16,
             circular_pitch=false,
             diametral_pitch=1,
-            gear_thickness = unit*0.5-0.5,
-            rim_thickness = unit*0.5-0.5,
+            gear_thickness = unit*0.5-0.2,
+            rim_thickness = unit*0.5-0.2,
             rim_width = 5,
-            hub_thickness = unit*0.5-0.5,
+            hub_thickness = unit*0.5-0.2,
             hub_diameter=0,
             bore_diameter=0,
             backlash = 0.1,
@@ -27,9 +27,9 @@ module gear_16() {
 
         for(z=[-1, 1])
             hull(){
-                translate([0, 0, z*(unit/4-0.25+0.01)+unit*0.25-0.25])
+                translate([0, 0, z*(unit/4-0.1+0.01)+unit*0.25-0.1])
                     cube([unit+1.6, unit+1.6, 0.01], true);
-                translate([0, 0, z*(unit/4-0.25-0.8)+unit*0.25-0.25])
+                translate([0, 0, z*(unit/4-0.1-0.8)+unit*0.25-0.1])
                     cube([unit+0.1, unit+0.1, 0.01], true);
         }
             
@@ -38,7 +38,7 @@ module gear_16() {
                 translate([unit*2.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*2.5/2, 0, unit*0.5-0.5])
+                translate([unit*2.5/2, 0, unit*0.5-0.2])
                 rotate([0, 45, 0])
                     cube(2, true);
             }

@@ -14,15 +14,18 @@ module gear_31() {
         bevel_gear (
             number_of_teeth=31,
             cone_distance=22.7,
-            face_width=5.20,
+            face_width=5.2,
             outside_circular_pitch=180,
             pressure_angle=30,
             clearance = 0.2,
-            bore_diameter=5,
+            bore_diameter=3,
             gear_thickness = 15,
             backlash = 0.2,
             involute_facets=0,
             finish = 0);
+
+        translate([0, 0, unit*0.25-0.1])
+            shaft_hole(0.5-0.2/unit);
 
         for (i = [0:360/31:360])
             rotate([0, 0, i])
@@ -32,7 +35,7 @@ module gear_31() {
 
         for (i=[0:90:360])
             rotate([0, 0, i])
-            translate([-unit, 0, unit*0.25])
+            translate([-unit, 0, unit*0.25-0.1])
             holes(1, 0.5-0.2/unit);
     }
 }

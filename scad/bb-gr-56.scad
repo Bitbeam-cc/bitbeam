@@ -11,9 +11,9 @@ module gear_56() {
             circular_pitch=false,
             diametral_pitch=1,
             gear_thickness = unit*0.5,
-            rim_thickness = unit,
+            rim_thickness = unit-0.2,
             rim_width = 5,
-            hub_thickness = unit,
+            hub_thickness = unit-0.2,
             hub_diameter=0,
             bore_diameter=0,
             backlash = 0.,
@@ -25,7 +25,7 @@ module gear_56() {
                 translate([unit*7.5/2, 0, 0])
                 rotate([0, 45, 0])
                     cube(2, true);
-                translate([unit*7.5/2, 0, unit])
+                translate([unit*7.5/2, 0, unit-0.1])
                 rotate([0, 45, 0])
                     cube(2, true);
             }
