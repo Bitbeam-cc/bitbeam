@@ -1,4 +1,4 @@
-// NAME: Internal Gear Thin Part 408
+// NAME: Internal Gear Part 408
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -16,7 +16,7 @@ module profile(size, h=1, angle=360){
 
 module gear_408() {
     difference(){
-        profile(51, h=0.5, angle=45);
+        profile(51, angle=45);
 
         translate([0, 0, -0.05])
         gear(number_of_teeth = 408,
@@ -32,10 +32,14 @@ module gear_408() {
             circles=0,
             twist=0);
 
+        translate([unit*26.5, unit, unit*0.5])
+            rotate([0, 0, 90])
+            holes(2);
+
         for (i=[2.25:2.25:44])
             rotate([0, 0, i])
-            translate([unit*26.5, 0, unit*0.25])
-            holes(1, h=0.5);
+            translate([unit*26.5, 0, unit*0.5])
+            holes(1);
 
     }
 }
