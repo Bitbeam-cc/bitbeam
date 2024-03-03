@@ -43,5 +43,5 @@ color("SkyBlue")
     rotate([0, 0, 360/8/2])
     gear_8();
 %translate([unit*2, 0 , 0])
-    rotate([0, 0, 360/24/2])
+    rotate([0, 0, 360/16/2])
     gear_16();

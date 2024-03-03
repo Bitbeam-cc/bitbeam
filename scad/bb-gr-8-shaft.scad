@@ -5,18 +5,7 @@
 include <bitbeam-lib/bitbeam-lib.scad>
 use <MCAD/involute_gears.scad>
 use <bb-gr-8.scad>
-
-
-module shaft(h=1){
-    difference(){
-        cylinder(d=4.5, h=unit*h, center=true);
-
-        translate([0, 4.8/2+1, 0])
-            cube([unit, 3, unit*h+0.251], center=true);
-        translate([0, -4.8/2-1, 0])
-            cube([unit, 3, unit*h+0.251], center=true);
-    }
-}
+use <lib/shafts.scad>
 
 module gear_8_shaft(){
     gear_8();

@@ -6,7 +6,6 @@
 include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/holes.scad>
 
-
 color("LightSlateGray")
 translate([0,0,unit/2])
     difference(){

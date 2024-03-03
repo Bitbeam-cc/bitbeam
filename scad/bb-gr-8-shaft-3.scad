@@ -1,22 +1,11 @@
-// NAME: Gear 8 with Shaft
+// NAME: Gear 8 with Shaft 3
 // CATEGORY: Gear
 // LDRAW: 322
 
 include <bitbeam-lib/bitbeam-lib.scad>
 use <MCAD/involute_gears.scad>
 use <bb-gr-8.scad>
-
-
-module shaft(h=1){
-    difference(){
-        cylinder(d=4.5, h=unit*h, center=true);
-
-        translate([0, 4.8/2+1, 0])
-            cube([unit, 3, unit*h+0.251], center=true);
-        translate([0, -4.8/2-1, 0])
-            cube([unit, 3, unit*h+0.251], center=true);
-    }
-}
+use <lib/shafts.scad>
 
 !color("SkyBlue"){
     gear_8();
