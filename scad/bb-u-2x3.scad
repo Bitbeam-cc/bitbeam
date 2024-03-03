@@ -1,4 +1,4 @@
-// NAME: Beam U Shape 2x3x2
+// NAME: Beam U Shape 2x3
 // LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>

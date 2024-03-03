@@ -3,6 +3,6 @@
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-translate([4-2*unit, 4, unit/8])
+translate([-1.5*unit, unit/2, unit/4])
     color("RoyalBlue")
     cube_arm(4, h=1/2);
