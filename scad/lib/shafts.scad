@@ -9,8 +9,8 @@ module t_shaft(size){
                 cylinder(d1=4.3, d2=hole, h=unit*0.6-0.5);
             translate([0, 0, unit*size/2-0.51])
                 cylinder(d1=hole, d2=4.3, h=0.5);
-            translate([0, 0, -unit*(size/2+0.25)])
-                ecylinder(d=unit, h=unit*0.251);
+            translate([0, 0, -unit*(size/2+0.2)])
+                ecylinder(d=unit, h=unit*0.201);
         }
     
         translate([0, 4.8/2+0.95, -unit*0.251/2])
@@ -22,6 +22,8 @@ module t_shaft(size){
             cube([0.7, 3.9, unit*0.61], center=true);
     }
 }
+
+//t_shaft(2);
 
 module shaft(size){
     difference(){
