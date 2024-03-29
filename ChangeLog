@@ -8,6 +8,9 @@
  * Internal Gear 408 fix
  * Wheel update - all wheels are little bit thinner
  * New beam parts
+ * Big plates update
+    - All plate parts are defined as lines x rows
+    - All plate parts have it's thin and smooth version
 
 ## [0.7.0]
 
