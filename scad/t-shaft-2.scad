@@ -1,4 +1,4 @@
-// NAME: Shaft 2
+// NAME: T-Shaft 2
 // LDRAW: 0
 // CATEGORY: Support
 

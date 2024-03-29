@@ -34,7 +34,7 @@ difference(){
     hull(){
         ecube([30, 20, 20]);
 
-        translate([-60,0, -10.05])
+        translate([-60,0, -9.95])
             cube([0.1, 15, 0.1], true);
     }
 
