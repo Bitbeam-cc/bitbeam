@@ -1,10 +1,9 @@
-// NAME: Beam Frame 5x5 with one side 45 Dec
+// NAME: Beam Frame 5x7 with one side 45 Dec
 // LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-
-
+rotate([0, 0, -90])
 color("RoyalBlue")
 difference(){
     union(){

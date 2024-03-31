@@ -3,8 +3,7 @@
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-
-
+rotate([0, 0, -90])
 color("RoyalBlue")
 difference(){
     union(){

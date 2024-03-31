@@ -1,4 +1,4 @@
-// NAME: Beam Frame 7x5
+// NAME: Beam Frame 5x7
 // LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>
