@@ -23,25 +23,29 @@ There are some main groups, the base group is **bb**, which means bit beam, so
 this is printed bitbeam parts. With **ws** group, only they are in STL release
 file.
   * **bb** - bit beam
-  * **co** - complete parts - typical bit beams with some other parts like
-    sensors or special wheel supports.
-  * **nut**, **ws**, **sc** - nuts, washers and screws
-  * **sen** - that is sensors
-  * **drv** - drivers, means electronics for drive motors, servos etc.
+  * **co** - complete part - typical bit beams with some other parts like
+    sensor or special wheel supports.
+  * **nut**, **ws**, **sc** - nut, washer or screw
+  * **sen** - that is sensor
+  * **pin** - plastic pin
+  * **shaft**, **t-shaft** - shaft
 
 ### type
 Type of part, that could tell you, what kind of beam, sensor or driver it is.
-  * **b** - Beam
   * **a** - L shape with defined angle
-  * **H**, **O**, **D** - Beam frame with specific shape
-  * **T**, **X**, **U** - Beam with the specific shape, which looks like T,
+  * **b** - Beam
+  * **bd** - board (Arduino, OctopusLAB, etc.)
+  * **gr** - Gear
+  * **h**, **o**, **d** - Beam frame with specific shape
+  * **t**, **x**, **u** - Beam with the specific shape, which looks like T,
     X(+) and U
-  * **sen**, **drv** - Box for sensor or driver
+  * **sen** - Box for sensor, driver or other separate electric part
   * **wh**, **pivot** - Wheel and special stabilization ball.
   * **tr** - piece of track chain
 
 ### subtype
 Some part have defined sub-type.
+  * **sm** - Smooth, that means version without too much holes.
   * **th** - Thin size, that means height of Beam is one half of unit.
 
 ### value

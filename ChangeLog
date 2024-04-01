@@ -12,6 +12,9 @@
     - All plate parts are defined as lines x rows
     - All plate parts have it's thin and smooth version
  * Frames update - parts are defined as lines x rows
+ * Boards beam updates
+    - New OctopusLAB Boards
+    - RaspberryPi Boards
 
 ## [0.7.0]
 

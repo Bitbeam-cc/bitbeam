@@ -1,4 +1,4 @@
-// NAME: Arduino UNO Beam 9x9
+// NAME: Arduino UNO Board Beam 9x9
 // CATEGORY: Electric
 // LDRAW: 27
 
@@ -7,11 +7,11 @@ include <bitbeam-lib/bitbeam-lib.scad>
 size = 70;
 
 
-module bb_cau_9x9(){
+module bb_brd_9x9(){
     difference(){
         union(){
             translate([-unit/2, unit/2, -unit*0.5])
-                cube([unit*9, unit*7, unit*0.25]);
+                ecube([unit*9, unit*7, unit*0.25]);
 
             for (i=[0,1]){
                 translate([17-unit/2,unit*7,-unit/2+5/2])
@@ -51,9 +51,13 @@ module bb_cau_9x9(){
                 difference(){
                     cube_arm(2+y, side_holes=false);
                     // horizontal holes only on 2 len block *(y-1)
-                    rotate([0,90*(y-1),0])
-                        cylinder(d=hole, h=unit*3.1, center=true);
+                    if (y == 0)
+                        translate([unit*0.5, 0, 0])
+                        rotate([0,90*(y-1),0])
+                            holes(1, h=2);
                 }
+            translate([x*unit*(7-y)-4, y*unit*8-8*y+3, -4])
+                ecube([unit*(2+y), 2, unit*0.25], false);
         }
     }
 }
@@ -61,4 +65,4 @@ module bb_cau_9x9(){
 
 translate([-4*unit, -4*unit, unit/2])
     color("YellowGreen")
-    bb_cau_9x9();
+    bb_brd_9x9();
