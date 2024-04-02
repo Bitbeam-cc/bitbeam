@@ -1,4 +1,4 @@
-// NAME: Kittenbot Robot:Bit Beam NxN
+// NAME: Kittenbot Robot:Bit Beam 7x8
 // CATEGORY: Electric
 // LDRAW: 27
 
