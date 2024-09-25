@@ -19,6 +19,7 @@ parts/tetris-box.dat
 parts/bearing-608.dat
 parts/tool.dat
 parts/shaft-*.dat
+parts/t-shaft-*.dat
 stl
 png
 catalog.db
