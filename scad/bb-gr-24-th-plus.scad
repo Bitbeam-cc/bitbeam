@@ -22,9 +22,6 @@ module gear_24() {
             circles=0,
             twist=0);
 
-        translate([0, 0, unit*((unit-0.2)/unit-0.5)/2])
-            plus_hole((unit-0.2)/unit-0.5);
-
         for (i = [0:360/24:360])
             rotate([0, 0, i]){
                 translate([unit*3.5/2, 0, 0])
@@ -34,6 +31,9 @@ module gear_24() {
                 rotate([0, 45, 0])
                     cube(2, true);
             }
+
+        translate([0, 0, unit*((unit-0.2)/unit-0.5)/2])
+            plus_hole((unit-0.2)/unit-0.5);
     }
 }
 
