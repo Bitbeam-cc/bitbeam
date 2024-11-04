@@ -52,17 +52,22 @@ sql/%.sql: scad/%.scad
 		done \
 	)
 
+# stl2dat:
+#  -ldraw: not standard header (we have own)
+#  -swapyz: same orientation as in STL (previously rotate 90°on X axis)
+#  -m 0 0 0 2.5 0 0 0 -2.5 0 0 0 2.5: mirror model in Z axis, which is the same
+#  	as in stl
+
 parts/%.dat: stl/%.stl
 	@echo "$< -> $@"
-	@echo 'scale([2.5, 2.5, 2.5]) rotate([90, 0, 0]) import("$<");' > .tmp.$*.scad
-	@openscad -o .tmp.$*.stl .tmp.$*.scad && rm .tmp.$*.scad
 	@(	NAME=`sed -n "s/.*NAME:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
+		NAME=`echo $$NAME | sed 's/\//\\\\\//g'` && \
 		COLOR=`sed -n "s/.*COLOR:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		KEYWORDS=`sed -n "s/.*KEYWORDS:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		[ -n "$$NAME" ] || NAME=$* && \
 		[ -n "$$COLOR" ] || COLOR=16 && \
-		stl2dat .tmp.$*.stl -ldraw -c1 $$COLOR -c3 $$COLOR -c4 $$COLOR -out .tmp.$*.dat > /dev/null && rm -r .tmp.$*.stl && \
+		stl2dat $< -ldraw -swapyz -m 0 0 0 2.5 0 0 0 -2.5 0 0 0 2.5 -c1 $$COLOR -c2 $$COLOR -c3 $$COLOR -out .tmp.$*.dat > /dev/null && \
 		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ \
 	)
 	@tail -n +4 .tmp.$*.dat >> $@
