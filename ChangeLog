@@ -1,6 +1,6 @@
 # ChangeLog
 
-## [0.8.0]
+## [dev]
 
  * Raspberry Pi Zero parts
  * Rings
@@ -15,6 +15,7 @@
  * Boards beam updates
     - New OctopusLAB Boards
     - RaspberryPi Boards
+ * Gear 20 for some motors with centered shaft
 
 ## [0.7.0]
 
