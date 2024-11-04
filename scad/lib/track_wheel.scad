@@ -18,8 +18,9 @@ size 30 (240) => 753,982 / 60 (6°) = 12.566
 //$fn=40;
 
 module track_wheel(size){
+    render(convexity=7)
     difference(){
-        cylinder(d=unit*size, h=unit, center=true, $fn=size*15);
+        ecylinder(d=unit*size, h=unit, center=true, $fn=size*15);
         cylinder(d=unit*(size-2), h=unit*1.1, center=true, $fn=size*10);
 
          for (i = [0:360/(size/3*6):360]){

@@ -23,11 +23,11 @@ module ring(size, h=1){
 }
 
 module round_logo(size,){
-    text = ["m", "-", "B", "I", "T", "B", "E", "A", "M"];
+    text = ["B", "i", "t ", "B ", "e ", "a ", "m"];
     fsize = size < 10 ? size/3 : 3;
 
     for (i = [0:len(text)])
-        rotate([0, 0, -50/len(text)*i])
+        rotate([0, 0, -28/len(text)*i+10])
         translate([unit*size/2-unit/3.5, 0, 0])
         linear_extrude(1, center=true, convexity=10)
             rotate([0, 0, 270])
@@ -174,4 +174,5 @@ module large_wheel(size, h=2, logo=true){
     }
 }
 
-large_wheel(7);
+//large_wheel(7);
+wheel(7);

@@ -10,7 +10,7 @@ translate([0, 0, unit*0.5])
 color("red")
 difference(){
     union(){
-        cube([3*unit, 3*unit, unit], center=true);
+        ecube([3*unit, 3*unit, unit], center=true);
         translate([-unit*2, unit, 0])
             cube_arm(5, skip_side=[1,2,3], skip=[1,2,3]);
         translate([-unit*2, -unit, 0])
