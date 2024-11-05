@@ -18,7 +18,7 @@ parts.lst: $(DAT)
 stl/%.stl: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@echo "$< -> $@"
 	@[ -d stl ] || mkdir stl
-	@openscad -o $@ $<
+	@openscad -q -o $@ $<
 
 catalog.db: catalog.sql $(SQL)
 	@echo "$< -> $@"
@@ -81,11 +81,11 @@ png/%.png: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@#convert $@ -transparent '#ffffe5' -scale 50% -colorspace gray -fill '#80a0ff' -tint 70 $@
 	@convert $@ -transparent '#ffffe5' -scale 50% $@
 
-release: m-bitbeam-stl-$(VERSION).zip \
-	m-bitbeam-parts-$(VERSION).zip \
-	m-bitbeam-catalog-$(VERSION).zip
+release: bitbeam-stl-$(VERSION).zip \
+	bitbeam-parts-$(VERSION).zip \
+	bitbeam-catalog-$(VERSION).zip
 
-m-bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
+bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
 	zip $@ \
 		stl/bb-*.stl \
 		stl/washer-*.stl \
@@ -96,31 +96,31 @@ m-bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
 		stl/tetris-box.stl \
 		LICENSE.md AUTHORS
 
-m-bitbeam-parts-$(VERSION).zip: parts.lst LICENSE.md AUTHORS
+bitbeam-parts-$(VERSION).zip: parts.lst LICENSE.md AUTHORS
 	zip $@ parts/*.dat parts.lst LICENSE.md AUTHORS
 
-m-bitbeam-catalog-$(VERSION).zip: parts.lst $(PNG) LICENSE.md AUTHORS
+bitbeam-catalog-$(VERSION).zip: parts.lst $(PNG) LICENSE.md AUTHORS
 	zip $@ png/*.png catalog.db LICENSE.md AUTHORS
 
 docker-build:
 	docker build \
-		-t ondratu/m-bitbeam .
+		-t ondratu/bitbeam .
 	docker run \
 		--rm \
 		-w "$(CURDIR)" \
 		-v "$(CURDIR):$(CURDIR)" \
-		ondratu/m-bitbeam
+		ondratu/bitbeam
 
 docker-console:
 	docker build \
-		-t ondratu/m-bitbeam .
+		-t ondratu/bitbeam .
 	docker run \
 		-ti \
 		--rm \
 		-w "$(CURDIR)" \
 		-v "$(CURDIR):$(CURDIR)" \
 		--entrypoint '' \
-		ondratu/m-bitbeam \
+		ondratu/bitbeam \
 		bash
 
 clean-dat:
@@ -130,4 +130,4 @@ clean-dat:
 clean: clean-dat
 	rm -rf stl png
 	rm -f *.zip
-	docker rmi -f ondratu/m-bitbeam || true
+	docker rmi -f ondratu/bitbeam || true

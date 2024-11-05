@@ -18,21 +18,21 @@ jobs:
         with:
           submodules: true
       - name: Build the Docker image
-        run: docker build . --file Dockerfile -t ondratu/m-bitbeam
+        run: docker build . --file Dockerfile -t ondratu/bitbeam
       - name: Run build process in Docker
         run: docker run --rm -w "$GITHUB_WORKSPACE"
-             -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" ondratu/m-bitbeam
+             -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" ondratu/bitbeam
       - name: Create release files
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         run: docker run --rm -e VERSION=${GITHUB_REF##*/} -w "$GITHUB_WORKSPACE"
              -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE"
              --entrypoint ''
-              ondratu/m-bitbeam make release
+              ondratu/bitbeam make release
       - name: Release assets
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            m-bitbeam-stl-${GITHUB_REF##*/}.zip
-            m-bitbeam-parts-${GITHUB_REF##*/}.zip
-            m-bitbeam-catalog-${GITHUB_REF##*/}.zip
+            bitbeam-stl-${GITHUB_REF##*/}.zip
+            bitbeam-parts-${GITHUB_REF##*/}.zip
+            bitbeam-catalog-${GITHUB_REF##*/}.zip
