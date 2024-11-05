@@ -81,6 +81,11 @@ png/%.png: scad/%.scad scad/bitbeam-lib/bitbeam-lib.scad
 	@#convert $@ -transparent '#ffffe5' -scale 50% -colorspace gray -fill '#80a0ff' -tint 70 $@
 	@convert $@ -transparent '#ffffe5' -scale 50% $@
 
+favicon.png: favicon.scad
+	@echo "$< -> $@"
+	@openscad $< -q --projection=o --autocenter --imgsize 1024,1024 --camera 23.7,-23.7,12,0,0,0 -o $@
+	@convert $@ -transparent '#ffffe5' -scale 50% $@
+
 release: m-bitbeam-stl-$(VERSION).zip \
 	m-bitbeam-parts-$(VERSION).zip \
 	m-bitbeam-catalog-$(VERSION).zip
