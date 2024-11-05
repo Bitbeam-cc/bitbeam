@@ -68,6 +68,7 @@ parts/%.dat: stl/%.stl
 		[ -n "$$NAME" ] || NAME=$* && \
 		[ -n "$$COLOR" ] || COLOR=16 && \
 		stl2dat $< -ldraw -swapyz -m 0 0 0 2.5 0 0 0 -2.5 0 0 0 2.5 -c1 $$COLOR -c2 $$COLOR -c3 $$COLOR -out .tmp.$*.dat > /dev/null && \
+		test -f .tmp.$*.dat && \
 		sed "s/{name}/$$NAME/; s/{file}/parts\/$*.dat/; s/{category}/$$CATEGORY/" header.dat > $@ \
 	)
 	@tail -n +4 .tmp.$*.dat >> $@
@@ -123,11 +124,15 @@ docker-console:
 		ondratu/bitbeam \
 		bash
 
+clean-sql:
+	rm -f $(SQL)
+	rm -f catalog.db
+
 clean-dat:
 	rm -f $(DAT)
-	rm -f parts.lst catalog.db
+	rm -f parts.lst
 
-clean: clean-dat
+clean: clean-dat clean-sql
 	rm -rf stl png
 	rm -f *.zip
 	docker rmi -f ondratu/bitbeam || true
