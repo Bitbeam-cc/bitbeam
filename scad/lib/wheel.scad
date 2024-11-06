@@ -36,13 +36,13 @@ module round_logo(size,){
 }
 
 module wheel(size, h=1, logo=true){
-    render(convexity = 7)
+    render(convexity = 1)
     translate([0, 0, unit*0.5])
     difference(){
         union(){
             translate([0, 0, unit*-0.5])
                 profile(size, h);
-            
+
             cylinder(r=unit+0.1, h=unit, center=true, $fn=40);
 
             for (i = [0:3]){
@@ -100,7 +100,7 @@ module wheel(size, h=1, logo=true){
 }
 
 module large_wheel(size, h=2, logo=true){
-    render(convexity = 7)
+    render(convexity = 1)
     translate([0, 0, unit*0.5])
     difference(){
         union(){

@@ -16,6 +16,7 @@ difference(){
 
         translate([-unit, 0, unit])
         rotate([90,0,0])
+            render(convexity = 2)
             linear_extrude(height=unit, center=true)
             for (i=[0:23])
                 translate([unit+i*3-2.5, -unit*0.5, 0])
