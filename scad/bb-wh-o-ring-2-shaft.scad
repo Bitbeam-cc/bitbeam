@@ -1,5 +1,5 @@
-// NAME: Wheel 2 Shaft
-// CATEGORY: O-Ring Wheel 2 Shaft
+// NAME: O-Ring Wheel 2 Shaft
+// CATEGORY: Wheel
 // LDRAW: 8
 
 include <bitbeam-lib/bitbeam-lib.scad>
@@ -19,7 +19,7 @@ module wheel(size, h=1){
 
         translate([0, 0, -0.25]){
             shaft_hole(1-0.5/unit);
-            
+
             rotate([0, 90, 90])
                 cylinder(d=2.8, h=size*unit+0.2, center=true);
         }
@@ -29,7 +29,7 @@ module wheel(size, h=1){
 color("gray")
 difference(){
     wheel(2);
-    
+
     for(i=[-1, 0, 1])
     translate([0,0,unit*0.5-i*2.5-0.25])
         scale([1.02, 1.02, 1])
