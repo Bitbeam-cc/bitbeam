@@ -1,81 +1,80 @@
-# m-BITBEAM
+# BitBeam
 
-This is source repository of m-BITBEAM parts. It is based on ``bitbeam-lib``
-openscad library, which is append as sub-module under the ``scad`` directory.
+This is the source repository of BitBeam parts. It is based on the `bitbeam-lib` OpenSCAD library, which is append as sub-module under the ``scad`` directory.
 
-Parts must be shifted to right position, to good positioning in LDRAW type
-software.
+Parts are aligned and rotated so that `.dat` files for LDraw software are generated correctly.
 
-## Parts naming
+All parts are available in the BitBeam [catalog](https://catalog.bitbeam.cc).
 
-There is simple as could be naming key for files and parts naming. This could
-help you to understand what kind of file, resp. part is it.
+## Parts Naming
+
+There is a simple naming key for files and parts. This can be helpful to understand what kind of file or part it is.
 
 ```
-bb-drv-mbkitronic-th
-                   ^---- subtype if is needed
-          ^------------- additional values of part
-     ^------------------ type of part
+bb-gr-int-32-th
+                   ^---- subtype if needed
+           ^------------ size of part
+       ^---------------- additional values of part
+   ^-------------------- type of part
  ^---------------------- main group or category of part
 ```
-### group
-There are some main groups, the base group is **bb**, which means bit beam, so
-this is printed bitbeam parts. With **ws** group, only they are in STL release
-file.
-  * **bb** - bit beam
-  * **co** - complete part - typical bit beams with some other parts like
-    sensor or special wheel supports.
-  * **nut**, **ws**, **sc** - nut, washer or screw
-  * **sen** - that is sensor
-  * **pin** - plastic pin
-  * **shaft**, **t-shaft** - shaft
 
-### type
-Type of part, that could tell you, what kind of beam, sensor or driver it is.
-  * **a** - L shape with defined angle
-  * **b** - Beam
-  * **bd** - board (Arduino, OctopusLAB, etc.)
-  * **gr** - Gear
-  * **h**, **o**, **d** - Beam frame with specific shape
-  * **t**, **x**, **u** - Beam with the specific shape, which looks like T,
-    X(+) and U
-  * **sen** - Box for sensor, driver or other separate electric part
-  * **wh**, **pivot** - Wheel and special stabilization ball.
-  * **tr** - piece of track chain
+### Group
 
-### subtype
-Some part have defined sub-type.
-  * **sm** - Smooth, that means version without too much holes.
-  * **th** - Thin size, that means height of Beam is one half of unit.
+There are some main groups. The base group is **bb**, which means **b**it**b**eam, so this is printed BitBeam parts.
 
-### value
-Value is short as possible which represent specific of part. That means number
-of each beams - size, type of sensor etc. Examples:
-  * ``bb-b-20x1`` - Bit Beam 20x1
-  * ``bb-a90-3x4`` - Bit Beam L type 3 for one arm and 4 for second with 90
-    degrees angle.
-  * ``bb-sen-rwc`` - Bit Beam box for rcw sensor
-  * ``drv-mbkitronic`` - electronic part Motor Driver from Kitronic for
-    BBC Micro:bit.
-  * ``bb-drv-mbkitronic`` - bit beam box for motor driver
-  * ``sc-M4x20`` - M4 screw 20mm length
+- **bb** - bit beam
+- **co** - complete part (typical beams with some other parts like sensors or special wheel supports)
+- **nut**, **washer**, **sc** - nut, washer, or screw
+- **sen** - sensor
+- **pin** - plastic pin
+- **shaft**, **t-shaft** - shaft
+
+### Type
+
+The type of part can tell you what kind of beam, sensor, or driver it is.
+
+- **a** - L shape with a defined angle
+- **b** - Beam
+- **bd** - board (Arduino, OctopusLAB, etc.)
+- **gr** - Gear
+- **h**, **o**, **d** - Beam frame with a specific shape
+- **t**, **x**, **u** - Beam with a specific shape, resembling T, X(+), and U
+- **plate** - Plate of defined size, thin or smooth
+- **wh**, **pivot** - Wheel and special stabilization ball
+- **tr** - piece of track chain
+
+### Subtype
+
+Some parts have defined sub-types.
+
+- **sm** - Smooth, meaning a version without too many holes
+- **th** - Thin size, meaning the height of the beam is one half of a unit
+
+### Value
+
+The value is as short as possible and represents the specifics of the part, such a means number of each beams - size, type of sensor etc. Examples:
+
+- `bb-b-20x1` - Beam 20x1
+- `bb-a90-3x4` - Beam L type 3 for one arm and 4 for the second with a 90-degrees angle.
+- `bb-bd-oedu` - Beam for OctopusLab EDU Board
+- `sc-M4x20` - M4 screw, 20 mm length
+- `pin-2_5` - Pin of size 2.5 units, which means 20 mm (one unit is 8 mm)
 
 ## Releases
 
-Avery tagged commit is released by Travis, and two "binary" files are
-created:
+Every tagged commit is released, and two archive files are created:
 
-  * ``m-bitbeam-stl-X.Y.Z.zip`` which is printed STL files.
-  * ``m-bitbeam-parts-X.Y.Z.zip`` which is parts library for LDRAW type
+- `bitbeam-stl-YYYY.MM.zip` - which contains printed STL files
+- `bitbeam-parts-YYYY.MM.zip` - which is contains parts library for LDraw
     software.
 
 ## Authors
 
-This work is created or based or more authors. So all parts is tagged as
-work of Collective Authors, they are in ``AUTHORS`` file.
+This work is created by or based on the work of multiple authors. All parts are tagged as work of Collective Authors, they are in ``AUTHORS`` file.
 
 ## License
 
-All files in this repository is public under the Creative Commons
+All files in this repository are public under the Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 license. See ``LICENSE.md`` file
 for more details.
