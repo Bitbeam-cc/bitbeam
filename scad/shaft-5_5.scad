@@ -1,9 +1,9 @@
 // NAME: Shaft 5.5
-// LDRAW: 0
+// LDRAW: 379
 // CATEGORY: Support
 
 include <bitbeam-lib/bitbeam-lib.scad>
 include <lib/shafts.scad>
 
-color("#404040")
+color("SlateGray")
     shaft(5.5);

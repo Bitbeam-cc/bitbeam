@@ -10,7 +10,7 @@ module plus_shaft(h){
     cube([2, 4.9, unit*h], center=true);
 }
 
-//color("#404040")
+color("SlateGray")
 difference(){
     union(){
         translate([0, 0, -unit*0.5])

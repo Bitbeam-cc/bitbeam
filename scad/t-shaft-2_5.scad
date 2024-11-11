@@ -1,9 +1,9 @@
 // NAME: T-Shaft 2.5
-// LDRAW: 0
+// LDRAW: 379
 // CATEGORY: Support
 
 include <bitbeam-lib/bitbeam-lib.scad>
 include <lib/shafts.scad>
 
-color("#404040")
+color("SlateGray")
     t_shaft(2.5);
