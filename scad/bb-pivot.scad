@@ -1,6 +1,6 @@
 // NAME: Ping-Pong Pivot
 // CATEGORY: Wheel
-// LDRAW: 4
+// LDRAW: 8
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -32,5 +32,5 @@ module bb_pivot(){
 }
 
 translate([4, 4, 4])
-    color("red")
+    color("gray")
     bb_pivot();

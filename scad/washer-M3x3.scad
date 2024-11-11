@@ -4,4 +4,5 @@
 
 include <lib/screw_nuts.scad>
 
-washer_m3(3);
+color("silver")
+    washer_m3(3);

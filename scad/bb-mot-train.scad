@@ -30,20 +30,21 @@ module gear_motor_holder() {
     }
 }
 
-!difference(){
+!color("red")
+difference(){
     union(){
         translate([0, -4, 2])
             ecube([unit*3, 24, 12], true);
-        
+
         for (x = [-1, 1]){
             translate([x* -unit*1.25, 0, 2])
                 ecube([unit*0.5, unit*6, 12], true);
         }
     }
-    
+
     translate([0, -8, 0])
         ecube([12.2, 28, 10], true);
-    
+
     translate([0, 15-8, 0])
         rotate([90, 0, 0])
         cylinder(d=4.2, h=3, center=true);
@@ -51,7 +52,7 @@ module gear_motor_holder() {
         translate([i*4.5, 15-8, 0])
         rotate([90, 0, 0])
             cylinder(d=2, h=3, center=true);
-    
+
     translate([0, 0, 6])
         rotate([0, 0, 90])
         shaft_hole(0.5);
@@ -59,7 +60,7 @@ module gear_motor_holder() {
         translate([0, y*unit*2.5, 0])
         rotate([0, 90, 0])
             cylinder(d=hole, h=unit*3.1, center=true);
-    
+
 }
 
 // motor()
