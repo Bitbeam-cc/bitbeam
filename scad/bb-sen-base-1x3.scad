@@ -1,5 +1,4 @@
 // NAME: Sensor base 1x3
-// CATEGORY: Electric
 // LDRAW: 1
 
 include <bitbeam-lib/bitbeam-lib.scad>

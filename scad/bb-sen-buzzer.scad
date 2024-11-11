@@ -13,7 +13,8 @@ module sector(){
             square([1.6, unit], true);
 }
 
-color("orange")
+translate([0, unit*0.5, unit*0.5])
+color("YellowGreen")
     translate([-unit, 0, 0]){
         translate([unit, 17.85, 0])
         sector();
