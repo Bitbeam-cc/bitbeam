@@ -5,7 +5,7 @@
 include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/holes.scad>
 
-color("#404040")
+module pin1()
 difference(){
     union(){
         cylinder(d=4.6, h=unit, center=true);
@@ -31,3 +31,6 @@ difference(){
         translate([0, 0, unit*0.5-edge])
         cap();
 }
+
+color("#404040")
+pin1();
