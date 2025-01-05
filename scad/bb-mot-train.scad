@@ -64,7 +64,7 @@ difference(){
 }
 
 // motor()
-use <bb-gr-bevel-12-3x2_5.scad>
+use <gr-bevel-12-3x2_5.scad>
 *translate([0, -8, 0])
 {
     color("silver"){

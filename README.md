@@ -24,6 +24,7 @@ bb-gr-int-32-th
 There are some main groups. The base group is **bb**, which means **b**it**b**eam, so this is printed BitBeam parts.
 
 - **bb** - bit beam
+- **gr** - gear
 - **co** - complete part (typical beams with some other parts like sensors or special wheel supports)
 - **nut**, **washer**, **sc** - nut, washer, or screw
 - **sen** - sensor
@@ -35,13 +36,12 @@ There are some main groups. The base group is **bb**, which means **b**it**b**ea
 The type of part can tell you what kind of beam, sensor, or driver it is.
 
 - **a** - L shape with a defined angle
-- **b** - Beam
+- **b** - beam
 - **bd** - board (Arduino, OctopusLAB, etc.)
-- **gr** - Gear
-- **h**, **o**, **d** - Beam frame with a specific shape
-- **t**, **x**, **u** - Beam with a specific shape, resembling T, X(+), and U
-- **plate** - Plate of defined size, thin or smooth
-- **wh**, **pivot** - Wheel and special stabilization ball
+- **h**, **o**, **d** - beam frame with a specific shape
+- **t**, **x**, **u** - beam with a specific shape, resembling T, X(+), and U
+- **plate** - plate of defined size, thin or smooth
+- **wh**, **pivot** - wheel and special stabilization ball
 - **tr** - piece of track chain
 
 ### Subtype
@@ -50,6 +50,9 @@ Some parts have defined sub-types.
 
 - **sm** - Smooth, meaning a version without too many holes
 - **th** - Thin size, meaning the height of the beam is one half of a unit
+- **shaft** - With shaft or shaft hole
+- **plus** - With plus shaft or plus shaft hole
+
 
 ### Value
 

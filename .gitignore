@@ -1,5 +1,6 @@
 parts.lst
 parts/bb-*
+parts/gr-*
 parts/sc-*
 parts/nut-*
 parts/washer-*
