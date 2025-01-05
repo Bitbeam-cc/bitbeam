@@ -34,6 +34,10 @@ module gear_20() {
 
         translate([0, 0, unit*((unit-0.2)/unit)*0.5])
             plus_hole((unit-0.2)/unit);
+
+        for (y = [-1, 1])
+            translate([-unit*0.5, y*unit*0.5, unit*0.5])
+            holes(2);
     }
 }
 

@@ -34,6 +34,11 @@ module gear_24() {
 
         translate([0, 0, unit*((unit-0.2)/unit)*0.5])
             shaft_hole((unit-0.2)/unit);
+
+        for (a = [0:90:270])
+            rotate([0, 0, a])
+            translate([-unit, 0, unit*0.5])
+            holes(1);
     }
 }
 

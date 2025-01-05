@@ -34,6 +34,11 @@ module gear_24() {
                 rotate([0, 45, 0])
                     cube(2, true);
             }
+
+       for (a = [0:90:270])
+            rotate([0, 0, a])
+            translate([-unit, 0, unit*0.25])
+            holes(1, h=0.5);
     }
 }
 
