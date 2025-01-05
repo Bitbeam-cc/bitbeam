@@ -32,7 +32,7 @@ module gear_31() {
 
         for (i=[0:90:360])
             rotate([0, 0, i])
-            translate([-unit, 0, unit*0.25])
+            translate([-unit, 0, unit*0.25-0.1])
             holes(1, 0.5-0.2/unit);
     }
 }
