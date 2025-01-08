@@ -6,4 +6,4 @@ include <bitbeam-lib/bitbeam-lib.scad>
 include <lib/shafts.scad>
 
 color("SlateGray")
-    shaft(3);
+    shaft(3, 0);

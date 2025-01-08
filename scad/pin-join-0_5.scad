@@ -15,9 +15,9 @@ module pin(){
                 cylinder(d1=4.6, d2=5, h=unit*0.33);
         }
 
-        translate([0, 4.8/2+0.5, 0])
+        translate([0, 4.8/2+0.55, 0])
             cube([5, 2, unit*1.51], center=true);
-        translate([0, -4.8/2-0.5, 0])
+        translate([0, -4.8/2-0.55, 0])
             cube([5, 2, unit*1.51], center=true);
 
         translate([0, 0, unit*0.46])
@@ -25,13 +25,13 @@ module pin(){
 
         translate([0, 0, unit*0.5-edge])
             cap();
-    }    
+    }
 }
 
 color("#404040"){
     translate([0, 0, -unit*0.25])
         ecube([unit*2, unit, unit*0.5], true);
-    
+
     for (i=[-1, 1])
         translate([unit*0.5*i, 0, 0])
         pin();
