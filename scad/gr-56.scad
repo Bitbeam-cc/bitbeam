@@ -6,6 +6,7 @@ include <bitbeam-lib/bitbeam-lib.scad>
 use <MCAD/involute_gears.scad>
 
 module gear_56() {
+    rotate([0, 0, 360/56/4])
     difference(){
         gear(number_of_teeth = 56,
             circular_pitch=false,
@@ -20,14 +21,12 @@ module gear_56() {
             circles=0,
             twist=0);
 
-        for (i = [0:360/56:360])
-            rotate([0, 0, i]){
-                translate([unit*7.5/2, 0, 0])
-                rotate([0, 45, 0])
-                    cube(2, true);
-                translate([unit*7.5/2, 0, unit-0.1])
-                rotate([0, 45, 0])
-                    cube(2, true);
+        rotate([0, 0, 360/56/2])
+        for (m = [0, 1])
+            mirror([0, 0, m])
+            rotate_extrude($fn=56){
+                translate([unit*7.25/2, m*(-unit+0.2)-0.01,])
+                polygon([[-0.45, 0], [0, 0], [0, 0.45]]);
             }
 
 
@@ -57,18 +56,15 @@ use <gr-24.scad>
 use <gr-40.scad>
 
 %translate([0, -unit*4,  0])
-    rotate([0, 0, 360/8/2])
+    rotate([0, 0, 360/8/4])
     gear_8();
 
 %translate([unit*5, 0 , 0])
-    rotate([0, 0, 360/24/2])
     gear_24();
 
 %translate([0, -unit*-6, 0])
-    rotate([0, 0, 360/40/2])
     gear_40();
 
 %translate([-unit*7,0, 0])
-    rotate([0, 0, 360/40/2])
     gear_56();
 */

@@ -1,4 +1,4 @@
-// NAME: Gear 40 Thin
+// NAME: Gear 40 Thin with Shaft hole
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -8,6 +8,7 @@ use <lib/holes.scad>
 
 module gear_40() {
     difference(){
+        rotate([0, 0, 360/40/4])
         gear(number_of_teeth = 40,
             circular_pitch=false,
             diametral_pitch=1,
@@ -21,14 +22,11 @@ module gear_40() {
             circles=0,
             twist=0);
 
-        for (i = [0:360/40:360])
-            rotate([0, 0, i]){
-                translate([unit*5.5/2, 0, 0])
-                rotate([0, 45, 0])
-                    cube(2, true);
-                translate([unit*5.5/2, 0, unit*0.5-0.2])
-                rotate([0, 45, 0])
-                    cube(2, true);
+       for (m = [0, 1])
+            mirror([0, 0, m])
+            rotate_extrude($fn=80){
+                translate([unit*5.25/2, m*(-unit*0.5+0.2)-0.01,])
+                polygon([[-0.45, 0], [0, 0], [0, 0.45]]);
             }
 
         translate([0, 0, unit*0.25-0.1])
@@ -39,6 +37,11 @@ module gear_40() {
             translate([-unit, unit*i, unit*0.5/2-0.1])
                 holes(3, h=0.5-0.2/unit, skip=skip);
        }
+
+       for (a = [0:90:270])
+            rotate([0, 0, a])
+            translate([-unit*1.75, 0, unit*0.5-0.2])
+            sphere(d=2);
     }
 }
 
@@ -58,6 +61,5 @@ use <gr-24-th.scad>
     gear_24();
 
 %translate([-unit*5, 0 , 0])
-    rotate([0, 0, 360/40/2])
     gear_40();
 */

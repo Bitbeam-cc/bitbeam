@@ -15,7 +15,7 @@ module thread(od,  // outer diameter of thread
 {
     linear_extrude(height = tl, convexity = 10, twist = -360.0*tl/p, center = false)
         translate([od/2-1.8, 0, 0])
-        circle(d=od+1.3);
+        circle(d=od+1.6);
 }
 
 module worm(length){
@@ -40,6 +40,7 @@ translate([0, 0, -unit-1.8])
         rotate([0, 0, 40])
             worm(unit*3-0.2);
         translate([0, 0, unit*1.5-0.1])
+            scale([1.03, 1.03, 1])
             shaft_hole((unit*3-0.2)/unit);
     }
 

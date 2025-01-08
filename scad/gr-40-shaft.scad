@@ -1,9 +1,10 @@
-// NAME: Gear 40
+// NAME: Gear 40 with Shaft hole
 // CATEGORY: Gear
 // LDRAW: 322
 
 include <bitbeam-lib/bitbeam-lib.scad>
 use <MCAD/involute_gears.scad>
+use <lib/holes.scad>
 
 module gear_40() {
     difference(){
@@ -15,7 +16,7 @@ module gear_40() {
             rim_thickness = unit-0.2,
             rim_width = unit*0.5,
             hub_thickness = unit-0.2,
-            hub_diameter=0,
+            hub_diameter=unit,
             bore_diameter=0,
             backlash = 0.1,
             circles=0,
@@ -28,20 +29,12 @@ module gear_40() {
                 polygon([[-0.45, 0], [0, 0], [0, 0.45]]);
             }
 
-        translate([0, 0, unit*0.5])
-            cube(unit+0.1, true);
-
-        for(z=[-1, 1])
-            hull(){
-                translate([0, 0, z*(unit/4+0.01)+unit*0.25])
-                    cube([unit+1.6, unit+1.6, 0.01], true);
-                translate([0, 0, z*(unit/4-0.8)+unit*0.25])
-                    cube([unit+0.1, unit+0.1, 0.01], true);
-            }
+        translate([0, 0, unit*((unit-0.2)/unit)*0.5])
+            shaft_hole((unit-0.2)/unit);
 
         for (i = [-1:1]){
             translate([-unit, unit*i, unit*0.5/2])
-                holes(3, h=0.5);
+                holes(3, h=0.5, skip=(i == 0) ? [1]: []);
        }
     }
 }
