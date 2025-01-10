@@ -1,3 +1,5 @@
+include <../bitbeam-lib/bitbeam-lib.scad>
+
 $fn=25;
 
 module screw_m3(h=20, button=false){
@@ -48,14 +50,21 @@ module nut_m4(){
 
 module washer_m3(h){
     difference(){
-        cylinder(d=8, h=h, center=true);
+        ecylinder(d=8, h=h, center=true);
         cylinder(d=3.4, h=h+0.1, center=true);
+    }
+}
+
+module washer_m4(h){
+    difference(){
+        ecylinder(d=8, h=h, center=true);
+        cylinder(d=4.4, h=h+0.1, center=true);
     }
 }
 
 module washer_m5(h){
     difference(){
-        cylinder(d=8, h=h, center=true);
+        ecylinder(d=8, h=h, center=true);
         cylinder(d=5.4, h=h+0.1, center=true);
     }
 }
