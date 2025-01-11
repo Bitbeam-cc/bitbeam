@@ -3,6 +3,7 @@
 // LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
+use <drv-mbkitronic.scad>
 
 // same values from drv-mbkitronic.scad
 mdbw = 67.4;
@@ -42,3 +43,6 @@ module bb_drv_mbkitronic(){
 translate([4-5*unit, 4-5*unit, 4])
     color("YellowGreen")
     bb_drv_mbkitronic();
+
+translate([0, 0, 4])
+    %drv_mbkitronic();
