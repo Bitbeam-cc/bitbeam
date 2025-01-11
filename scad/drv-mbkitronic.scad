@@ -9,9 +9,9 @@ mdbh = 62;
 // kitronic motor driver board http://www.kitronik.co.uk/5620 for micro:bit
 
 module drv_mbkitronic(){
+    translate([-unit/2+(unit*10-mdbw)/2+4-5*unit, unit/2+(unit*8-mdbh)/2+4-5*unit, 0])
     difference(){
-        color("green")
-            cube([mdbw, mdbh, 1.6]);
+         cube([mdbw, mdbh, 1.6]);
 
         for (y=[0, 1]){
             for (x=[0, 1]){
@@ -26,11 +26,8 @@ module drv_mbkitronic(){
         }
     }
 
-    translate([4, 42, 0.01])
-        color("black")
+    translate([(unit*10-mdbw)/2+4-5*unit, unit/2+(unit*8-mdbh)/2+4-5*unit+42, 0])
         cube([mdbw-8, 10, 16]);
 }
 
-
-translate([-unit/2+(unit*10-mdbw)/2+4-5*unit, unit/2+(unit*8-mdbh)/2+4-5*unit, 4])
-    drv_mbkitronic();
+drv_mbkitronic();
