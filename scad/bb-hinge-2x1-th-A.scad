@@ -1,4 +1,5 @@
 // NAME: Hinge Beam 2 x 1 Thin A
+// CATEGORY: Special
 // LDRAW: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
@@ -14,7 +15,7 @@ module hinge(){
             translate([-unit*0.5, -unit-0.35, 0])
                 ecube([unit-0.2, unit, unit*0.5]);
         }
-    
+
         translate([-0.1, -unit, unit*0.5])
             rotate([0, 90, 0])
             holes(1, h=(unit-0.2)/unit);

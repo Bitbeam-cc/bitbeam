@@ -1,4 +1,5 @@
 // NAME: Hinge Beam 2 x 1 Thin B
+// CATEGORY: Special
 // LDRAW: 508
 
 include <bitbeam-lib/bitbeam-lib.scad>
