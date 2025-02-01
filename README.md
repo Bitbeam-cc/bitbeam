@@ -1,7 +1,7 @@
 # BitBeam
 
 This is the source repository of BitBeam parts. It is based on the `bitbeam-lib` OpenSCAD library, which is append as sub-module under the ``scad`` directory.
- 
+
 Parts are aligned and rotated so that `.dat` files for LDraw software are generated correctly.
 
 All parts are available in the BitBeam [catalog](https://catalog.bitbeam.cc).

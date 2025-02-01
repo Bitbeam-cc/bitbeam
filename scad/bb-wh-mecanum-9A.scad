@@ -48,7 +48,7 @@ module m_wheel(text){
 
             }
         }
-        
+
         rotate([0, 0, 0])
             translate([0, 0, 0])
             mirror([1, 1, 0])
@@ -58,7 +58,7 @@ module m_wheel(text){
             translate([0, 0, 0])
             mirror([1, 1, 0])
             round_text(5);
-        
+
         rotate([0, 0, 90+45])
             translate([0, 0, 0])
             mirror([1, 1, 0])
@@ -67,7 +67,7 @@ module m_wheel(text){
             translate([0, 0, 0])
             mirror([1, 1, 0])
             round_text(5, text);
-        
+
         for (i = [0:3]){
             rotate([0, 0, i*90])
                 translate([unit, 0, unit*0.5])

@@ -9,7 +9,7 @@ module battery_AA(center=false){
     translate([0, 0, 0.5 - (center ? 50.5/2 : 0)]){
         //color("PaleGreen")
         cylinder(d=14.5, h=48.5);
-    
+
         // plus
         translate([0, 0, 48.5])
             //color("silver")
@@ -18,7 +18,7 @@ module battery_AA(center=false){
         translate([0, 0, -0.5])
             //color("silver")
             cylinder(d=10, h=0.6);
-    }    
+    }
 }
 
 module unipolar_contact(){
@@ -58,17 +58,17 @@ difference(){
     for(y = [-1, 1])
         translate([-unit*3.5, y*unit*4.5, 0])
         holes(8);
-    
+
     translate([0, 0, 30/2-unit/2+4])
         rotate([0, 90, 0])
         cylinder(d=30, h=unit*8+0.1, center=true);
-    
-    
+
+
     translate([0, 0, unit/2+1]){
         rotate([90, 0, 0])
         cylinder(d=14.8, h=53, center=true);
     }
-    
+
     for (i = [-1,1]){
         translate([0, 56/2*i, 15/2-unit/2+1])
             rotate([90, 0, (i < 0 ? 180: 0)])

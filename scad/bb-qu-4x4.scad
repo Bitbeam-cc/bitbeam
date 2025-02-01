@@ -13,27 +13,27 @@ difference(){
             [0, 0], [unit*4-0.5, 0], [unit*4,0.5],
             [unit*4, unit-0.5], [unit*4-0.5, unit], [0, unit]
         ]);
-    
+
     for (i=[1:2])
         translate([unit*i-unit*0.5, unit*(2-i/2-0.5), 0])
         {
             cube([unit+0.01, unit*(3-i)+0.01  , unit+0.01], true);
-            for (z=[-1,1])           
+            for (z=[-1,1])
                 translate([0, unit*(3-i)/2, z*unit*0.5])
                     rotate([45, 0, 0])
                     cube([unit, edge, edge], true);
-               
+
             for (z=[-1,1])
                 translate([unit*0.5, 0, z*unit*0.5])
                     rotate([0, 45, 0])
-                    cube([edge, unit*(3-i), edge], true);   
+                    cube([edge, unit*(3-i), edge], true);
         }
 
     for(z=[-1, 1]){
         translate([unit*3, 0, z*unit*0.5])
             rotate([45, 0, 0])
             cube([unit*2, edge, edge], true);
-        
+
         translate([0, unit*3, z*unit*0.5])
             rotate([0, 45, 0])
             cube([edge, unit*2, edge], true);

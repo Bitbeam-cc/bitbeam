@@ -8,7 +8,7 @@ translate([-3*unit, -1*unit, unit/4])
 color("green")
 difference(){
     cube_base(7, 3, fill_holes=false);
-    
+
     for(y=[0, 1])
         translate([unit, y*unit*2, 0])
         rotate([90, 0, 0])

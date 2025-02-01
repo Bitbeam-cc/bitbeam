@@ -46,7 +46,7 @@ module rail(size){
         translate([0, (32/2+unit*0.25+0.25)*i, unit*0.5])
             rail_profile(size);
     }
-     
+
     if (size > 4){
         for (i=[4:4:size-4]){
             translate([(-size/2+0.5+i)*unit, -3.5*unit, unit*0.25]){
@@ -59,14 +59,14 @@ module rail(size){
             }
         }
     }
-    
-    difference(){        
+
+    difference(){
         for (i=[0, size-1]){
             translate([(-size/2+0.5+i)*unit, -3.5*unit, unit*0.25])
             rotate([0, 0, 90])
                 cube_arm(8, h=0.5, skip=[1,6]);
         }
-    
+
         for (r = [0, 1]){
             rotate([0, 0, r*180])
             translate([size/2*unit, -unit*1.5, unit*0.25]){
@@ -79,7 +79,7 @@ module rail(size){
             }
         }
     }
-    
+
     for (r = [0, 1]){
             rotate([0, 0, r*180]){
                 translate([(size/2+0.15)*unit, unit*1.5, unit*0.25]){
@@ -97,13 +97,13 @@ module curve(angle){
         rail_curve(48.45, angle);
         rail_curve(57.55, angle);
     }
-    
+
     for (a=[0, 1]){
         rotate([0, 0, a*45]) //11 -> 22
         translate([unit*22.5, unit*0.5-unit*a, unit*0.25])
             difference(){
                 cube_arm(8, h=0.5, skip=[1,6]);
-        
+
                 mirror([0, a, 0])
                 translate([unit*(2+3*a), -unit*0.5, 0]){
                     cube([unit/2, unit, unit/2+0.1], true);
@@ -115,7 +115,7 @@ module curve(angle){
                 }
             }
     }
-    
+
     for (a=[0, 1]){
         rotate([0, 0, a*45]){
             mirror([0, a, 0])
@@ -128,7 +128,7 @@ module curve(angle){
             }
         }
     }
-    
+
     for (a=[11.25:11.25:33.75])
         rotate([0, 0, a])
         translate([unit*22.5, -unit/2, unit*0.25]){

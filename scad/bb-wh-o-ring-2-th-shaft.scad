@@ -26,7 +26,7 @@ module wheel(size, h=0.5-0.2/unit){
 color("gray")
 difference(){
     wheel(2);
-    
+
     translate([0,0,unit*0.25-0.1])
         scale([1.01, 1.01, 1])
         o_ring_15();

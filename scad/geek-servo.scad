@@ -13,9 +13,9 @@ color("red"){
     translate([unit*-2, 0, 0])
         cube_arm(5, h=2, skip=[1, 2, 3], side_holes=false);
 
-    translate([0, -unit*0.25, 0])    
+    translate([0, -unit*0.25, 0])
         ecube([unit*3, unit*3.5, unit*2], true);
-    
+
     translate([unit*0.5, 0, 0])
         rotate([-90, 0, 0])
         cylinder(d=11, h=unit/2+11, $fn=40);

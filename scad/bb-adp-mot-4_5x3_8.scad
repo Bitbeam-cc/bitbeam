@@ -23,12 +23,12 @@ mirror([0, 0, 1])
                 ecube([unit, unit, unit], true);
         }
 
-        
+
         translate([0, 0, -unit*0.25])
             rotate([0, 0, 90])
             shaft_hole(1.5);
-        
-        
+
+
         // nuts
         for (y=[-1, 1]){
             translate([y*4, 0, 0])

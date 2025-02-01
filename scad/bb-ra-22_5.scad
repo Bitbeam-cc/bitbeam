@@ -10,13 +10,13 @@ module curve(angle){
         rail_curve(48.45, angle);
         rail_curve(57.55, angle);
     }
-    
+
     for (a=[0, 1]){
         rotate([0, 0, a*angle]) //11 -> 22
         translate([unit*22.5, unit*0.5-unit*a, unit*0.25])
             difference(){
                 cube_arm(8, h=0.5, skip=[1,6]);
-        
+
                 mirror([0, a, 0])
                 translate([unit*(2+3*a), -unit*0.5, 0]){
                     cube([unit/2, unit, unit/2+0.1], true);
@@ -28,7 +28,7 @@ module curve(angle){
                 }
             }
     }
-    
+
     for (a=[0, 1]){
         rotate([0, 0, a*angle]){
             mirror([0, a, 0])
@@ -41,7 +41,7 @@ module curve(angle){
             }
         }
     }
-    
+
     for (a=[11.25:11.25:angle-11.25])
         rotate([0, 0, a])
         translate([unit*22.5, -unit/2, unit*0.25]){

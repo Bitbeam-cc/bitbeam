@@ -16,24 +16,24 @@ difference(){
     for(y = [-1, 1])
         translate([-unit*1.5, y*unit*4.5, 0])
         holes(4);
-    
+
     translate([0, 0, 30/2-unit/2+4])
         rotate([0, 90, 0])
         cylinder(d=30, h=unit*8+0.1, center=true);
-    
+
     for (i = [1:2]){
         translate([i*15-1.5*15, 0, 15/2-unit/2+1]){
             rotate([90, 0, 0])
             cylinder(d=14.8, h=53, center=true);
         }
     }
-    
+
     for (i = [-1,1]){
         translate([15/2*i, 56/2, 15/2-unit/2+1])
             rotate([90, 0, 0])
             unipolar_contact();
     }
-    
+
     translate([0, -56/2, 15/2-unit/2+1])
             rotate([90, 0, 180])
             bipolar_contact();
