@@ -26,7 +26,7 @@ module cover() {
 }
 
 
-color("orange") {
+color("DarkOrange") {
     translate([-unit,-unit*6.5, unit/2])
         cube_arm(3, h=1, skip_side=[1]);
     translate([0,-unit*6.5,unit/4])

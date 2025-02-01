@@ -1,4 +1,4 @@
-// NAME: Rail Switch Right Angle 45°
+// NAME: Rail Cross
 // CATEGORY: Train
 // LDRAW: 19
 
@@ -14,7 +14,7 @@ module rail(){
         translate([(unit*4.125)*x, (32/2+unit*0.25+0.25)*i, unit*0.5])
             rail_profile(3.75);
     }
-     
+
     if (size > 4){
         for (i=[4:4:size-4]){
             translate([(-size/2+0.5+i)*unit, -3.5*unit, unit*0.25]){
@@ -27,14 +27,14 @@ module rail(){
             }
         }
     }
-    
-    difference(){        
+
+    difference(){
         for (i=[0, size-1]){
             translate([(-size/2+0.5+i)*unit, -3.5*unit, unit*0.25])
             rotate([0, 0, 90])
                 cube_arm(8, h=0.5, skip=[1,6]);
         }
-    
+
         for (r = [0, 1]){
             rotate([0, 0, r*180])
             translate([size/2*unit, -unit*1.5, unit*0.25]){
@@ -47,7 +47,7 @@ module rail(){
             }
         }
     }
-    
+
     for (r = [0, 1]){
             rotate([0, 0, r*180]){
                 translate([(size/2+0.15)*unit, unit*1.5, unit*0.25]){
@@ -61,14 +61,13 @@ module rail(){
 }
 
 
-//color("tan")
-
+color("tan")
 difference(){
-    union(){   
+    union(){
         rail();
         rotate([0, 0, 90])
             rail();
-        
+
         for (x=[-1, 1], y=[-1, 1])
             translate([x*(unit*2.25+0.25), y*(unit*2.25+0.25), unit*.5])
             intersection(){
@@ -76,12 +75,12 @@ difference(){
                 rotate([0, 0, 90])
                     rail_profile(0.5);
             }
-        
+
         for (a=[0, 90],  y=[-1, 1])
             rotate([0, 0, a])
             translate([0, unit*2.5*y, unit*0.25])
                 ecube([unit*8, unit, unit*0.5], true);
-    }  
+    }
 }
 
 /*

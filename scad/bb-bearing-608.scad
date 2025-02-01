@@ -7,7 +7,7 @@ include <bitbeam-lib/bitbeam-lib.scad>
 // bearing 8x22x7
 
 translate([0, 0, unit*0.5])
-color("orange")
+color("DarkOrange")
 difference(){
     union(){
         ecube([3*unit, 3*unit, unit], center=true);

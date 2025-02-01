@@ -36,6 +36,7 @@ module worm(length){
 }
 
 translate([0, 0, -unit-1.8])
+    color("SkyBlue")
     difference(){
         rotate([0, 0, 40])
             worm(unit*3-0.2);

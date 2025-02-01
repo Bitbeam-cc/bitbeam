@@ -4,7 +4,7 @@
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-color("orange")
+color("DarkOrange")
 intersection(){
     difference(){
         for (i = [-1, 1]){
