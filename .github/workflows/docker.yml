@@ -27,12 +27,14 @@ jobs:
 
       - name: Run build process in Docker
         if: startsWith(github.ref, 'refs/tags/')
-        run: docker run --rm -w "$GITHUB_WORKSPACE"
+        run: docker run --rm -e VERSION=${GITHUB_REF_NAME}
+             -w "$GITHUB_WORKSPACE"
              -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" ondratu/bitbeam
 
       - name: Create release files
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: docker run --rm -e VERSION=${GITHUB_REF_NAME} -w "$GITHUB_WORKSPACE"
+        run: docker run --rm -e VERSION=${GITHUB_REF_NAME}
+             -w "$GITHUB_WORKSPACE"
              -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE"
              --entrypoint ''
               ondratu/bitbeam make release
