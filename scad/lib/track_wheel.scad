@@ -4,15 +4,20 @@ include <../bitbeam-lib/bitbeam-lib.scad>
         circle counting
 
 size  3  (24) =>  75,398 / 6  (60°) = 12.566
-size  6  (48) => 150,796 / 12 (30°) = 12.566
-size  9  (72) => 226,195 / 18 (20°) = 12.566
-size 12  (96) => 301,593 / 24 (15°) = 12.566
-size 15 (120) => 376,991 / 30 (12°) = 12.566
-size 21 BAD ANGLE (8.571428571428571°)
-size 24 (192) => 603,186 / 48 (7.5°) = 12.566
-size 27 BAD ANGLE (6.666666666666667°)
+size  4  (32) => 100.530 / 8  (45°)
+size  5  (40) => 125.663 / 10 (36°)
+size  6  (48) => 150,796 / 12 (30°)
+size  8  (64) => 201.061 / 16 (22.5°)
+size  9  (72) => 226,195 / 18 (20°)
+size 10  (80) => 251.327 / 20 (18°)
+size 12  (96) => 301,593 / 24 (15°)
+size 15 (120) => 376,991 / 30 (12°)
+size 16 (128) =>              (11.25°)
+size 18 (144) => 452,389 / 36 (10°)
+size 20 (160) => 502.654 / 40 (9°)
+size 24 (192) => 603,186 / 48 (7.5°)
+size 25 (200) =>              (7.2°)
 size 30 (240) => 753,982 / 60 (6°) = 12.566
-
 */
 
 //$fn=40;
@@ -24,10 +29,17 @@ module track_wheel(size){
         cylinder(d=unit*(size-2), h=unit*1.1, center=true, $fn=size*10);
 
          for (i = [0:360/(size/3*6):360]){
-            rotate([0, 0, i])
+            rotate([0, 0, i]){
                 translate([unit*size/2, 0, 0])
-                cylinder(d=8.2, h=unit*1.1, center=true);
-        }
+                    cylinder(d=unit+0.2, h=unit*1.1, center=true);
+                translate([unit*size/2, unit/2, 0])
+                    rotate([0, 0, 45+12])
+                    cube([1.4, 1.4, unit], true);
+                translate([unit*size/2, -unit/2, 0])
+                    rotate([0, 0, 45-12])
+                    cube([1.4, 1.4, unit], true);
+            }
+         }
 
         for (i = [0:3]){
             rotate([0, 0, i*90])
@@ -68,7 +80,7 @@ module track_wheel(size){
                 translate([0, 0, z*(unit/2+0.01)])
                     cube([unit+1.6, unit+1.6, 0.01], true);
                 translate([0, 0, z*(unit/2-0.8)])
-                    cube([unit+0.2, unit+0.2, 0.01], true);
+                    cube([unit+0.1, unit+0.1, 0.01], true);
             }
 
         for (i = [0:3]){

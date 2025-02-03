@@ -82,6 +82,14 @@
     - Li-Ion 18650 battery
  * New Beam 2 for LED 3mm (bb-bd-led3-2)
  * New o-beams for electro boards
+ * Track chain rework (not backward compatible)
+    - new track chain grousers (bb-tr-chain-gr-1x4)
+    - new Track Wheel size 3 (bb-wh-track-3)
+ * Hubcup sizes update
+    - renamed to include size: bb-hubcup-3-plus, bb-hubcup-3-shaft
+    - new Hubcup size 4: bb-hubcup-4-plus, bb-hubcup-4-shaft
+ * Filament support parts
+    - Filament 25 mm and 30 mm
 
 ## [2025.01]
 

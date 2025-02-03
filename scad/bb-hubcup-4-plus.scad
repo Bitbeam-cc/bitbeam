@@ -1,4 +1,4 @@
-// NAME: Hubcup for Plus Shaft
+// NAME: Hubcup size 4 for Plus Shaft
 // CATEGORY: Wheel
 // KEYWORDS: Wheel
 // LDRAW: 379
@@ -17,9 +17,9 @@ color("LightSlateGray")
 difference(){
         union(){
             intersection(){
-                cylinder(d1=unit*2, d2=unit*3, h=unit*0.5, $fn=90);
+                cylinder(d1=unit*3, d2=unit*4, h=unit*0.5, $fn=90);
                 translate([0, 0, 0])
-                    ecylinder(unit*3, unit*0.5);
+                    ecylinder(unit*4, unit*0.5);
             }
             translate([0, 0, unit/2])
                 ecube([unit, unit, unit], true);
