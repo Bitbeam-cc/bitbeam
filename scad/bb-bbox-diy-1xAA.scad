@@ -24,7 +24,7 @@ module battery_AA(center=false){
 module unipolar_contact(){
     cube([14, 12.5, 1], true);
     translate([0, -5, -0.25])
-        cube([4, 10, 0.5], true);
+        cube([4.5, 10, 0.5], true);
     hull(){
         translate([0, 0, 0])
             cylinder(d=6, h=5);
@@ -37,7 +37,7 @@ module bipolar_contact(){
     cube([29.2, 12.5, 1], true);
     for (x = [0, 15]){
         translate([x-30/4, -5, -0.25])
-            cube([4, 10, 0.5], true);
+            cube([4.5, 10, 0.5], true);
         hull(){
             translate([x-30/4, 0, 0])
                 cylinder(d=6, h=5);
@@ -45,6 +45,8 @@ module bipolar_contact(){
                 cylinder(d=6, h=5);
         }
     }
+    translate([0, -5, -0.25])
+        cube([4.5, 10, 0.5], true);
 }
 
 color("YellowGreen")
@@ -52,8 +54,8 @@ translate([0, 0, unit*0.5])
 difference(){
     union(){
         ecube([unit*2, unit*10, unit], true);
-        translate([0, 0, 1.5])
-            ecube([unit*2, unit*8, unit+3], true);
+        translate([0, 0, 3])
+            ecube([unit*2, unit*8, unit+6], true);
     }
     for(y = [-1, 1])
         translate([-unit*3.5, y*unit*4.5, 0])
@@ -65,17 +67,16 @@ difference(){
 
 
     translate([0, 0, unit/2+1]){
-        rotate([90, 0, 0])
-        cylinder(d=14.8, h=53, center=true);
+        rotate([90, -90, 0])
+        hull(){
+            cylinder(d=14.8, h=53, center=true);
+            translate([5, 0, 0])
+                cylinder(d=13, h=53, center=true);
+        }
     }
 
     for (i = [-1,1]){
         translate([0, 56/2*i, 15/2-unit/2+1])
-            rotate([90, 0, (i < 0 ? 180: 0)])
-            unipolar_contact();
-    }
-    *for (i = [-1,1]){
-        translate([0, 50/2*i, 11/2-unit/2+1])
             rotate([90, 0, (i < 0 ? 180: 0)])
             unipolar_contact();
     }

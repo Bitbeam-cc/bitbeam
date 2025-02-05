@@ -10,8 +10,8 @@ translate([0, 0, unit*0.5])
 difference(){
     union(){
         ecube([unit*8, unit*10, unit], true);
-        translate([0, 0, 1.5])
-            ecube([unit*8, unit*8, unit+3], true);
+        translate([0, 0, 3])
+            ecube([unit*8, unit*8, unit+6], true);
     }
     for(y = [-1, 1])
         translate([-unit*3.5, y*unit*4.5, 0])
@@ -23,8 +23,12 @@ difference(){
 
     for (i = [0:3]){
         translate([i*15-1.5*15, 0, 15/2-unit/2+1]){
-            rotate([90, 0, 0])
-            cylinder(d=14.8, h=53, center=true);
+            rotate([90, -90, 0])
+            hull(){
+                cylinder(d=14.8, h=53, center=true);
+                translate([5, 0, 0])
+                    cylinder(d=13, h=53, center=true);
+            }
         }
     }
 
