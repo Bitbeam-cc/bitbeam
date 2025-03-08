@@ -1,4 +1,4 @@
-// NAME: Switch Box
+// NAME: Switch 13x20 Box
 // CATEGORY: Electric
 // LDRAW: 27
 

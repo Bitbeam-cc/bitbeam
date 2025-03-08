@@ -1,4 +1,4 @@
-// NAME: 12V Power Switch
+// NAME: 12V Power Switch 13x20
 // CATEGORY: Electric
 // COLOR: 0
 
