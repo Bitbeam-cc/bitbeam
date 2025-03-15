@@ -46,8 +46,8 @@ module gear_56() {
             holes(5, h=0.5-0.2/unit);
 
         for (a = [0:90:270])
-            rotate([0, 0, a])
-            translate([-unit*2.75, 0, unit*0.5-0.2])
+            rotate([0, 0, a+45])
+            translate([-unit*2.1, 0, unit*0.5-0.2])
             sphere(d=2);
     }
 }
@@ -55,13 +55,11 @@ module gear_56() {
 color("SkyBlue")
     gear_56();
 
-/*
 use <gr-8.scad>
 use <gr-24-th.scad>
 use <gr-40-th.scad>
 
 %translate([0, -unit*4,  0])
-    rotate([0, 0, 360/8/4])
     gear_8();
 
 %translate([unit*5, 0 , 0])
@@ -72,4 +70,3 @@ use <gr-40-th.scad>
 
 %translate([-unit*7,0, 0])
     gear_56();
-*/

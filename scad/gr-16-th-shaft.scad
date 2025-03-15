@@ -9,6 +9,7 @@ use <lib/holes.scad>
 
 module gear_16() {
     difference(){
+        rotate([0, 0, 360/16/4])
         gear(number_of_teeth = 16,
             circular_pitch=false,
             diametral_pitch=1,
@@ -25,23 +26,23 @@ module gear_16() {
         translate([0, 0, unit*((unit-0.2)/unit-0.5)/2])
             shaft_hole((unit-0.2)/unit-0.5);
 
-        for (i = [0:360/16:360])
-            rotate([0, 0, i]){
-                translate([unit*2.5/2, 0, 0])
-                rotate([0, 45, 0])
-                    cube(2, true);
-                translate([unit*2.5/2, 0, unit*0.5-0.2])
-                rotate([0, 45, 0])
-                    cube(2, true);
+        for (m = [0, 1])
+            mirror([0, 0, m])
+            rotate_extrude($fn=32){
+                translate([unit*2.25/2, m*(-unit*0.5+0.2)-0.01,])
+                polygon([[-0.45, 0], [0, 0], [0, 0.45]]);
             }
+
+        for (a = [0:90:270])
+            rotate([0, 0, a+45])
+            translate([-unit*0.6, 0, unit*0.5-0.2])
+            sphere(d=2);
     }
 }
 
 color("SkyBlue")
     gear_16();
 %translate([0, -unit*1.5, 0])
-    rotate([0, 0, 360/8/2])
     gear_8();
 %translate([unit*2, 0 , 0])
-    rotate([0, 0, 360/16/2])
     gear_16();

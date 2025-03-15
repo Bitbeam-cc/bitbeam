@@ -1,4 +1,4 @@
-// NAME: Gear 8 with Shaft 2
+// NAME: Gear 8 with Shaft 0.5
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -7,10 +7,15 @@ use <MCAD/involute_gears.scad>
 use <gr-8.scad>
 use <lib/shafts.scad>
 
-color("SkyBlue"){
+module gear_8_shaft(){
     gear_8();
-    translate([0, 0, unit*3/2])
-        shaft(2.9, 0);
+    translate([0, 0, unit*1.5/2])
+        shaft(1.4, 0);
 }
+
+color("SkyBlue")
+    gear_8_shaft();
 %translate([unit, 0 , 0])
+    gear_8_shaft();
+%translate([0, -unit , 0])
     gear_8();

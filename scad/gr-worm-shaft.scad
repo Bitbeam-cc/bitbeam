@@ -45,10 +45,9 @@ translate([0, 0, -unit-1.8])
             shaft_hole((unit*3-0.2)/unit);
     }
 
-translate([unit*2, unit/2, 0])
+translate([unit*2, unit/2, 0.6])
 rotate([90, 0, 0])
     %gear_24();
-translate([-unit*1, unit/2, 0])
+translate([-unit*1, unit/2, 0.6])
 rotate([90, 0, 0])
-    rotate([0, 0, 360/8/2])
     %gear_8();

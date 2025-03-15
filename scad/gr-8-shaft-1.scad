@@ -1,4 +1,4 @@
-// NAME: Gear 8 with Shaft 2
+// NAME: Gear 8 with Shaft 1
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -9,8 +9,8 @@ use <lib/shafts.scad>
 
 color("SkyBlue"){
     gear_8();
-    translate([0, 0, unit*3/2])
-        shaft(2.9, 0);
+    translate([0, 0, unit])
+        shaft(1.9, 0);
 }
 %translate([unit, 0 , 0])
     gear_8();

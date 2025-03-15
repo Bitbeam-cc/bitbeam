@@ -40,8 +40,8 @@ module gear_24() {
                     cube([unit+0.1, unit+0.1, 0.01], true);
             }
         for (a = [0:90:270])
-            rotate([0, 0, a])
-            translate([-unit, 0, unit*0.5-0.2])
+            rotate([0, 0, a+45])
+            translate([-unit*1.1, 0, unit*0.5-0.2])
             sphere(d=2);
     }
 }
@@ -49,7 +49,6 @@ module gear_24() {
 color("SkyBlue")
     gear_24();
 %translate([0, -unit*2, 0])
-    rotate([0, 0, 360/8/4])
     gear_8();
 %translate([unit*3, 0 , 0])
     gear_24();

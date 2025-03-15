@@ -38,9 +38,9 @@ module gear_40() {
                 holes(3, h=0.5-0.2/unit, skip=skip);
        }
 
-       for (a = [0:90:270])
-            rotate([0, 0, a])
-            translate([-unit*1.75, 0, unit*0.5-0.2])
+        for (a = [0:90:270])
+            rotate([0, 0, a+45])
+            translate([-unit*0.75, 0, unit*0.5-0.2])
             sphere(d=2);
     }
 }
@@ -48,18 +48,14 @@ module gear_40() {
 color("SkyBlue")
     gear_40();
 
-/*
 use <gr-8.scad>
 use <gr-24-th.scad>
 
 %translate([unit*3, 0 , 0])
-    rotate([0, 0, 360/8/2])
     gear_8();
 
 %translate([0, unit*4 , 0])
-    rotate([0, 0, 360/24/2])
     gear_24();
 
 %translate([-unit*5, 0 , 0])
     gear_40();
-*/

@@ -47,7 +47,6 @@ module gear_24() {
 color("SkyBlue")
     gear_24();
 %translate([0, -unit*2, 0])
-    rotate([0, 0, 360/8/4])
     gear_8();
 %translate([unit*3, 0 , 0])
     gear_24();
