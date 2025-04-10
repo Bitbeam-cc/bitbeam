@@ -12,6 +12,9 @@ module gear_motor_holder() {
         translate([0, 0, 20/2-5])
             ecube([12.2, 28, 20], true);
 
+        translate([0, -unit*4/2+1, unit*3/2-3.5])
+            ecube([12.2, 5, 9], true);
+
         hull(){
             translate([0, 15, 0])
                 rotate([90, 0, 0])
