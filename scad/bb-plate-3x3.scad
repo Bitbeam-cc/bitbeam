@@ -4,7 +4,7 @@
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
-translate([-unit, -1*unit, unit/4])
+translate([-unit, -1*unit, unit*0.5])
 color("green")
 difference(){
     cube_base(3, 3, fill_holes=true);
