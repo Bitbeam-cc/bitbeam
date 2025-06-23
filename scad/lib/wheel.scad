@@ -100,7 +100,7 @@ module wheel(size, h=1, logo=true){
 }
 
 module large_wheel(size, h=2, logo=true){
-    render(convexity = 1)
+    render(convexity = 5)
     translate([0, 0, unit*0.5])
     difference(){
         union(){

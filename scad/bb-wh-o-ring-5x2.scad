@@ -13,4 +13,11 @@ difference(){
     translate([0,0,2.2+i*2.8+0.2])
         scale([1.1, 1.1, 1])
         o_ring_35();
+
+    translate([0,0,2.1+4*2.8+0.2]){
+        rotate([0, 90, 90])
+            cylinder(d=2.1, h=unit*5, center=true);
+        rotate([90, 0, 90])
+            cylinder(d=2.1, h=unit*5, center=true);
+    }
 }
