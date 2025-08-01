@@ -30,6 +30,7 @@ There are some main groups. The base group is **bb**, which means **b**it**b**ea
 - **sen** - sensor
 - **pin** - plastic pin
 - **shaft**, **t-shaft** - shaft
+- **jt** - joint
 
 ### Type
 
@@ -41,8 +42,11 @@ The type of part can tell you what kind of beam, sensor, or driver it is.
 - **h**, **o**, **d** - beam frame with a specific shape
 - **t**, **x**, **u** - beam with a specific shape, resembling T, X(+), and U
 - **plate** - plate of defined size, thin or smooth
+- **tl** - tile
 - **wh**, **pivot** - wheel and special stabilization ball
 - **tr** - piece of track chain
+- **cr** - connecting rod
+- **j** - joint-to-joint part
 
 ### Subtype
 
@@ -52,7 +56,9 @@ Some parts have defined sub-types.
 - **th** - Thin size, meaning the height of the beam is one half of a unit
 - **shaft** - With shaft or shaft hole
 - **plus** - With plus shaft or plus shaft hole
-
+- **pn** - pinned, used with tiles which have pins on itself
+- **ds** - Double side, used on shafts
+- **ss** - Single side, used for jointed parts, when joint is only on one side
 
 ### Value
 
