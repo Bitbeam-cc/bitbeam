@@ -30,7 +30,8 @@ There are some main groups. The base group is **bb**, which means **b**it**b**ea
 - **sen** - sensor
 - **pin** - plastic pin
 - **shaft**, **t-shaft** - shaft
-- **jt** - joint
+- **jt** - jointed beam
+- **joint** - joint
 
 ### Type
 
