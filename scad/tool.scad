@@ -46,13 +46,13 @@ difference(){
     translate([-12, -9.5, -4])
         rotate([90,0,0])
         linear_extrude(1.1, center=true, convexity=10)
-        text("m-BITBEAM", font = "Sans", size=6,
+        text("BitBeam", font = "Sans", size=6,
               halign="center", valign="center");
 
     translate([-12, -9.5, -4])
         rotate([90,0,-3])
         linear_extrude(1.1, center=true, convexity=10)
-        text("m-BITBEAM", font = "Sans", size=6,
+        text("BitBeam", font = "Sans", size=6,
               halign="center", valign="center");
 }
 
