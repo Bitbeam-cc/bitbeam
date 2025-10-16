@@ -1,12 +1,12 @@
 // NAME: Dowel M4
+// CATEGORY: Support
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/holes.scad>
 
-translate([0, 0, unit*0.5])
-    color("SlateGray")
 
+module dowel_m4(){
     difference(){
         union(){
             cylinder(d=4.6, h=unit, center=true);
@@ -34,3 +34,9 @@ translate([0, 0, unit*0.5])
         rotate([90, 0, 0])
             cylinder(d=3.5, h=4.7, center=true);
     }
+}
+
+
+translate([0, 0, unit*0.5])
+    color("SlateGray")
+    dowel_m4();

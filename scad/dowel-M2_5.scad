@@ -1,4 +1,5 @@
 // NAME: Dowel M2.5
+// CATEGORY: Support
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>

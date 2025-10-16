@@ -23,6 +23,7 @@ parts/bearing-608.dat
 parts/tool.dat
 parts/shaft-*.dat
 parts/t-shaft-*.dat
+parts/dowel-*.dat
 stl
 sql
 png

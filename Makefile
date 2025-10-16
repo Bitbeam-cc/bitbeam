@@ -43,7 +43,7 @@ sql/%.sql: scad/%.scad
 		CATEGORY=`sed -n "s/.*CATEGORY:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		KEYWORDS=`sed -n "s/.*KEYWORDS:\s*\(.*\)\s*/\1/p" scad/$*.scad` && \
 		[ -n "$$NAME" ] || NAME=$* && \
-		(echo $* | grep -E '^bb-|^gr-|^washer-|^pin-|^shaft-|^t-shaft-|^jt-|^joint-|^tool|^tetris-box' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
+		(echo $* | grep -E '^bb-|^gr-|^washer-|^pin-|^shaft-|^t-shaft-|^dowel-|^jt-|^joint-|^tool|^tetris-box' > /dev/null) && TO_PRINT=1 || TO_PRINT=0 && \
 		echo "INSERT OR REPLACE INTO parts VALUES ('$$NAME', '$*', '$$TO_PRINT');" > $@ && \
 		[ -n "$$CATEGORY" ] || CATEGORY=Beam && \
 		for cat in `echo $$CATEGORY $$KEYWORDS`; do \
@@ -93,6 +93,7 @@ bitbeam-stl-$(VERSION).zip: $(STL) LICENSE.md AUTHORS
 		stl/washer-*.stl \
 		stl/pin-*.stl \
 		stl/shaft-*.stl \
+		stl/dowel-*.stl \
 		stl/t-shaft-*.stl \
 		stl/tool.stl \
 		stl/tetris-box.stl \
