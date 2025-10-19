@@ -1,0 +1,55 @@
+// NAME: Adapter for Stepper Motor 8x6 Shaft
+// CATEGORY: Adapter
+// KEYWORDS: Motor
+// LDRAW: 379
+
+include <bitbeam-lib/bitbeam-lib.scad>
+
+color("LightSlateGray")
+translate([0,0,unit/2])
+mirror([0,0,1])
+    difference(){
+        union(){
+            ecylinder(d=unit*2.5, h=unit, center=true);
+            rotate([0, 0, 90])
+                intersection(){
+                    translate([-unit, 0, 0])
+                        cube_arm(3, side_holes=false);
+                    translate([0, 0, -unit*0.5])
+                        ecylinder(unit*3, unit);
+                }
+            translate([0, 0, -unit/2])
+                ecube([unit, unit, unit], true);
+        }
+
+        // shaft
+        difference(){
+            translate([0, 0, -unit*0.25])
+                cylinder(d=8.1, h=unit*1.6, center=true);
+            translate([5, 0, -unit*0.25])
+                cube([4, 5, unit*1.61], center=true);
+            translate([-5, 0, -unit*0.25])
+                cube([4, 5, unit*1.61], center=true);
+        }
+
+        // nuts
+        for (y=[-1, 1]){
+            translate([y*6, 0, 0])
+                hull(){
+                    for (z=[1.5, 6]){
+                        translate([0, 0, z])
+                            rotate([0, 90, 0])
+                            cylinder(d=6.2, $fn=6, h=2.6, center=true);
+                    }
+                }
+        }
+        translate([0, 0, 1.5])
+            rotate([0, 90, 0])
+            cylinder(d=3, h=unit*2.51, center=true);
+
+
+        for (y=[-1, 1]){
+            translate([0, unit*y, 0])
+                holes(1);
+        }
+    }
