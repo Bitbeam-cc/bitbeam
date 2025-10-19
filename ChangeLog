@@ -2,10 +2,66 @@
 
 ## [dev]
 
+ * Hinge update
+ * Category fixes
+ * Build fixes
+ * Color fixes
+ * DIY AA boxes update
+ * Pinned title update
+    - rename
+    - new sizes
+    - refactoring
+ * Symetric gear update
+    - all gears have marks on one side
+ * Beams for switch
+    - refactoring 13x20
+    - new 9x15
+    - new micro-switch 5x20
+ * New plates
+    - new ramp plate type
+ * 5x3 o-ring wheel improvement
+    - hole for screw driver
+ * Tube holder beams
+    - 18 mm - best fo 18650 battery
+    - 36 mm
+    - 40 mm
+ * New parts
+    - tiles - new category
+    - dowel
+    - pin + 0.25 (2mm)
+    - Funduino IR Line Tracker Beam
+    - Pivot for 15mm ball (rename pivot to Ping-Pong pivot)
+    - u part 2x4
+ * Joints - for figures
+    - new category
+    - old joins are connecting-rods
+    - jointed beams
+    - joint pins
+
+## [2025.01]
+
  * Category fixes
  * Build fixes
  * Color fixes
  * New o-beams parts
+ * Extra gear category
+ * Worm gear
+ * Pins and Shafts update
+    - pins are 4.8mm width (height)
+    - shafts are 4.6mm width (height)
+    - new shafts and t-shafts, double side extra shafts
+    - new pin sizes
+ * Washers and ring update
+ * New parts
+    - o-beams parts
+    - some to thin connectors (bb-b-AxB-th)
+    - new H Frame parts and rename to hf
+    - new hinge part
+    - new join beams
+    - plates
+ * DIY batery box update
+    - new types of boxes
+    - AAA support
 
 ## [2024.11]
 
