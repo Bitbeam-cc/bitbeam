@@ -5,12 +5,12 @@ module join(size){
         union(){
             for (i=[0, size-1])
                 translate([i*unit, 0, 0])
-                    ecylinder(d=unit, h=unit*0.5, center=true);
+                    ecylinder(d=unit, h=unit*0.5-0.2, center=true);
 
             hull(){
                 for (i=[0, size-1])
                     translate([i*unit, 0, 0])
-                        ecylinder(d=unit*0.5, h=unit*0.5, center=true);
+                        ecylinder(d=unit*0.5, h=unit*0.5-0.2, center=true);
             }
         }
 
