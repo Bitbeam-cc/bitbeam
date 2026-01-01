@@ -37,14 +37,14 @@ module gear_20() {
             translate([-unit*0.5, y*unit*0.5, unit*0.5])
             holes(2);
 
-        for (a = [0:90:270])
+        for (a = [0, 180])
             rotate([0, 0, a])
             translate([-unit*0.8, 0, unit-0.2])
             sphere(d=2);
     }
 }
 
-color("SkyBlue")
+color("DarkOrange")
     gear_20();
 %translate([0, -unit*1.75, 0])
     gear_8();

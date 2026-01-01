@@ -11,8 +11,10 @@
     - rename
     - new sizes
     - refactoring
- * Symetric gear update
+ * Symmetric gear wheels update
     - all gears have marks on one side
+ * New special gear wheels
+ * New linear racks
  * Beams for switch
     - refactoring 13x20
     - new 9x15
@@ -22,7 +24,7 @@
  * 5x3 o-ring wheel improvement
     - hole for screw driver
  * Tube holder beams
-    - 18 mm - best fo 18650 battery
+    - 18 mm - best for 18650 battery
     - 36 mm
     - 40 mm
  * New parts
@@ -33,7 +35,7 @@
     - Pivot for 15mm ball (rename pivot to Ping-Pong pivot)
     - u part 2x4
     - angle parts
-    - pcb and byj driver beams
+    - pcb and BYJ driver beams
     - real box like part
     - some new electro o parts
     - adapters for 8 and 8x6 mm shafts
