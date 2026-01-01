@@ -40,14 +40,14 @@ module gear_20() {
                     cube([unit+0.1, unit+0.1, 0.01], true);
             }
 
-        for (a = [0:90:270])
+        for (a = [0, 180])
             rotate([0, 0, a])
             translate([-unit*0.8, 0, unit*0.5-0.2])
             sphere(d=2);
     }
 }
 
-color("SkyBlue")
+color("DarkOrange")
     gear_20();
 %translate([0, -unit*1.75, 0])
     gear_8();
