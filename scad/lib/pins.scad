@@ -13,14 +13,14 @@ module pin(size){
                 }
         }
 
-        translate([0, 4.8/2+0.55, 0])
+        translate([0, 4.8/2+0.65, 0])
             cube([5, 2.1, unit*size+0.1], center=true);
-        translate([0, -4.8/2-0.55, 0])
+        translate([0, -4.8/2-0.65, 0])
             cube([5, 2.1, unit*size+0.1], center=true);
 
         for (z=[-1, 1])
             translate([0, 0, z*unit*(size/2-0.3)])
-            cube([0.7, 3.9, unit*0.61], center=true);
+            cube([0.7, 4.1, unit*0.61], center=true);
 
         for(m=[0, 1])
             mirror([0, 0, m])
@@ -39,9 +39,9 @@ module os_pin_1(){
                 cylinder(d1=4.6, d2=5, h=unit*0.33);
         }
 
-        translate([0, 4.8/2+0.55, 0])
+        translate([0, 4.8/2+0.60, 0])
             cube([5, 2, unit*1.51], center=true);
-        translate([0, -4.8/2-0.55, 0])
+        translate([0, -4.8/2-0.60, 0])
             cube([5, 2, unit*1.51], center=true);
 
         translate([0, 0, unit*0.46])
@@ -62,9 +62,9 @@ module os_pin_1_5(){
                 cylinder(d1=4.6, d2=5, h=unit*0.33);
         }
 
-        translate([0, 4.8/2+0.55, 0])
+        translate([0, 4.8/2+0.60, 0])
             cube([5, 2, unit*1.51], center=true);
-        translate([0, -4.8/2-0.55, 0])
+        translate([0, -4.8/2-0.60, 0])
             cube([5, 2, unit*1.51], center=true);
 
         translate([0, 0, unit*0.46])
