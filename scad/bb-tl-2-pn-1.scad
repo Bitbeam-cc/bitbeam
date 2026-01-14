@@ -1,12 +1,12 @@
 // NAME: Beam Tile 2 Pinned 1
-// LDRAW: 0
+// LDRAW: 321
 // CATEGORY: Tile Support
 
 include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/pins.scad>
 
 
-color("#404040"){
+color("DodgerBlue"){
     translate([0, 0, -unit*0.25])
         ecube([unit*2, unit, unit*0.5], true);
 

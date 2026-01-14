@@ -16,9 +16,9 @@ difference(){
             cylinder(d1=5, d2=4.6, h=unit*0.5);
     }
 
-    translate([0, 4.8/2+0.55, 0])
+    translate([0, 4.8/2+0.65, 0])
         cube([5, 2.1, unit*1.51], center=true);
-    translate([0, -4.8/2-0.55, 0])
+    translate([0, -4.8/2-0.65, 0])
         cube([5, 2.1, unit*1.51], center=true);
 
     translate([0, 0, unit*0.46])
