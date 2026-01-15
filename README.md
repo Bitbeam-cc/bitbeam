@@ -71,6 +71,40 @@ The value is as short as possible and represents the specifics of the part, such
 - `sc-M4x20` - M4 screw, 20 mm length
 - `pin-2_5` - Pin of size 2.5 units, which means 20 mm (one unit is 8 mm)
 
+## Color Groups
+
+Parts in the BitBeam library use specific colors to visually distinguish different types of components. The following color groups are used:
+
+### BitBeam Parts (bb-)
+
+- **RoyalBlue** - Standard beams, angles (a), connecting rods (cr), frames (h, o, d), U-beams, and triangles
+- **DodgerBlue** - Pinned beams and pinned tiles
+- **SkyBlue** - Linear gear beams and planetary gears
+- **Green/green** - Plates, circles, and ramps
+- **YellowGreen** - Battery boxes, sensors, tubes, and switches
+- **Gray/gray** - Wheels, rings, and motors
+- **LightSlateGray** - Adapters (motor adapters, shaft adapters, rings)
+- **DarkOrange** - Bearings, hinges, traffic lights, special parts (differential, pencil, quadrilaterals)
+- **Red/red** - Motor frames and servo parts
+- **Tan** - Curved parts and ramps with specific angles
+- **#404040** (Dark gray) - Track chains
+
+### Gears (gr-)
+
+- **SkyBlue** - Most standard gears (8, 16, 24, 40, 56 teeth) and internal gears
+- **DarkOrange** - Small gears (12, 14, 20 teeth)
+
+### Shafts and Pins
+
+- **SlateGray** - Standard shafts and T-shafts
+- **#404040** (Dark gray) - Most pins and some T-shaft pins
+- **Teal** - Specific pin sizes (1.25, 2.25) and joints
+
+### Hardware
+
+- **Silver/silver** - Screws, nuts, washers, and bearings
+- **White** - Special parts (ping-pong ball)
+
 ## Releases
 
 Every tagged commit is released, and two archive files are created:
