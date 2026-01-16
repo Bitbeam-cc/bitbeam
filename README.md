@@ -77,33 +77,35 @@ Parts in the BitBeam library use specific colors to visually distinguish differe
 
 ### BitBeam Parts (bb-)
 
-- **RoyalBlue** - Standard beams, angles (a), connecting rods (cr), frames (h, o, d), U-beams, and triangles
-- **DodgerBlue** - Pinned beams and pinned tiles
-- **SkyBlue** - Linear gear beams and planetary gears
-- **Green/green** - Plates, circles, and ramps
-- **YellowGreen** - Battery boxes, sensors, tubes, and switches
-- **Gray/gray** - Wheels, rings, and motors
-- **LightSlateGray** - Adapters (motor adapters, shaft adapters, rings)
-- **DarkOrange** - Bearings, hinges, traffic lights, special parts (differential, pencil, quadrilaterals)
-- **Red/red** - Motor frames and servo parts
-- **Tan** - Curved parts and ramps with specific angles
-- **#404040** (Dark gray) - Track chains
+- **RoyalBlue** (LDraw: 1) - Standard beams
+- **DodgerBlue** (LDraw: 321) - Pinned beams
+- **SkyBlue** (LDraw: 322) - Linear gear beams and planetary gears
+- **Green** (LDraw: 2) - Plates, circles, and ramps
+- **YellowGreen** (LDraw: 27) - Electronics parts (battery boxes, sensors, tubes, and switches)
+- **Gray** (LDraw: 8) - Wheels, rings, and motors
+- **LightSlateGray** (LDraw: 379) - Adapters (motor adapters, shaft adapters, rings)
+- **DarkOrange** (LDraw: 508) - Special parts (bearings, hinges, traffic lights, differential, pencil, quadrilaterals)
+- **Red** (LDraw: 4) - Motor frames and servo parts
+- **Tan** (LDraw: 19) - Curved parts and ramps with specific angles
+- **#404040** (LDraw: 0) - Track chains (very dark gray, used instead of black for better part visibility)
 
 ### Gears (gr-)
 
-- **SkyBlue** - Most standard gears (8, 16, 24, 40, 56 teeth) and internal gears
-- **DarkOrange** - Small gears (12, 14, 20 teeth)
+- **SkyBlue** (LDraw: 322) - Standard gears (teeth count divisible by 8)
+- **DarkOrange** (LDraw: 322) - Special gears (teeth count not divisible by 8)
 
 ### Shafts and Pins
 
-- **SlateGray** - Standard shafts and T-shafts
-- **#404040** (Dark gray) - Most pins and some T-shaft pins
-- **Teal** - Specific pin sizes (1.25, 2.25) and joints
+- **SlateGray** (LDraw: 379) - Standard shafts and T-shafts
+- **#404040** (LDraw: 0) - Most pins and some T-shaft pins (very dark gray, used instead of black for better part visibility)
+- **Teal** (LDraw: 378) - Specific pin sizes (1.25, 2.25) and joints
 
 ### Hardware
 
-- **Silver/silver** - Screws, nuts, washers, and bearings
+- **Silver** (LDraw: 80) - Screws, nuts, and washers
 - **White** - Special parts (ping-pong ball)
+
+*Note: Other hardware parts and complete parts (co-) may retain their original colors when possible to match real-world appearance.*
 
 ## Releases
 
