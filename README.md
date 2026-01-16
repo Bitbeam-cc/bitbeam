@@ -86,7 +86,7 @@ Parts in the BitBeam library use specific colors to visually distinguish differe
 - **LightSlateGray** (LDraw: 379) - Adapters (motor adapters, shaft adapters, rings)
 - **DarkOrange** (LDraw: 508) - Special parts (bearings, hinges, traffic lights, differential, pencil, quadrilaterals)
 - **Red** (LDraw: 4) - Motor frames and servo parts
-- **Tan** (LDraw: 19) - Curved parts and ramps with specific angles
+- **Tan** (LDraw: 19) - Rails (for trains)
 - **#404040** (LDraw: 0) - Track chains (very dark gray, used instead of black for better part visibility)
 
 ### Gears (gr-)
