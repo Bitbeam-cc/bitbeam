@@ -14,6 +14,6 @@ color("DodgerBlue"){
         os_pin_1_5();
 
     translate([unit*0.75, 0, unit*-0.25])
-            rotate([90, 0, 90])
-                os_pin_1_5();
+        rotate([90, 0, 90])
+            os_pin_1_5();
 }
