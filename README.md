@@ -1,6 +1,6 @@
 # BitBeam
 
-This is the source repository of BitBeam parts. It is based on the `bitbeam-lib` OpenSCAD library, which is append as sub-module under the ``scad`` directory.
+This is the source repository of BitBeam parts. It is based on the `bitbeam-lib` OpenSCAD library, which is appended as a submodule under the ``scad`` directory.
 
 Parts are aligned and rotated so that `.dat` files for LDraw software are generated correctly.
 
@@ -8,11 +8,13 @@ All parts are available in the BitBeam [catalog](https://catalog.bitbeam.cc).
 
 ## Parts Naming
 
-There is a simple naming key for files and parts. This can be helpful to understand what kind of file or part it is.
+The naming convention follows a simple key: `group-type-subtype-value`
+
+This simple naming convention for files and parts helps in understanding the type of file or part.
 
 ```
-bb-gr-int-32-th
-                   ^---- subtype if needed
+bb-adp-mot-4_5x3_8-th
+                   ^----- subtype if needed
            ^------------ size of part
        ^---------------- additional values of part
    ^-------------------- type of part
@@ -21,59 +23,67 @@ bb-gr-int-32-th
 
 ### Group
 
-There are some main groups. The base group is **bb**, which means **b**it**b**eam, so this is printed BitBeam parts.
+There are some main groups. The base group is **bb**, which stands for **B**it**B**eam, indicating these are 3D-printed BitBeam parts.
 
-- **bb** - bit beam
-- **gr** - gear
-- **co** - complete part (typical beams with some other parts like sensors or special wheel supports)
-- **nut**, **washer**, **sc** - nut, washer, or screw
-- **sen** - sensor
-- **pin** - plastic pin
-- **shaft**, **t-shaft** - shaft
-- **jt** - jointed beam
-- **joint** - joint
+- **bb** - BitBeam (standard parts with holes)
+- **jt** - joint parts (parts with integrated ball holes)
+- **gr** - gears (gears, racks, and transmission parts)
+- **box** - technical boxes and frames
+- **pin, shaft, joint, sc, nut, washer** - connectors and hardware
+- **co** - complete parts (e.g., typical beams integrated with sensors or special wheel supports)
+
 
 ### Type
 
-The type of part can tell you what kind of beam, sensor, or driver it is.
+The type of part indicates the type of component, such as a beam, sensor, or driver.
 
-- **a** - L shape with a defined angle
-- **b** - beam
+- **b** - beam (standard straight part)
+- **cr** - connecting rod (rods with holes at the ends)
+- **tl** - tile (flat, half-height parts)
+- **t, x, u, a** - specific shapes (T-shape, X-shape, etc.)
+- **r** - rail
+- **j** - joint link (dumbbell joint, used within `jt` parts or as standalone `joint-X` parts)
 - **bd** - board (Arduino, OctopusLAB, etc.)
-- **h**, **o**, **d** - beam frame with a specific shape
-- **t**, **x**, **u** - beam with a specific shape, resembling T, X(+), and U
+- **h**, **o**, **d** - beam frames with specific shapes
 - **plate** - plate of defined size, thin or smooth
-- **tl** - tile
-- **wh**, **pivot** - wheel and special stabilization ball
-- **tr** - piece of track chain
-- **cr** - connecting rod
-- **j** - joint-to-joint part
+- **wh**, **pivot** - wheels and special stabilization balls
+- **tr** - track chain piece
+- **j** - joint-to-joint parts
 
 ### Subtype
 
-Some parts have defined sub-types.
+Some parts have specific subtypes.
 
-- **sm** - Smooth, meaning a version without too many holes
-- **th** - Thin size, meaning the height of the beam is one half of a unit
-- **shaft** - With shaft or shaft hole
-- **plus** - With plus shaft or plus shaft hole
-- **pn** - pinned, used with tiles which have pins on itself
-- **ds** - Double side, used on shafts
-- **ss** - Single side, used for jointed parts, when joint is only on one side
+- **th** - thin (half height)
+- **sm** - smooth (no holes on top)
+- **pn** - pinned (integrated pins)
+- **shaft** - with shaft or shaft hole
+- **plus** - with plus shaft or plus shaft hole
+- **ds** - double-sided, used on shafts
+- **ss** - single-sided, used for joint parts when the joint is only on one side
+- **s** - single (joint/pin on one side only)
+- **v / h** - vertical/horizontal orientation (for pins on tiles)
 
 ### Value
 
-The value is as short as possible and represents the specifics of the part, such a means number of each beams - size, type of sensor etc. Examples:
+The value is as short as possible and represents the specific attributes of the part, such as the number of beams, size, type of sensor, etc. Examples:
 
 - `bb-b-20x1` - Beam 20x1
-- `bb-a90-3x4` - Beam L type 3 for one arm and 4 for the second with a 90-degrees angle.
+- `bb-a90-3x4` - L-beam type with arms of length 3 and 4 at a 90-degree angle.
 - `bb-bd-oedu` - Beam for OctopusLab EDU Board
 - `sc-M4x20` - M4 screw, 20 mm length
-- `pin-2_5` - Pin of size 2.5 units, which means 20 mm (one unit is 8 mm)
+- `pin-2_5` - Pin with a size of 2.5 units, equivalent to 20 mm (one unit is 8 mm)
+- `bb-cr-5` : Connecting rod of length 5
+- `jt-b-3` : Beam of length 3 with joints on both ends
+- `jt-b-3-s` : Beam of length 3 with a joint on one end only
+- `bb-tl-pn-1x1` : 1x1 tile with an integrated vertical pin
+- `bb-tl-pnh-1x1` : 1x1 tile with an integrated horizontal pin (from the thin side)
+- `bb-gr-r-9` : Gear rack of length 9
+- `box-10x7` : Electronic box frame with size 10x7
 
 ## Color Groups
 
-Parts in the BitBeam library use specific colors to visually distinguish different types of components. The following color groups are used:
+Parts in the BitBeam library use specific colors to visually distinguish different types of components. The following color groups are used to categorize components:
 
 ### BitBeam Parts (bb-)
 
@@ -111,16 +121,16 @@ Parts in the BitBeam library use specific colors to visually distinguish differe
 
 Every tagged commit is released, and two archive files are created:
 
-- `bitbeam-stl-YYYY.MM.zip` - which contains printed STL files
-- `bitbeam-parts-YYYY.MM.zip` - which is contains parts library for LDraw
+- `bitbeam-stl-YYYY.MM.zip` - which contains 3D-printed STL files
+- `bitbeam-parts-YYYY.MM.zip` - which contains the parts library for LDraw
     software.
 
 ## Authors
 
-This work is created by or based on the work of multiple authors. All parts are tagged as work of Collective Authors, they are in ``AUTHORS`` file.
+This work is created by or based on the work of multiple authors. All parts are tagged as the work of Collective Authors, listed in the ``AUTHORS`` file.
 
 ## License
 
-All files in this repository are public under the Creative Commons
+All files in this repository are publicly available under the Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 license. See ``LICENSE.md`` file
 for more details.
