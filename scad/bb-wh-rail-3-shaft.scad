@@ -1,4 +1,4 @@
-// NAME: Rail Wheel 3 Shaft
+// NAME: Rail Wheel 3 Shaft hole
 // CATEGORY: Train Wheel
 // LDRAW: 8
 

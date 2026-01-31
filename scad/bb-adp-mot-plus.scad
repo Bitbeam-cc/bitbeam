@@ -4,6 +4,7 @@
 // LDRAW: 379
 
 include <bitbeam-lib/bitbeam-lib.scad>
+use <lib/holes.scad>
 
 module plus_shaft(h){
     cube([4.9, 2, unit*h], center=true);
@@ -28,8 +29,8 @@ mirror([0, 0, 1])
         }
 
         // shaft
-        translate([0, 0, -unit*0.25])
-            plus_shaft(unit*1.6);
+        translate([0, 0, -unit*0.25+0.02])
+            plus_hole(1.5);
 
 
         // nuts

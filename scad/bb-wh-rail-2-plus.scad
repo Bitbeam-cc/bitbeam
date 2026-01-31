@@ -1,4 +1,4 @@
-// NAME: Rail Wheel 2 Shaft hole
+// NAME: Rail Wheel 2 Plus Shaft hole
 // CATEGORY: Train Wheel
 // LDRAW: 8
 
@@ -16,7 +16,7 @@ module rwheel(size, h=1){
         }
 
 
-        shaft_hole(1);
+       plus_hole(1);
 
         rotate([0, 90, 90])
             cylinder(d=2.8, h=size*unit+0.2, center=true);

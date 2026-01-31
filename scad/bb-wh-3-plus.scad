@@ -1,4 +1,4 @@
-// NAME: Wheel 3 Shaft hole
+// NAME: Wheel 3 Plus Shaft hole
 // CATEGORY: Wheel
 // LDRAW: 8
 
@@ -15,7 +15,7 @@ module wheel(size, h=1){
             cylinder(r=unit+0.1, h=unit, center=true, $fn=40);
         }
 
-        shaft_hole(1);
+        plus_hole(1);
 
         rotate([0, 90, 90])
             cylinder(d=2.8, h=size*unit+0.2, center=true);
