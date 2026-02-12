@@ -1,4 +1,4 @@
-// NAME: Thin Adapter for Motor Plus Shaft
+// NAME: Thin for Shaft
 // CATEGORY: Adapter
 // KEYWORDS: Motor
 // LDRAW: 379
@@ -20,8 +20,10 @@ translate([0,0,unit/2])
                 }
         }
 
-        // shaft
-        plus_hole(1);
+
+        translate([0, 0, 0])
+            rotate([0, 0, 90])
+            shaft_hole(1);
 
         rotate([0, 90, 0])
             cylinder(d=2.8, h=16.1, center=true);

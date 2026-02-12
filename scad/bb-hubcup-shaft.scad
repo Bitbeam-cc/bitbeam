@@ -1,4 +1,4 @@
-// NAME: Hubcup for 4.5x3.8 Shaft
+// NAME: Hubcup for Shaft
 // CATEGORY: Wheel
 // KEYWORDS: Wheel
 // LDRAW: 379

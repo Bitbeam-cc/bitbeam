@@ -1,4 +1,4 @@
-// NAME: Thin Adapter for Motor Plus Shaft
+// NAME: Extra Adapter for Motor Plus Shaft
 // CATEGORY: Adapter
 // KEYWORDS: Motor
 // LDRAW: 379
@@ -10,7 +10,8 @@ color("LightSlateGray")
 translate([0,0,unit/2])
     difference(){
         union(){
-            ecylinder(d=unit*1.5, h=unit, center=true);
+            translate([0, 0, unit*0.25])
+                ecube([unit, unit, unit*1.5], true);
             rotate([0, 0, 90])
                 intersection(){
                     translate([-unit, 0, -unit/4])
@@ -21,18 +22,11 @@ translate([0,0,unit/2])
         }
 
         // shaft
-        plus_hole(1);
-
-        rotate([0, 90, 0])
-            cylinder(d=2.8, h=16.1, center=true);
-
+        translate([0, 0, unit*0.25])
+            plus_hole(1.5);
 
         for (y=[-1, 1]){
             translate([0, unit*y, 0])
                 cylinder(d=hole, h=unit*1.01, center=true);
-        }
-        for (y=[-1, 1]){
-            translate([0, unit*y, 0])
-                cylinder(d=unit, h=unit*0.51);
         }
     }
