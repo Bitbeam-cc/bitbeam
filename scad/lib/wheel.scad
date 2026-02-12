@@ -66,7 +66,7 @@ module wheel(size, h=1, logo=true){
             }
         }
 
-        if (logo && size > 3){
+        if (logo && size > 4){
             rotate([0, 0, -20])
                 translate([0, 0, unit/2])
                 round_logo(size);
@@ -142,7 +142,7 @@ module large_wheel(size, h=2, logo=true){
             }
         }
 
-        if (logo && size > 3){
+        if (logo && size > 4){
             rotate([0, 0, -20])
                 translate([0, 0, unit*(h-0.5)])
                 round_logo(size);
