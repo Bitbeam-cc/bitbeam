@@ -3,6 +3,7 @@
 // LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
+use <switch-13x20.scad>
 
 module bb_switch(){
     difference(){
@@ -17,3 +18,6 @@ module bb_switch(){
 translate([unit/-2, -2.5*unit, unit/2])
     color("YellowGreen")
     bb_switch();
+
+translate([0, 0, -1.5])
+    %switch();

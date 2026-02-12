@@ -3,13 +3,16 @@
 // LDRAW: 27
 
 include <bitbeam-lib/bitbeam-lib.scad>
+use <rcw-0001.scad>
+use <bb-sen-rcw-cover.scad>
 
-color("YellowGreen"){
+color("YellowGreen")
+translate([0, 0, unit*0.5]) {
     difference(){
         for(x=[-1, 1]){
             for(y=[-1, 1]){
                 translate([x*27/2, y*13.5/2, -2.3/2])
-                    cylinder(d=5, h=3, center=true);
+                    cylinder(d=4, h=3, center=true);
             }
         }
         for(x=[-1, 1]){
@@ -56,5 +59,18 @@ color("YellowGreen"){
                     rotate([90, 0, 0])
                     holes(1);
         }
+
+        for (x=[-1, 1])
+            translate([x*unit*1.25, 0, 0])
+            hull(){
+                for (y=[-1, 1])
+                    translate([0, y*(unit+3), 0])
+                    rotate([0, 90, 0])
+                    cylinder(d=3, h=4, center=true);
+            }
     }
 }
+
+%translate([0, 0, unit*0.5+1.1])
+    rwc_0001();
+%rcw_0001_cover();

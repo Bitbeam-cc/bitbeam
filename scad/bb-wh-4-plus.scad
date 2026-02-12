@@ -6,7 +6,7 @@ include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/wheel.scad>
 use <lib/holes.scad>
 
-module wheel(size, h=1, logo=true){
+module wheel(size, h=1){
     translate([0, 0, unit*0.5])
     difference(){
         union(){
@@ -32,16 +32,6 @@ module wheel(size, h=1, logo=true){
                 translate([unit, 0, 0])
                     holes(size/2.1);
             }
-        }
-
-        if (logo && size > 3){
-            rotate([0, 0, -20])
-                translate([0, 0, unit/2])
-                round_logo(size);
-
-            rotate([0, 0, 160])
-                translate([0, 0, unit/2])
-                round_logo(size);
         }
     }
 }

@@ -13,7 +13,7 @@ module switch(){
         cube([5, 12, 7], center=true);
     translate([0, 0, 7])
         rotate([10, 0, 0])
-        color([0, 0.8, 0])
+        color([1, 0, 0, 0.8])
         cube([7, 11, 3], center=true);
 }
 

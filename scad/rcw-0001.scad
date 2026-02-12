@@ -5,7 +5,6 @@
 $fn=25;
 
 module rwc_0001(){
-    color("green")
     difference(){
         cube([31, 17, 1.5], center=true);
 
@@ -18,14 +17,11 @@ module rwc_0001(){
 
     for(i=[-1, 1])
         translate([i*-18.5/2, 0, 0])
-            color("gray")
             cylinder(d=12.5, h=9);
 
     translate([0, 17/2+1.5, -2.5-0.75])
-        color("black")
         cube([10.5, 9, 5], center=true);
     translate([0, 0, -1.75])
-        color("black")
         cube([12, 10, 2], center=true);
 }
 
