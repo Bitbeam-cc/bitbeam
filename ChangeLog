@@ -50,6 +50,17 @@
  * New wheels, mainly for shafts
  * New mini tool
  * Special bb-u-2x2-tr-shaft for infinity cube
+ * New thin beams with channel
+    - bb-b-2-th-ch (1x2), bb-b-2x2-th-ch, bb-b-3x2-th-ch, bb-b-4x2-th-ch
+ * New Beam 6x2 (bb-b-6x2)
+ * New Geekservo Motor Cube 5x3x3.5 (bb-mot-geek)
+ * New Beam T Shape 2x2 (bb-t-2x2)
+ * New Screw M3x16 (sc-M3x16)
+ * Fixes
+    - Motor adapter thin for shaft: name fix
+    - Wheel 1.5 shaft: geometry adjustment
+    - Geek servo: color changed to orange, shaft height fix
+    - T-shaft: base cylinder diameter reduced
 
 ## [2025.01]
 

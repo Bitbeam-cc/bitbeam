@@ -1,4 +1,4 @@
-// NAME: Thin for Shaft
+// NAME: Motor adapter thin for shaft
 // CATEGORY: Adapter
 // KEYWORDS: Motor
 // LDRAW: 379

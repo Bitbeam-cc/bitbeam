@@ -6,9 +6,9 @@ include <bitbeam-lib/bitbeam-lib.scad>
 use <lib/holes.scad>
 
 module wheel(size, h=1){
-    translate([0, 0, unit*0.5])
+    translate([0, 0, unit*0.5-0.1])
     difference(){
-        ecylinder(d=unit*size, h=unit, center=true, $fn=40);
+        ecylinder(d=unit*size, h=unit-0.2, center=true, $fn=40);
 
         shaft_hole(1);
 

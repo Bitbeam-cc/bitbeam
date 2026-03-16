@@ -1,6 +1,6 @@
 // NAME: Geek Servo
 // CATEGORY: Motor
-// COLOR: 493
+// COLOR: 25
 
 include <bitbeam-lib/bitbeam-lib.scad>
 
@@ -9,7 +9,7 @@ module plus_shaft(h){
     cube([2, 4.9, unit*h], center=true);
 }
 
-color("red"){
+color("orange"){
     translate([unit*-2, 0, 0])
         cube_arm(5, h=2, skip=[1, 2, 3], side_holes=false);
 
@@ -22,5 +22,5 @@ color("red"){
 
     translate([unit*0.5, unit*2, 0])
         rotate([-90, 0, 0])
-        plus_shaft(2);
+        plus_shaft(1);
 }
