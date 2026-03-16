@@ -1,5 +1,5 @@
 // NAME: RCW 0001 Ultrasound Sensor
-// COLOR: 2
+// COLOR: 7
 // CATEGORY: Electric
 
 $fn=25;
@@ -25,4 +25,5 @@ module rwc_0001(){
         cube([12, 10, 2], center=true);
 }
 
+color("lightgray")
 rwc_0001();
