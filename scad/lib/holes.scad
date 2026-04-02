@@ -27,8 +27,8 @@ module shaft_hole_3x2_5(size){
 }
 
 module plus_hole(size){
-    cube([4.9, 2, unit*size+0.1], center=true);
-    cube([2, 4.9, unit*size+0.1], center=true);
+    cube([4.9, 1.9, unit*size+0.1], center=true);
+    cube([1.9, 4.9, unit*size+0.1], center=true);
 
     for (z=[-1, 1])
         translate([0, 0, z*(-size*unit-0.1)/2])

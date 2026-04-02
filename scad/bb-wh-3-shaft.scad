@@ -11,8 +11,9 @@ module wheel(size, h=1){
     difference(){
         union(){
             translate([0, 0, unit*-0.5])
-                profile(size, h);
-            cylinder(r=unit+0.1, h=unit, center=true, $fn=40);
+                profile(size, h*(8-0.2)/unit);
+            translate([0, 0, -0.1])
+            cylinder(r=unit+0.1, h=unit-0.2, center=true, $fn=40);
         }
 
         shaft_hole(1);

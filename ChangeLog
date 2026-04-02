@@ -40,6 +40,8 @@
     - real box like part
     - some new electro o parts
     - adapters for 8 and 8x6 mm shafts
+    - t-Shaft 3 No Fork
+    - beam T Shape 4x5
  * Joints - for figures
     - new category
     - old joins are connecting-rods
@@ -61,6 +63,8 @@
     - Wheel 1.5 shaft: geometry adjustment
     - Geek servo: color changed to orange, shaft height fix
     - T-shaft: base cylinder diameter reduced
+    - Fix `plus_hole()` dimensions (4.9×2 → 4.9×1.9) for tighter fit
+    - Fix wheel profile height calculation in `bb-wh-3-shaft.scad`
  * New o-beams for electro boards
 
 ## [2025.01]
