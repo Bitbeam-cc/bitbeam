@@ -32,11 +32,24 @@ module gear_200() {
             circles=0,
             twist=0);
 
-        for (i=[4.5:4.5:89])
+       for (i=[-0,45,90])
             rotate([0, 0, i])
-            translate([unit*13.5, 0, unit*0.5])
-                holes(1);
+            translate([unit*13.5, unit*-0.5, unit*0.25])
+            rotate([0, 0, 90])
+            holes(2, h=0.5);
 
+        translate([unit*12.5, unit*4.5, unit*0.25])
+            holes(1, h=0.5);
+        translate([unit*4.5, unit*12.5, unit*0.25])
+            holes(1, h=0.5);
+        translate([unit*11.5, unit*6.5, unit*0.25])
+            holes(1, h=0.5);
+        translate([unit*6.5, unit*11.5, unit*0.25])
+            holes(1, h=0.5);
+        translate([unit*10.5, unit*8.5, unit*0.25])
+            holes(1, h=0.5);
+        translate([unit*8.5, unit*10.5, unit*0.25])
+            holes(1, h=0.5);
     }
 }
 
@@ -44,19 +57,23 @@ color("SkyBlue")
     gear_200();
 
 /*
+%rotate([0, 0, 45])
+    gear_200();
+*/
+
 use <gr-8.scad>
 use <gr-24.scad>
 use <gr-40.scad>
 
-%translate([0, -unit*12,  0])
-    rotate([0, 0, 0])
+%rotate([0, 0, 45])
+translate([unit*12, 0, 0])
+    rotate([0, 0, 34])
     gear_8();
 
 %translate([unit*11, 0 , 0])
-    rotate([0, 0, 0])
+    rotate([0, 0, 11.2])
     gear_24();
 
 %translate([0, -unit*-10, 0])
-    rotate([0, 0, 0])
+    rotate([0, 0, 6.8])
     gear_40();
-*/

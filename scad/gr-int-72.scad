@@ -51,20 +51,18 @@ module gear_72() {
 color("SkyBlue")
     gear_72();
 
-/*
 use <gr-8.scad>
 use <gr-24.scad>
 use <gr-40.scad>
 
 %translate([0, -unit*4,  0])
-    rotate([0, 0, 0])
+    rotate([0, 0, 34])
     gear_8();
 
 %translate([unit*3, 0 , 0])
-    rotate([0, 0, 0])
+    rotate([0, 0, 11])
     gear_24();
 
 %translate([0, unit*2, 0])
-    rotate([0, 0, 0])
+    rotate([0, 0, 6.8])
     gear_40();
-*/

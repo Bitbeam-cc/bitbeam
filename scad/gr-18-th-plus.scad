@@ -1,4 +1,4 @@
-// NAME: Gear 12 Thin with Plus Shaft hole
+// NAME: Gear 18 Thin with Plus Shaft hole
 // CATEGORY: Gear
 // LDRAW: 508
 
@@ -6,10 +6,10 @@ include <bitbeam-lib/bitbeam-lib.scad>
 use <MCAD/involute_gears.scad>
 use <lib/holes.scad>
 
-module gear_12() {
+module gear_18() {
     difference(){
-        rotate([0, 0, 360/12/4])
-        gear(number_of_teeth = 12,
+        rotate([0, 0, 360/18/4])
+        gear(number_of_teeth = 18,
             circular_pitch=false,
             diametral_pitch=1,
             gear_thickness = unit*0.5-0.2,
@@ -28,18 +28,18 @@ module gear_12() {
         for (m = [0, 1])
             mirror([0, 0, m])
             rotate_extrude($fn=32){
-                translate([unit*1.75/2, m*(-unit*0.5+0.2)-0.01])
+                translate([unit*2.5/2, m*(-unit*0.5+0.2)-0.01])
                 polygon([[-0.45, 0], [0, 0], [0, 0.45]]);
             }
 
-        for (a = [0, 180])
+        for (a = [0:360/3:359])
             rotate([0, 0, a])
-            translate([-unit*0.45, 0, unit*0.5-0.2])
-            sphere(d=1.5);
+            translate([-unit*0.5, 0, unit*0.5-0.2])
+            sphere(d=2);
     }
 }
 
 color("DarkOrange")
-    gear_12();
-%translate([unit*1.5, 0 , 0])
-    gear_12();
+    gear_18();
+%translate([unit*2.25, 0 , 0])
+    gear_18();

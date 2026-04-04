@@ -1,4 +1,4 @@
-// NAME: Internal Gear Thin Part 408
+// NAME: Internal Gear Thin Part 416
 // CATEGORY: Gear
 // LDRAW: 322
 
@@ -14,14 +14,14 @@ module profile(size, h=1, angle=360){
         ]);
 }
 
-module gear_408() {
+module gear_416() {
     difference(){
-        profile(51, h=0.5, angle=45);
+        profile(52, h=0.5, angle=45);
 
         translate([0, 0, -0.05])
-        gear(number_of_teeth = 408,
+        gear(number_of_teeth = 416 ,
             circular_pitch=false,
-            diametral_pitch=0.998,
+            diametral_pitch=0.9995,
             gear_thickness = unit*1.1,
             rim_thickness = unit*1.1,
             rim_width = 5,
@@ -32,35 +32,39 @@ module gear_408() {
             circles=0,
             twist=0);
 
-        translate([unit*26.5, unit, unit*0.5])
-            rotate([0, 0, 90])
-            holes(2);
-
-        for (i=[2.25:2.25:44])
+        for (i=[-0:11.25/2:45])
             rotate([0, 0, i])
-            translate([unit*26.5, 0, unit*0.25])
-            holes(1, h=0.5);
-
+            translate([unit*27, unit*-0.5, unit*0.25])
+            rotate([0, 0, 90])
+            holes(2, h=0.5);
     }
 }
 
 color("SkyBlue")
-    gear_408();
+    gear_416();
 
 /*
+%rotate([0, 0, 45/52*26])
+    gear_416();
+
+use <bb-ra-45.scad>
+%rotate([0,  0, 0])
+    curve(45);
+*/
 use <gr-8.scad>
 use <gr-24.scad>
 use <gr-40.scad>
 
-%translate([0, -unit*25,  0])
-    rotate([0, 0, 0])
+%rotate([0, 0, 45/2])
+    translate([unit*25.5, 0,  0])
+    rotate([0, 0, 34])
     gear_8();
 
-%translate([unit*24, 0 , 0])
-    rotate([0, 0, 0])
+%translate([unit*24.5, 0 , 0])
+    rotate([0, 0, 11])
     gear_24();
 
-%translate([0, -unit*-23, 0])
-    rotate([0, 0, 0])
+%rotate([0, 0, -45])
+    translate([0, unit*23.5, 0])
+    rotate([0, 0, 6.8])
     gear_40();
-*/

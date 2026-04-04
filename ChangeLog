@@ -42,6 +42,13 @@
     - adapters for 8 and 8x6 mm shafts
     - t-Shaft 3 No Fork
     - beam T Shape 4x5
+    - Gear 28 and Gear 28 Thin (plus and shaft hole variants)
+    - Gear 18 (plus and shaft hole variants, thin variants)
+    - Internal Gear 200 (complete ring part)
+    - Internal Gear Part 416 and 416 Thin
+ * Internal gear part 408 replaced by 416
+    - wider rim (unit*2 instead of unit*1.5)
+    - updated hole positions on gear parts 200
  * Joints - for figures
     - new category
     - old joins are connecting-rods
@@ -65,6 +72,7 @@
     - T-shaft: base cylinder diameter reduced
     - Fix `plus_hole()` dimensions (4.9×2 → 4.9×1.9) for tighter fit
     - Fix wheel profile height calculation in `bb-wh-3-shaft.scad`
+    - Rail curves 22.5° and 45°: corrected radius and connector positions (slightly larger angle)
  * New o-beams for electro boards
 
 ## [2025.01]
