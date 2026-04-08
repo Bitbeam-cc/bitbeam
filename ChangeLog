@@ -25,7 +25,7 @@
  * 5x3 o-ring wheel improvement
     - hole for screw driver
  * Tube holder beams
-    - 18 mm - best for 18650 battery
+    - 18 mm, 3-unit and 4-unit long (best for 18650 battery)
     - 36 mm
     - 40 mm
  * New parts
@@ -74,6 +74,13 @@
     - Fix `plus_hole()` dimensions (4.9×2 → 4.9×1.9) for tighter fit
     - Fix wheel profile height calculation in `bb-wh-3-shaft.scad`
     - Rail curves 22.5° and 45°: corrected radius and connector positions (slightly larger angle)
+ * New motor mounts
+    - N20 mini gear motor cube (renamed from bb-mot-mini-gear)
+    - Pololu motor 20D, 25D, 37D mounts
+ * Battery models
+    - Li-Pol cube battery
+    - Li-Ion 18650 battery
+ * New Beam 2 for LED 3mm (bb-bd-led3-2)
  * New o-beams for electro boards
 
 ## [2025.01]

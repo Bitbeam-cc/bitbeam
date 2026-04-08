@@ -1,4 +1,4 @@
-// NAME: Mini Gear Motor Mount
+// NAME: Mini Gear Motor N20 Mount
 // CATEGORY: Motor
 // LDRAW: 4
 
